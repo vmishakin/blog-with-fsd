@@ -4,12 +4,10 @@ interface AboutPageProps {
   myName: string;
 }
 
-const AboutPage = ({ myName }: AboutPageProps) => {
+export const AboutPage = ({ myName }: AboutPageProps) => {
   return (
     <div>
       <p>{myName}</p>
     </div>
   );
 };
-
-export default AboutPage;

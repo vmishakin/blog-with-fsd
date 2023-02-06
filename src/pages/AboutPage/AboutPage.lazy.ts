@@ -1,3 +1,5 @@
 import { lazy } from "react";
 
-export const AboutPageLazy = lazy(() => import('./AboutPage'))
+export const AboutPageLazy = lazy(() =>
+  import("./AboutPage").then((m) => ({ default: m.AboutPage }))
+);
