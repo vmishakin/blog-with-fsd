@@ -1,13 +1,9 @@
 // import s from "./AboutPage.module.scss";
 
-interface AboutPageProps {
-  myName: string;
-}
-
-export const AboutPage = ({ myName }: AboutPageProps) => {
+export const AboutPage = () => {
   return (
     <div>
-      <p>{myName}</p>
+      <p>About page</p>
     </div>
   );
 };
