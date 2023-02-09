@@ -1,4 +1,4 @@
-import s from "./AboutPage.module.scss";
+// import s from "./AboutPage.module.scss";
 
 interface AboutPageProps {
   myName: string;
