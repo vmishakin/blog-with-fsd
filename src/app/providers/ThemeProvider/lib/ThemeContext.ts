@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useContext } from "react";
 
 export enum Theme {
   LIGHT = "normal",
@@ -6,9 +6,20 @@ export enum Theme {
 }
 
 export interface ThemeContextProps {
-  theme?: Theme;
-  setTheme?: (theme: Theme) => void;
+  theme: Theme;
+  setTheme: (theme: Theme) => void;
 }
-export const ThemeContext = createContext<ThemeContextProps>({});
+
+export const ThemeContext = createContext<ThemeContextProps | null>(null);
 
 export const LOCAL_STORAGE_THEME_KEY = "theme";
+
+export const useThemeContext = () => {
+  const theme = useContext(ThemeContext)
+
+  if (!theme) {
+    throw new Error('Can`t use useThemeContext outside of the ThemeProvider')
+  }
+
+  return theme
+}
