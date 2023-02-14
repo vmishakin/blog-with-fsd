@@ -28,6 +28,9 @@
     "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
+    "@babel/core": "^7.17.5",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.5",
+    "babel-loader": "^8.2.3",
     "css-loader": "^6.6.0",
     "file-loader": "^6.2.0",
     "i18next": "^21.6.11",
