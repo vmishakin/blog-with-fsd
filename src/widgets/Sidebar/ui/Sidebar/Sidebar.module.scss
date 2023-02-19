@@ -1,8 +1,10 @@
 .Sidebar {
+  display: flex;
+  flex-direction: column;
+  position: relative;
   height: calc(100vh - var(--navbar-height));
   width: var(--sidebar-width);
   background: var(--inverted-color-bg);
-  position: relative;
   transition: width 0.3s;
 
   .switchers {

@@ -1,6 +1,10 @@
 {
   "Main page": "Main page",
   "Language": "English",
-  "toggle": "toggle",
-  "Page not found": "Page not found"
+  "Page not found": "Page not found",
+  "Page error": "Something went wrong",
+  "Reload page": "Reload page",
+  "expand": "Expand",
+  "collapse": "Collapse",
+  "throw error": "throw error"
 }

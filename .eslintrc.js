@@ -18,7 +18,7 @@ module.exports = {
   rules: {
     'react/jsx-filename-extension': [
       2,
-      { extensions: ['.js', '.jsx', '.tsx'] },
+      { extensions: ['.jsx', '.tsx'] },
     ],
     'linebreak-style': 'off',
     'react/function-component-definition': 'off',
@@ -36,6 +36,7 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'import/no-extraneous-dependencies': 'off',
     'max-len': ['warn', { code: 100, ignoreComments: true }],
+    'no-console': 'off',
   },
   globals: {
     __IS_DEV__: true,
