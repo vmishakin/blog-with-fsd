@@ -1,4 +1,8 @@
-import { LOCAL_STORAGE_THEME_KEY, Theme, useThemeContext } from 'app/providers/ThemeProvider/lib/ThemeContext';
+import {
+  LOCAL_STORAGE_THEME_KEY,
+  Theme,
+  useThemeContext,
+} from 'app/providers/ThemeProvider/lib/ThemeContext';
 
 interface UseThemeResult {
   toggleTheme: () => void;

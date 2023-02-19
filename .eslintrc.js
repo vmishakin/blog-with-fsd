@@ -2,6 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    jest: true,
   },
   extends: ['plugin:react/recommended', 'airbnb', 'plugin:i18next/recommended'],
   overrides: [],
@@ -34,7 +35,7 @@ module.exports = {
     'react/require-default-props': 'off',
     'no-underscore-dangle': 'off',
     'import/no-extraneous-dependencies': 'off',
-    // 'i18next/no-literal-string': ['error', {markupOnly}],
+    'max-len': ['warn', { code: 100, ignoreComments: true }],
   },
   globals: {
     __IS_DEV__: true,
