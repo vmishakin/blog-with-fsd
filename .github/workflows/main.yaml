@@ -5,7 +5,7 @@ on:
   pull_request:
     branches: [master]
 jobs:
-  cicd-pipeline:
+  ci-pipeline:
     runs-on: ubuntu-latest
     strategy:
       matrix:
