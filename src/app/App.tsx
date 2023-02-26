@@ -7,7 +7,7 @@ import { classNames } from '../shared/lib/classNames/classNames';
 import { useTheme } from './providers/ThemeProvider';
 
 export const App = () => {
-  const { theme } = useTheme();
+  const { theme } = useTheme()
 
   return (
     <div className={classNames('app', {}, [theme])}>
