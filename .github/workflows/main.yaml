@@ -6,47 +6,25 @@ on:
   pull_request:
     branches:
       - master
-jobs:
-  ci-pipeline:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [17.x]
-    steps:
-      - uses: actions/checkout@v3
-      - name: Starting Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: install dependencies
-        run: npm ci
-      - name: build project
-        run: npm run build
-      
+jobs:    
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [17.x]
     steps:
       - uses: actions/checkout@v3
-      - name: Starting Node.js ${{ matrix.node-version }}
+      - name: Starting Node.js '17'
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: '17'
       - name: install dependencies
         run: npm ci
   lint:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [17.x]
     steps:
       - uses: actions/checkout@v3
-      - name: Starting Node.js ${{ matrix.node-version }}
+      - name: Starting Node.js '17'
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: '17'
       - name: install dependencies
         run: npm ci
       - name: lint typescript
@@ -55,30 +33,24 @@ jobs:
         run: npm run lint:scss
   unit-testing:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [17.x]
     steps:
       - uses: actions/checkout@v3
-      - name: Starting Node.js ${{ matrix.node-version }}
+      - name: Starting Node.js '17'
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: '17'
       - name: install dependencies
         run: npm ci
       - name: unit testing
         run: npm run test:unit
   screenshot-testing:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [17.x]
     steps:
       - uses: actions/checkout@v3
-      - name: Starting Node.js ${{ matrix.node-version }}
+      - name: Starting Node.js '17'
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: '17'
       - name: install dependencies
         run: npm ci
       - name: build storybook
