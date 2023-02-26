@@ -9,7 +9,9 @@
     "lint:ts": "eslint \"**/*.{ts,tsx}\" --max-warnings 0",
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
     "start": "webpack serve --env port=3000",
-    "unit": "jest --config ./config/jest/jest.config.ts",
+    "test:unit": "jest --config ./config/jest/jest.config.ts",
+    "test:ui": "npx loki test",
+    "test:ui:ok": "npx loki approve",
     "lint:all": "npm run lint:ts && npm run lint:scss",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
     "build-storybook": "build-storybook -c ./config/storybook"
