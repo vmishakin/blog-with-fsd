@@ -14,8 +14,8 @@
     "test:ui:ok": "npx loki approve",
     "test:ui:ci": "loki --requireReference --reactUri file:./storybook-static",
     "lint:all": "npm run lint:ts && npm run lint:scss",
-    "storybook": "start-storybook -p 6006 -c ./config/storybook",
-    "build-storybook": "build-storybook -c ./config/storybook"
+    "storybook": "start-storybook -p 6006 -c ./config/storybook -s public",
+    "build-storybook": "build-storybook -c ./config/storybook -s public"
   },
   "dependencies": {
     "i18next": "^21.6.11",
