@@ -1,4 +1,3 @@
-import './styles/index.scss';
 import { Suspense } from 'react';
 import { Sidebar } from 'widgets/Sidebar';
 import { Navbar } from 'widgets/Navbar';
