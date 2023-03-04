@@ -36,11 +36,12 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'max-len': ['warn', { code: 100, ignoreComments: true }],
     'no-console': 'off',
-    'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['data-testid'] }],
+    'i18next/no-literal-string': ['warn', { markupOnly: true, ignoreAttribute: ['data-testid'] }],
     'jsx-a11y/click-events-have-key-events': 'off',
     'jsx-a11y/no-static-element-interactions': 'off',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
+    'no-param-reassign': 'off',
   },
   globals: {
     __IS_DEV__: true,

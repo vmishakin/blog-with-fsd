@@ -8,5 +8,7 @@
   "collapse": "Collapse",
   "throw error": "throw error",
   "Language short": "en",
-  "Login": "Login"
+  "Login": "Login",
+  "increment": "increment",
+  "decrement": "decrement"
 }
