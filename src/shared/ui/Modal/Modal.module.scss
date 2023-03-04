@@ -9,17 +9,6 @@
   pointer-events: none;
   color: var(--primary-color);
 
-  // TODO: убрать!!
-  &.normal {
-    --bg-color: #c9c9c9;
-    --primary-color: #049604;
-  }
-
-  &.dark {
-    --bg-color: #5a5a5a;
-    --primary-color: #008929;
-  }
-
   .overlay {
     width: 100%;
     height: 100%;
