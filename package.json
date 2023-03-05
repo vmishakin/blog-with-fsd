@@ -8,6 +8,7 @@
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
     "lint:ts": "eslint \"**/*.{ts,tsx}\" --max-warnings 0",
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
+    "lint:typecheck": "tsc --project ./tsconfig.json --noEmit",
     "start": "webpack serve --env port=3000",
     "start:server": "node ./json-server/index.js",
     "test:unit": "jest --config ./config/jest/jest.config.ts",
