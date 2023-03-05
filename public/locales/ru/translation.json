@@ -8,5 +8,7 @@
   "collapse": "Свернуть",
   "throw error": "бросить ошибку",
   "Language short": "рус",
-  "Login": "Авторизоваться"
+  "Login": "Авторизоваться",
+  "Password": "Пароль",
+  "Username": "Имя"
 }
