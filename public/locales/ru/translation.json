@@ -10,5 +10,8 @@
   "Language short": "рус",
   "Login": "Авторизоваться",
   "Password": "Пароль",
-  "Username": "Имя"
+  "Username": "Имя",
+  "Authorization": "Авторизация",
+  "Invalid username or password": "Неправильное имя пользователя или пароль",
+  "Logout": "Выйти"
 }
