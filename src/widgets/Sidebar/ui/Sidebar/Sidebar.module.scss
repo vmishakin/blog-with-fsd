@@ -12,27 +12,6 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-
-    .item {
-      display: flex;
-      align-items: center;
-
-      .link {
-        display: flex;
-        align-items: center;
-
-        .icon {
-          fill: var(--primary-color);
-        }
-
-        .link_label {
-          margin-left: 10px;
-          opacity: 1;
-          white-space: nowrap;
-          transition: margin 0.3s, opacity 0.2s;
-        }
-      }
-    }
   }
 
   .switchers {
@@ -54,16 +33,6 @@
 
   &.collapsed {
     width: var(--sidebar-width-collapsed);
-
-    .items {
-      .link {
-        .link_label {
-          margin: 0;
-          opacity: 0;
-          width: 0;
-        }
-      }
-    }
 
     .switchers {
       flex-direction: column;

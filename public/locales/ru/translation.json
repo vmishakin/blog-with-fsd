@@ -13,5 +13,6 @@
   "Username": "Имя",
   "Authorization": "Авторизация",
   "Invalid username or password": "Неправильное имя пользователя или пароль",
-  "Logout": "Выйти"
+  "Logout": "Выйти",
+  "PROFILE PAGE": "Страница профиля"
 }
