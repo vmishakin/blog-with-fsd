@@ -8,7 +8,7 @@ import { Text } from 'shared/ui/Text/Text';
 import s from './ProfilePageHeader.module.scss';
 
 export const ProfilePageHeader = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('profile');
   const readonly = useSelector(getProfileReadonly);
   const dispatch = useAppDispatch();
 

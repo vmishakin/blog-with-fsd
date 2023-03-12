@@ -10,5 +10,11 @@
   "Age": "Age",
   "Avatar": "Avatar",
   "Currency": "Currency",
-  "Country": "Country"
+  "Country": "Country",
+  "Server error": "Server error",
+  "No data": "No data",
+  "Incorrect user data": "Incorrect user data",
+  "Incorrect age": "Incorrect age",
+  "Incorrect country": "Incorrect country",
+  "Cancel": "Cancel"
 }

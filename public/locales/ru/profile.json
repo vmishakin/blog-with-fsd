@@ -10,5 +10,11 @@
   "Age": "Возраст",
   "Avatar": "Аватар",
   "Currency": "Валюта",
-  "Country": "Страна"
+  "Country": "Страна",
+  "Server error": "Ошибка сервера",
+  "No data": "Нет данных",
+  "Incorrect user data": "Неверные данные пользователя",
+  "Incorrect age": "Неверный возраст",
+  "Incorrect country": "Неверная страна",
+  "Cancel": "Отмена"
 }
