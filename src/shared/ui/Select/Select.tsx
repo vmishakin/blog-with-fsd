@@ -17,7 +17,7 @@ interface SelectProps {
 }
 
 export const Select = memo(({
-  label, className, options, value, onChange, readonly
+  label, className, options, value, onChange, readonly,
 }: SelectProps) => {
   const optionList = useMemo(() => {
     return options?.map((opt) => (
