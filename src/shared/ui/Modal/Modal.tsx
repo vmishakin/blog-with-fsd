@@ -49,7 +49,7 @@ export const Modal = ({
     }
 
     return () => {
-      clearTimeout(timerRef.current);
+      window.clearTimeout(timerRef.current);
       window.removeEventListener('keydown', onKeyDown);
     };
   }, [isOpen, onKeyDown]);

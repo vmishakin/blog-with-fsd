@@ -20,12 +20,12 @@ export function createReducerManager(
 
     // The root reducer function exposed by this object
     // This will be passed to the store
-    reduce: (state: StateSchema, action: AnyAction) => {
+    reduce: (state: StateSchema | undefined, action: AnyAction) => {
       // If any reducers have been removed, clean up their state first
-      if (keysToRemove.length > 0) {
+      if (keysToRemove.length > 0 && state) {
         state = { ...state };
         keysToRemove.forEach((key) => {
-          delete state[key];
+          delete state?.[key];
         });
         keysToRemove = [];
       }
