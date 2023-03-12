@@ -14,5 +14,6 @@
   "Authorization": "Авторизация",
   "Invalid username or password": "Неправильное имя пользователя или пароль",
   "Logout": "Выйти",
-  "PROFILE PAGE": "Страница профиля"
+  "PROFILE PAGE": "Страница профиля",
+  "Cancel": "Отмена"
 }

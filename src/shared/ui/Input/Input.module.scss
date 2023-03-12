@@ -16,6 +16,10 @@
       &:focus {
         outline: none;
       }
+
+      &.readonly {
+        opacity: 0.7;
+      }
     }
 
     .caret {

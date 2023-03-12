@@ -16,5 +16,6 @@
   "Authorization": "Authorization",
   "Invalid username or password": "Invalid username or password",
   "Logout": "Logout",
-  "PROFILE PAGE": "Profile page"
+  "PROFILE PAGE": "Profile page",
+  "Cancel": "Cancel"
 }

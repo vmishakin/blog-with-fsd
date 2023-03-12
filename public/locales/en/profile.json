@@ -2,5 +2,13 @@
   "Profile": "Profile",
   "Edit": "Edit",
   "Last name": "Last name",
-  "First name": "First name"
+  "First name": "First name",
+  "Profile load error": "Profile load error",
+  "Try to reload page": "Please try to reload page",
+  "Save": "Save",
+  "City": "City",
+  "Age": "Age",
+  "Avatar": "Avatar",
+  "Currency": "Currency",
+  "Country": "Country"
 }
