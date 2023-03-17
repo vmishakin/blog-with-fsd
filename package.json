@@ -11,6 +11,7 @@
     "lint:typecheck": "tsc --project ./tsconfig.json --noEmit",
     "start": "webpack serve --env port=3000",
     "start:server": "node ./json-server/index.js",
+    "start:dev": "concurrently \"npm run start\" \"npm run start:server\" ",
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "test:ui": "npx loki test",
     "test:ui:ok": "npx loki approve",
@@ -27,6 +28,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.0",
     "axios": "^1.3.4",
+    "concurrently": "^7.6.0",
     "i18next": "^21.6.11",
     "i18next-browser-languagedetector": "^6.1.3",
     "i18next-http-backend": "^1.3.2",
