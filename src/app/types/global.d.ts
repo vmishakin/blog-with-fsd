@@ -21,6 +21,7 @@ declare module '*.svg' {
 // variables from webpack`s DefinePlugin
 declare const __IS_DEV__: boolean;
 declare const __API__: string;
+declare const __PROJECT__: 'storybook' | 'frontend' | 'jest';
 
 type PartialDeep<T> = T extends object ? {
   [P in keyof T]?: PartialDeep<T[P]>;
