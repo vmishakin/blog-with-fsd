@@ -7,8 +7,6 @@ import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
 import { ProfilePage } from './ProfilePage';
 
-const avatarUrl = 'https://kildall.com/wp/wp-content/uploads/2022/11/PawPaws.jpg';
-
 export default {
   title: 'pages/ProfilePage',
   component: ProfilePage,
@@ -27,7 +25,6 @@ Light.decorators = [StoreDecorator({
       first: 'vadya',
       lastname: 'programmer',
       age: 10,
-      avatar: avatarUrl,
       city: 'NN',
       country: Country.Belarus,
       currency: Currency.EUR,
@@ -44,7 +41,6 @@ Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
       first: 'vadya',
       lastname: 'programmer',
       age: 10,
-      avatar: avatarUrl,
       city: 'NN',
       country: Country.Belarus,
       currency: Currency.EUR,

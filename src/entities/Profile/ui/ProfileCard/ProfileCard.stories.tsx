@@ -23,7 +23,6 @@ Primary.args = {
     first: 'vadya',
     lastname: 'programmer',
     age: 10,
-    avatar: 'https://kildall.com/wp/wp-content/uploads/2022/11/PawPaws.jpg',
     city: 'NN',
     country: Country.Belarus,
     currency: Currency.EUR,
