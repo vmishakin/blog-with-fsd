@@ -3,10 +3,11 @@ import 'app/styles/index.scss';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import AvatarImg from 'shared/assets/avatar-for-tests.jpg';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
 import { ProfilePage } from './ProfilePage';
+
+const avatarUrl = 'https://kildall.com/wp/wp-content/uploads/2022/11/PawPaws.jpg';
 
 export default {
   title: 'pages/ProfilePage',
@@ -26,7 +27,7 @@ Light.decorators = [StoreDecorator({
       first: 'vadya',
       lastname: 'programmer',
       age: 10,
-      avatar: AvatarImg,
+      avatar: avatarUrl,
       city: 'NN',
       country: Country.Belarus,
       currency: Currency.EUR,
@@ -43,7 +44,7 @@ Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
       first: 'vadya',
       lastname: 'programmer',
       age: 10,
-      avatar: AvatarImg,
+      avatar: avatarUrl,
       city: 'NN',
       country: Country.Belarus,
       currency: Currency.EUR,

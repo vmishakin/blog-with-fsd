@@ -2,7 +2,6 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import 'app/styles/index.scss';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
-import AvatarImg from 'shared/assets/avatar-for-tests.jpg';
 import { ProfileCard } from './ProfileCard';
 
 export default {
@@ -24,7 +23,7 @@ Primary.args = {
     first: 'vadya',
     lastname: 'programmer',
     age: 10,
-    avatar: AvatarImg,
+    avatar: 'https://kildall.com/wp/wp-content/uploads/2022/11/PawPaws.jpg',
     city: 'NN',
     country: Country.Belarus,
     currency: Currency.EUR,
