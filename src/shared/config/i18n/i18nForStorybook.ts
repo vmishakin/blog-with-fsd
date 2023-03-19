@@ -3,6 +3,7 @@ import { initReactI18next } from 'react-i18next';
 import aboutNS from '../../../../public/locales/en/about.json';
 import translationNS from '../../../../public/locales/en/translation.json';
 import profileNS from '../../../../public/locales/en/profile.json';
+import articleNS from '../../../../public/locales/en/article.json';
 
 i18n
   .use(initReactI18next)
@@ -15,6 +16,7 @@ i18n
         translation: translationNS,
         about: aboutNS,
         profile: profileNS,
+        article: articleNS,
       },
     },
   });
