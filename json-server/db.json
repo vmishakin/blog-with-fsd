@@ -142,13 +142,15 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://preview.redd.it/7nsk7aswet4a1.jpg?width=640&crop=smart&auto=webp&s=20dfcd757e65684e16f0c04682ab541a038b5154"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/2b1efa152244281.631a478be72ab.png"
     }
   ]
 }
