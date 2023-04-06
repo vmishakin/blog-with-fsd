@@ -24,7 +24,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -93,7 +95,9 @@
       "img": "https://panorama.pub/storage/images/76/7e/c5b14566b5046b0d2511ecf6785a/previews/17803-main.jpg.webp",
       "views": 512,
       "createdAt": "18.03.2023",
-      "type": ["Science"],
+      "type": [
+        "Science"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -125,18 +129,44 @@
       "text": "aboba",
       "articleId": "1",
       "userId": "2"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "privet",
+      "id": "6tQJClf"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "hi",
+      "id": "Mt6Xck7"
     }
   ],
-  "profile": {
-    "first": "Vadim",
-    "lastname": "Sosiska",
-    "age": 23,
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "Nightcity",
-    "username": "superadmin",
-    "avatar": "https://preview.redd.it/7nsk7aswet4a1.jpg?width=640&crop=smart&auto=webp&s=20dfcd757e65684e16f0c04682ab541a038b5154"
-  },
+  "profile": [
+    {
+      "id": "1",
+      "first": "Vadim",
+      "lastname": "Sosiska",
+      "age": 24,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Nightcity",
+      "username": "superadmin",
+      "avatar": "https://preview.redd.it/7nsk7aswet4a1.jpg?width=640&crop=smart&auto=webp&s=20dfcd757e65684e16f0c04682ab541a038b5154"
+    },
+    {
+      "id": "2",
+      "first": "valera",
+      "lastname": "zhmih",
+      "age": 23,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Nightcity",
+      "username": "zhmih",
+      "avatar": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/2b1efa152244281.631a478be72ab.png"
+    }
+  ],
   "users": [
     {
       "id": "1",
@@ -147,7 +177,7 @@
     },
     {
       "id": "2",
-      "username": "user",
+      "username": "zhmih",
       "password": "123",
       "role": "USER",
       "avatar": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/2b1efa152244281.631a478be72ab.png"

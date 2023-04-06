@@ -22,7 +22,7 @@ export const updateProfileData = createAsyncThunk<
     }
 
     try {
-      const response = await extra.api.put('/profile', formData);
+      const response = await extra.api.put(`/profile/${formData?.id}`, formData);
 
       if (!response.data) {
         throw new Error();

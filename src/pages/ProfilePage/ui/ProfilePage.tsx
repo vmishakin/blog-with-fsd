@@ -12,13 +12,15 @@ import {
   getProfileValidateError,
 } from 'entities/Profile';
 import { ValidateProfileError } from 'entities/Profile/model/types/profile';
-import { useCallback, useEffect, useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import {
   DynamicModuleLoader, ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
@@ -34,6 +36,7 @@ export const ProfilePage = () => {
   const error = useSelector(getProfileError);
   const readonly = useSelector(getProfileReadonly);
   const validateErrors = useSelector(getProfileValidateError);
+  const { id } = useParams<{id: string}>();
 
   const validateErrorTranslates = useMemo(() => ({
     [ValidateProfileError.SERVER_ERROR]: t('Server error'),
@@ -43,11 +46,11 @@ export const ProfilePage = () => {
     [ValidateProfileError.INCORRECT_COUNTRY]: t('Incorrect country'),
   }), [t]);
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchProfileData());
+  useInitialEffect(() => {
+    if (id) {
+      dispatch(fetchProfileData(id));
     }
-  }, [dispatch]);
+  });
 
   const onChangeFirstname = useCallback((value?: string) => {
     dispatch(profileActions.updateProfile({ first: value || '' }));

@@ -16,4 +16,23 @@ export default {
 const Template: ComponentStory<typeof CommentList> = (args) => <CommentList {...args} />;
 
 export const Primary = Template.bind({});
-Primary.args = {};
+Primary.args = {
+  comments: [
+    {
+      id: '1',
+      text: 'hello',
+      user: { id: '1', username: 'Grisha' },
+    },
+    {
+      id: '2',
+      text: 'hi',
+      user: { id: '2', username: 'Vasya' },
+    },
+  ],
+};
+
+export const Loading = Template.bind({});
+Loading.args = {
+  comments: [],
+  isLoading: true,
+};
