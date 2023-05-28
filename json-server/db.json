@@ -95,6 +95,7 @@
       "subtitle": "РАН разоблачила очередной заговор западных учёных",
       "img": "https://panorama.pub/storage/images/76/7e/c5b14566b5046b0d2511ecf6785a/previews/17803-main.jpg.webp",
       "views": 512,
+      "userId": "1",
       "createdAt": "18.03.2023",
       "type": [
         "Science"
@@ -142,6 +143,12 @@
       "userId": "1",
       "text": "hi",
       "id": "Mt6Xck7"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "text": "qq",
+      "id": "6iMPMFl"
     }
   ],
   "profile": [
