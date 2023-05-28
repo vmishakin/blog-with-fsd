@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import 'app/styles/index.scss';
 import { Article, ArticleView } from 'entities/Article';
-import { ArticleList } from 'entities/Article/ui/ArticleList/ArticleList';
-import { memo } from 'react';
-import s from './ArticlesPage.module.scss';
+import { ArticleListItem } from './ArticleListItem';
 
 const article = {
   id: '1',
@@ -84,17 +84,24 @@ const article = {
   ],
 } as Article;
 
-export const ArticlesPage = memo(() => {
-  return (
-    <div className={s.ArticlesPage}>
-      <ArticleList
-        view={ArticleView.BIG}
-        isLoading
-        articles={new Array(16).fill(0).map((item, index) => ({
-          ...article,
-          id: String(index),
-        }))}
-      />
-    </div>
-  );
-});
+export default {
+  title: 'entities/Article/ArticleListItem',
+  component: ArticleListItem,
+  argTypes: {
+    backgroundColor: { control: 'color' },
+  },
+} as ComponentMeta<typeof ArticleListItem>;
+
+const Template: ComponentStory<typeof ArticleListItem> = (args) => <ArticleListItem {...args} />;
+
+export const Big = Template.bind({});
+Big.args = {
+  view: ArticleView.BIG,
+  article,
+};
+
+export const Small = Template.bind({});
+Small.args = {
+  view: ArticleView.SMALL,
+  article,
+};

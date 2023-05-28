@@ -8,6 +8,11 @@ import { ArticleDetails } from './ArticleDetails';
 const article: Article = {
   id: '1',
   title: 'Javascript news',
+  user: {
+    id: '1',
+    username: 'Vadim',
+    avatar: 'https://preview.redd.it/7nsk7aswet4a1.jpg?width=640&crop=smart&auto=webp&s=20dfcd757e65684e16f0c04682ab541a038b5154',
+  },
   subtitle: 'Что нового в JS за 2022 год?',
   img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
   views: 1022,
@@ -76,13 +81,10 @@ const article: Article = {
 };
 
 export default {
-  title: 'entities/ArticleDetails',
+  title: 'entities/Article/ArticleDetails',
   component: ArticleDetails,
   argTypes: {
     backgroundColor: { control: 'color' },
-  },
-  args: {
-    to: '/',
   },
 } as ComponentMeta<typeof ArticleDetails>;
 

@@ -1,4 +1,8 @@
 {
   "Article not found": "Article not found",
-  "Comments": "Comments"
+  "Comments": "Comments",
+  "Read more": "Read more...",
+  "article": {
+    "Back to list": "Back to list"
+  }
 }

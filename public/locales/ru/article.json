@@ -1,4 +1,8 @@
 {
   "Article not found": "Статья не найдена",
-  "Comments": "Комментарии"
+  "Comments": "Комментарии",
+  "Read more": "Читать далее...",
+  "article": {
+    "Back to list": "Обратно к списку"
+  }
 }
