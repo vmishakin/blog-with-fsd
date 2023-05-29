@@ -13,6 +13,7 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { Text } from 'shared/ui/Text/Text';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { Page } from 'shared/ui/Page/Page';
 import {
   fetchCommentsByArticleId,
 } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
@@ -51,15 +52,15 @@ export const ArticleDetailsPage = memo(() => {
 
   if (!id) {
     return (
-      <div>
+      <Page>
         {t('Article not found')}
-      </div>
+      </Page>
     );
   }
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={s.ArticleDetailsPage}>
+      <Page className={s.ArticleDetailsPage}>
         <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
           {t('Back to list')}
         </Button>
@@ -70,7 +71,7 @@ export const ArticleDetailsPage = memo(() => {
           isLoading={isCommentsLoading}
           comments={comments}
         />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 });
