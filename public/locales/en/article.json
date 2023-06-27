@@ -2,7 +2,17 @@
   "Article not found": "Article not found",
   "Comments": "Comments",
   "Read more": "Read more...",
-  "article": {
-    "Back to list": "Back to list"
-  }
+  "Back to list": "Back to list",
+  "Sort by": "Sort by..",
+  "Search": "Search",
+  "ascending": "ascending",
+  "descending": "descending",
+  "creation date": "creation date",
+  "title": "title",
+  "views": "views",
+  "asc/desc": "by",
+  "All articles": "All",
+  "It articles": "IT",
+  "Science articles": "Science",
+  "Economics articles": "Economics"
 }

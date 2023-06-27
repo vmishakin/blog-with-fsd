@@ -13,7 +13,7 @@ describe('initArticlesPage.test', () => {
         _inited: false,
       },
     });
-    await thunk.callThunk();
+    await thunk.callThunk(new URLSearchParams());
     expect(thunk.dispatch).toHaveBeenCalledTimes(4);
   });
 
@@ -23,7 +23,7 @@ describe('initArticlesPage.test', () => {
         _inited: true,
       },
     });
-    await thunk.callThunk();
+    await thunk.callThunk(new URLSearchParams());
     expect(thunk.dispatch).toHaveBeenCalledTimes(2);
     expect(fetchArticlesList).not.toHaveBeenCalled();
   });

@@ -16,5 +16,6 @@
   "Incorrect user data": "Неверные данные пользователя",
   "Incorrect age": "Неверный возраст",
   "Incorrect country": "Неверная страна",
-  "Cancel": "Отмена"
+  "Cancel": "Отмена",
+  "Username": "Имя"
 }

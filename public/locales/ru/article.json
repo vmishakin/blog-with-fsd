@@ -2,7 +2,17 @@
   "Article not found": "Статья не найдена",
   "Comments": "Комментарии",
   "Read more": "Читать далее...",
-  "article": {
-    "Back to list": "Обратно к списку"
-  }
+  "Back to list": "Обратно к списку",
+  "Sort by": "Сортировать по..",
+  "Search": "Поиск",
+  "ascending": "возрастанию",
+  "descending": "убыванию",
+  "creation date": "дате создания",
+  "title": "заголовку",
+  "views": "просмотрам",
+  "asc/desc": "по",
+  "All articles": "Все",
+  "It articles": "IT",
+  "Economics articles": "Экономика",
+  "Science articles": "Наука"
 }
