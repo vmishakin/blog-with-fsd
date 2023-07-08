@@ -14,5 +14,8 @@
   "All articles": "Все",
   "It articles": "IT",
   "Economics articles": "Экономика",
-  "Science articles": "Наука"
+  "Science articles": "Наука",
+  "article": {
+    "Recommendations": "Рекомендуем"
+  }
 }
