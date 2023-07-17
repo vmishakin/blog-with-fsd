@@ -1,8 +1,8 @@
 {
-  "name": "ulbi-frontend-course",
+  "name": "pena-blog",
   "version": "1.0.0",
   "scripts": {
-    "build": "webpack --env mode=production",
+    "build": "webpack --env mode=production apiUrl=https://pena-blog-server.vercel.app/",
     "build:dev": "webpack --env mode=development",
     "lint:scss": "npx stylelint \"**/*.scss\" --max-warnings 0",
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
@@ -29,6 +29,7 @@
     "@reduxjs/toolkit": "^1.8.0",
     "axios": "^1.3.4",
     "concurrently": "^7.6.0",
+    "copy-webpack-plugin": "^10.2.4",
     "i18next": "^21.6.11",
     "i18next-browser-languagedetector": "^6.1.3",
     "i18next-http-backend": "^1.3.2",

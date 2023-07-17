@@ -40,7 +40,7 @@ export const Button = memo(({
       className={classNames(s.Button, {
         [s.square]: square,
         [s.disabled]: disabled,
-      }, [className, s[theme], s[size]])}
+      }, [s[theme], s[size], className])}
       disabled={disabled}
       type="button"
     >
