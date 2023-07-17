@@ -4,17 +4,18 @@ import { AddCommentForm } from 'features/addCommentForm';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import {
   DynamicModuleLoader, ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Text, TextSize } from 'shared/ui/Text/Text';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Page } from 'widgets/Page/Page';
 import { ArticleList } from 'entities/Article/ui/ArticleList/ArticleList';
+import {
+  ArticleDetailsPageHeader,
+} from 'pages/ArticleDetailsPage/ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import {
   fetchArticleRecommendations,
 } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
@@ -49,15 +50,10 @@ export const ArticleDetailsPage = memo(() => {
   const recommendations = useSelector(getArticleRecommendations.selectAll);
   const isCommentsLoading = useSelector(getArticleCommentsIsLoading);
   const isRecommendationsLoading = useSelector(getArticleRecommendationsIsLoading);
-  const navigate = useNavigate();
 
   const onSendComment = useCallback((text) => {
     dispatch(addCommentForArticle(text));
   }, [dispatch]);
-
-  const onBackToList = useCallback(() => {
-    navigate(RoutePath.articles);
-  }, [navigate]);
 
   useInitialEffect(() => {
     dispatch(fetchCommentsByArticleId(id));
@@ -75,9 +71,7 @@ export const ArticleDetailsPage = memo(() => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={s.ArticleDetailsPage}>
-        <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
-          {t('Back to list')}
-        </Button>
+        <ArticleDetailsPageHeader />
         <ArticleDetails id={id} />
         <Text size={TextSize.L} className={s.commentTitle} title={t('Recommendations')} />
         <ArticleList

@@ -54,7 +54,7 @@ export const ArticleListItem = memo(({
             <ArticleTextBlockComponent block={textBlock} className={s.textBlock} />
           )}
           <div className={s.footer}>
-            <AppLink target={target} to={`${RoutePath.article_details}/${article.id}`}>
+            <AppLink target={target} to={`${RoutePath.article_details}${article.id}`}>
               <Button theme={ButtonTheme.OUTLINE}>
                 {t('Read more')}
               </Button>
@@ -68,7 +68,7 @@ export const ArticleListItem = memo(({
   return (
     <AppLink
       target={target}
-      to={`${RoutePath.article_details}/${article.id}`}
+      to={`${RoutePath.article_details}${article.id}`}
       className={classNames(s.ArticleListItem, {}, [className, s[view]])}
     >
       <Card className={s.card}>

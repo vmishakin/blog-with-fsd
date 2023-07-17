@@ -6,3 +6,4 @@ export type { Article } from './model/types/article';
 export { ArticleView, ArticleSortField } from './model/types/article';
 export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails';
 export { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelector';
+export { getArticleDetailsData } from './model/selectors/articleDetails';

@@ -15,7 +15,6 @@
   "It articles": "IT",
   "Economics articles": "Экономика",
   "Science articles": "Наука",
-  "article": {
-    "Recommendations": "Рекомендуем"
-  }
+  "Recommendations": "Рекомендуем",
+  "Edit": "Редактировать"
 }
