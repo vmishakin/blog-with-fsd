@@ -6,7 +6,7 @@ const server = jsonServer.create();
 
 const router = jsonServer.router(path.resolve(__dirname, 'db.json'));
 
-const PORT = 7000;
+const PORT = 7001;
 
 server.use(jsonServer.defaults({}));
 server.use(jsonServer.bodyParser);
