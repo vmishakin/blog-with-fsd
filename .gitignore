@@ -3,3 +3,5 @@
 /build
 /extractedTranslations
 /storybook-static
+
+.DS_Store

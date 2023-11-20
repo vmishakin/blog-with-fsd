@@ -1,8 +1,7 @@
 /* eslint-disable max-len */
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import 'app/styles/index.scss';
-import { ArticleView } from 'entities/Article/model/types/article';
-import { Article } from 'entities/Article';
+import { ArticleView, Article } from '../../model/types/article';
 import { ArticleList } from './ArticleList';
 
 const article = {

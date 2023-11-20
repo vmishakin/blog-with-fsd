@@ -1,10 +1,10 @@
-import { Comment } from 'entities/Comment/model/types/comment';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { Text } from 'shared/ui/Text/Text';
+import { Comment } from '../../model/types/comment';
 import s from './CommentCard.module.scss';
 
 interface CommentCardProps {

@@ -1,6 +1,3 @@
-import {
-  Article, ArticleBlockType, ArticleTextBlock, ArticleView,
-} from 'entities/Article/model/types/article';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Icon } from 'shared/ui/Icon/Icon';
 import { Text } from 'shared/ui/Text/Text';
@@ -12,6 +9,9 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
+import {
+  Article, ArticleBlockType, ArticleTextBlock, ArticleView,
+} from '../../model/types/article';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import s from './ArticleListItem.module.scss';
 
