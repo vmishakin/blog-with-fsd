@@ -4,6 +4,7 @@ import s from "./ListBox.module.scss";
 import { Mods, classNames } from "shared/lib/classNames/classNames";
 import { Button } from "../Button/Button";
 import { HStack } from '../Stack';
+import { DropdownDirection } from 'shared/types/ui';
 
 export interface ListBoxItem {
   value: string;
@@ -22,8 +23,6 @@ interface ListBoxProps {
   label?: string;
 }
 
-type DropdownDirection = "top" | "bottom";
-
 export const ListBox = ({
   items,
   className,
@@ -31,7 +30,7 @@ export const ListBox = ({
   defaultValue,
   onChange,
   readonly,
-  direction = "bottom",
+  direction = "bottomRight",
   label,
 }: ListBoxProps) => {
   return (
