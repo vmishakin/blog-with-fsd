@@ -2,22 +2,8 @@
   padding: 20px;
   border: 2px solid var(--inverted-primary-color);
 
-  .data {
-    .avatarWrapper {
-      display: flex;
-      width: 100%;
-      justify-content: center;
-    }
-
-    .input {
-      margin-top: 10px;
-    }
-  }
-
-  &.loading {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  &.loading,
+  &.error {
     height: 100px;
   }
 

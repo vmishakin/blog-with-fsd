@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Text } from 'shared/ui/Text/Text';
-import s from './ProfilePageHeader.module.scss';
+import { HStack } from 'shared/ui/Stack/HStack/HStack';
 
 export const ProfilePageHeader = () => {
   const { t } = useTranslation('profile');
@@ -31,38 +31,32 @@ export const ProfilePageHeader = () => {
   }, [dispatch]);
 
   return (
-    <div className={s.ProfilePageHeader}>
+    <HStack max justify="between">
       <Text title={t('Profile')} />
-      {canEdit && (
-        <div className={s.btnsWrapper}>
-          {readonly ? (
-            <Button
-              theme={ButtonTheme.OUTLINE}
-              className={s.editBtn}
-              onClick={onEdit}
-            >
-              {t('Edit')}
-            </Button>
-          ) : (
-            <>
-              <Button
-                theme={ButtonTheme.OUTLINE_RED}
-                className={s.editBtn}
-                onClick={onCancelEdit}
-              >
-                {t('Cancel')}
-              </Button>
-              <Button
-                theme={ButtonTheme.OUTLINE}
-                onClick={onSave}
-              >
-                {t('Save')}
-              </Button>
-            </>
-          )}
-        </div>
+      {canEdit && readonly ? (
+        <Button
+          theme={ButtonTheme.OUTLINE}
+          onClick={onEdit}
+        >
+          {t('Edit')}
+        </Button>
+      ) : (
+        <HStack gap="8">
+          <Button
+            theme={ButtonTheme.OUTLINE_RED}
+            onClick={onCancelEdit}
+          >
+            {t('Cancel')}
+          </Button>
+          <Button
+            theme={ButtonTheme.OUTLINE}
+            onClick={onSave}
+          >
+            {t('Save')}
+          </Button>
+        </HStack>
       )}
 
-    </div>
+    </HStack>
   );
 };

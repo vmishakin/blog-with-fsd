@@ -4,6 +4,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
 import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher/ThemeSwitcher';
+import { VStack } from 'shared/ui/Stack/VStack/VStack';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 
@@ -26,7 +27,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
       data-testid="sidebar"
       className={classNames(s.Sidebar, { [s.collapsed]: collapsed }, [className])}
     >
-      <div className={s.items}>
+      <VStack className={s.items} gap="8">
         {sidebarItemsList.map((item) => {
           return (
             <SidebarItem
@@ -36,7 +37,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
             />
           );
         })}
-      </div>
+      </VStack>
 
       <Button
         data-testid="sidebar-toggle"
