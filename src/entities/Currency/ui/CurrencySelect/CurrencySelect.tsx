@@ -1,7 +1,8 @@
-import { memo, useCallback } from 'react';
-import { useTranslation } from 'react-i18next';
-import { Select } from 'shared/ui/Select/Select';
-import { Currency } from '../../model/types/currency';
+import { memo, useCallback } from "react";
+import { useTranslation } from "react-i18next";
+import { Select } from "shared/ui/Select/Select";
+import { Currency } from "../../model/types/currency";
+import { ListBox } from "shared/ui/ListBox/ListBox";
 
 const options = [
   { value: Currency.RUB, content: Currency.RUB },
@@ -9,29 +10,33 @@ const options = [
   { value: Currency.USD, content: Currency.USD },
 ];
 interface CurrencySelectProps {
-  className?: string
-  value?: Currency
-  onChange?: (value: Currency) => void
-  readonly?: boolean
+  className?: string;
+  value?: Currency;
+  onChange?: (value: Currency) => void;
+  readonly?: boolean;
 }
 
-export const CurrencySelect = memo(({
-  className, value, onChange, readonly,
-}: CurrencySelectProps) => {
-  const { t } = useTranslation('profile');
+export const CurrencySelect = memo(
+  ({ className, value, onChange, readonly }: CurrencySelectProps) => {
+    const { t } = useTranslation("profile");
 
-  const onChangeHandler = useCallback((v: string) => {
-    onChange?.(v as Currency);
-  }, [onChange]);
+    const onChangeHandler = useCallback(
+      (v: string) => {
+        onChange?.(v as Currency);
+      },
+      [onChange]
+    );
 
-  return (
-    <Select
-      className={className}
-      label={t('Currency')}
-      options={options}
-      value={value}
-      readonly={readonly}
-      onChange={onChangeHandler}
-    />
-  );
-});
+    return (
+      <ListBox
+        label={t('Currency')}
+        value={value}
+        items={options}
+        onChange={onChangeHandler}
+        defaultValue={t('Currency')}
+        readonly={readonly}
+        className={className}
+      />
+    );
+  }
+);

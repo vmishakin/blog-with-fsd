@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, memo } from 'react';
+import { ButtonHTMLAttributes, ForwardedRef, forwardRef, memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import s from './Button.module.scss';
 
@@ -25,7 +25,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   disabled?: boolean;
 }
 
-export const Button = memo(({
+export const Button = memo(forwardRef(({
   className,
   children,
   theme = ButtonTheme.OUTLINE,
@@ -33,7 +33,7 @@ export const Button = memo(({
   size = ButtonSize.M,
   disabled,
   ...otherProps
-}: ButtonProps) => {
+}: ButtonProps, ref: ForwardedRef<HTMLButtonElement>) => {
   return (
     <button
       {...otherProps}
@@ -43,8 +43,9 @@ export const Button = memo(({
       }, [s[theme], s[size], className])}
       disabled={disabled}
       type="button"
+      ref={ref}
     >
       {children}
     </button>
   );
-});
+}));
