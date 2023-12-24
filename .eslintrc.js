@@ -13,7 +13,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'pena-blog'],
+  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
   rules: {
     'react/jsx-filename-extension': [
       2,
@@ -34,7 +34,7 @@ module.exports = {
     'react/require-default-props': 'off',
     'no-underscore-dangle': 'off',
     'import/no-extraneous-dependencies': 'off',
-    'max-len': ['warn', { code: 100, ignoreComments: true }],
+    'max-len': ['warn', { code: 120, ignoreComments: true }],
     'no-console': 'off',
     'i18next/no-literal-string': ['warn', { markupOnly: true, ignoreAttribute: ['data-testid'] }],
     'jsx-a11y/click-events-have-key-events': 'off',
@@ -44,7 +44,9 @@ module.exports = {
     'no-param-reassign': 'off',
     'no-undef': 'off',
     'react/no-array-index-key': 'off',
-    'pena-blog/path-checker': 'error',
+    // 'pena-blog/path-checker': 'error',
+    'react/prop-types': 'off',
+    'react/no-unused-prop-types': 'off',
   },
   globals: {
     __IS_DEV__: true,

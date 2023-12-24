@@ -111,6 +111,7 @@
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.7.4"
   },
+  "license": "MIT",
   "loki": {
     "configurations": {
       "chrome.laptop": {

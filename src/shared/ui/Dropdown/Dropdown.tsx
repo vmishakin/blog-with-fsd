@@ -1,9 +1,9 @@
-import { Menu } from "@headlessui/react";
-import s from "./Dropdown.module.scss";
-import { classNames } from "shared/lib/classNames/classNames";
-import { Fragment, ReactNode } from "react";
-import { DropdownDirection } from "shared/types/ui";
-import { AppLink } from "../AppLink/AppLink";
+import { Menu } from '@headlessui/react';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { Fragment, ReactNode } from 'react';
+import { DropdownDirection } from 'shared/types/ui';
+import s from './Dropdown.module.scss';
+import { AppLink } from '../AppLink/AppLink';
 
 export interface DropdownItem {
   disabled?: boolean;
@@ -23,7 +23,7 @@ export const Dropdown = ({
   className,
   items,
   trigger,
-  direction = "bottomRight",
+  direction = 'bottomRight',
 }: DropdownProps) => {
   return (
     <Menu as="div" className={classNames(s.Dropdown, {}, [className])}>

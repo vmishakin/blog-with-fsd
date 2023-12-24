@@ -17,5 +17,8 @@
   "Incorrect age": "Incorrect age",
   "Incorrect country": "Incorrect country",
   "Cancel": "Cancel",
-  "Username": "Username"
+  "Username": "Username",
+  "profile": {
+    "Profile not found": "Profile not found"
+  }
 }

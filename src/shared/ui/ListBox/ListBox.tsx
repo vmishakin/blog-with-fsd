@@ -1,10 +1,10 @@
-import { Fragment, ReactNode, useState } from "react";
-import { Listbox as HListBox } from "@headlessui/react";
-import s from "./ListBox.module.scss";
-import { Mods, classNames } from "shared/lib/classNames/classNames";
-import { Button } from "../Button/Button";
-import { HStack } from '../Stack';
+import { Fragment, ReactNode } from 'react';
+import { Listbox as HListBox } from '@headlessui/react';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { DropdownDirection } from 'shared/types/ui';
+import s from './ListBox.module.scss';
+import { Button } from '../Button/Button';
+import { HStack } from '../Stack';
 
 export interface ListBoxItem {
   value: string;
@@ -30,12 +30,12 @@ export const ListBox = ({
   defaultValue,
   onChange,
   readonly,
-  direction = "bottomRight",
+  direction = 'bottomRight',
   label,
 }: ListBoxProps) => {
   return (
     <HStack gap="4">
-      {label && <span>{label + ">"}</span>}
+      {label && <span>{`${label}>`}</span>}
       <HListBox
         as="div"
         className={classNames(s.ListBox, {}, [className])}
@@ -59,7 +59,7 @@ export const ListBox = ({
                     [s.disabled]: item.disabled,
                   })}
                 >
-                  {selected && ">"}
+                  {selected && '>'}
                   {item.content}
                 </li>
               )}

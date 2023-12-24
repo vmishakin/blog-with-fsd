@@ -1,4 +1,6 @@
-import { ButtonHTMLAttributes, ForwardedRef, forwardRef, memo } from 'react';
+import {
+  ButtonHTMLAttributes, ForwardedRef, forwardRef, memo,
+} from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import s from './Button.module.scss';
 

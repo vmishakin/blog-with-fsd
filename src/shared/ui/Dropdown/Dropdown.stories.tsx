@@ -1,3 +1,4 @@
+/* eslint-disable i18next/no-literal-string */
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import 'app/styles/index.scss';
 import { Dropdown } from './Dropdown';
@@ -20,13 +21,13 @@ Primary.args = {
   trigger: <Button>Open</Button>,
   items: [
     {
-      content: 'first'
+      content: 'first',
     },
     {
-      content: 'second'
+      content: 'second',
     },
     {
-      content: 'third'
+      content: 'third',
     },
-  ]
+  ],
 };

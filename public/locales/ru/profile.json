@@ -17,5 +17,8 @@
   "Incorrect age": "Неверный возраст",
   "Incorrect country": "Неверная страна",
   "Cancel": "Отмена",
-  "Username": "Имя"
+  "Username": "Имя",
+  "profile": {
+    "Profile not found": "Профиль не найден"
+  }
 }
