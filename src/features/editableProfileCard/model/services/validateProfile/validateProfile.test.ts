@@ -1,7 +1,7 @@
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
-import { ValidateProfileError } from '../../types/editableProfileCardSchema';
 import { validateProfile } from './validateProfile';
+import { ValidateProfileError } from '../../consts/consts';
 
 const userData = {
   first: 'vadya',
