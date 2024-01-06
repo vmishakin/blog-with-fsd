@@ -17,13 +17,13 @@ interface CommentCardProps {
 export const CommentCard = ({ className, comment, isLoading }: CommentCardProps) => {
   if (isLoading) {
     return (
-      <div className={classNames(s.CommentCard, {}, [className, s.loading])}>
+      <VStack gap="8" max className={classNames(s.CommentCard, {}, [className, s.loading])}>
         <div className={s.header}>
           <Skeleton width={30} height={30} border="50%" />
           <Skeleton width={100} height={16} className={s.username} />
         </div>
         <Skeleton className={s.text} width="100%" height={50} />
-      </div>
+      </VStack>
     );
   }
 
