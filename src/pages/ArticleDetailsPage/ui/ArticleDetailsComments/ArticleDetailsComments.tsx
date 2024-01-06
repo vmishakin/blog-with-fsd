@@ -10,7 +10,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
   addCommentForArticle,
 } from 'pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle';
-import { useCallback } from 'react';
+import { Suspense, useCallback } from 'react';
 import {
   fetchCommentsByArticleId,
 } from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
@@ -27,7 +27,7 @@ export const ArticleDetailsComments = ({ id }: ArticleDetailsCommentsProps) => {
   const comments = useSelector(getArticleComments.selectAll);
   const isCommentsLoading = useSelector(getArticleCommentsIsLoading);
 
-  const onSendComment = useCallback((text) => {
+  const onSendComment = useCallback((text: string) => {
     dispatch(addCommentForArticle(text));
   }, [dispatch]);
 
@@ -41,7 +41,9 @@ export const ArticleDetailsComments = ({ id }: ArticleDetailsCommentsProps) => {
         size={TextSize.L}
         title={t('Comments')}
       />
-      <AddCommentForm onSendComment={onSendComment} />
+      <Suspense fallback="Loading...">
+        <AddCommentForm onSendComment={onSendComment} />
+      </Suspense>
       <CommentList isLoading={isCommentsLoading} comments={comments} />
     </VStack>
   );
