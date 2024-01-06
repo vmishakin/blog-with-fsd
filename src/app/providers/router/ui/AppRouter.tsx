@@ -18,7 +18,7 @@ export const AppRouter = memo(() => {
       <Route
         key={route.path}
         path={route.path}
-        element={route.authOnly ? (<RequireAuth>{routeElement}</RequireAuth>) : routeElement}
+        element={route.authOnly ? (<RequireAuth roles={route.roles}>{routeElement}</RequireAuth>) : routeElement}
       />
     );
   }, []);

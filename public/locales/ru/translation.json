@@ -24,5 +24,11 @@
   "Send": "Отправить",
   "Edit article with ID": "Редактировать статью с идентификатором = ",
   "Create new article": "Создать новую статью",
-  "Pena blog": "Пенаблог"
+  "Pena blog": "Пенаблог",
+  "translation": {
+    "Admin panel": "Панель администратора"
+  },
+  "Forbidden": {
+    " You don": "Запрещенный. \nУ вас нет доступа."
+  }
 }

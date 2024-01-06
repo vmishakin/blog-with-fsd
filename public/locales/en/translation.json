@@ -26,5 +26,11 @@
   "Send": "Send",
   "Edit article with ID": "Edit article with ID = ",
   "Create new article": "Create new article",
-  "Pena blog": "Pena blog"
+  "Pena blog": "Pena blog",
+  "translation": {
+    "Admin panel": "Admin panel"
+  },
+  "Forbidden": {
+    " You don": "Forbidden. You don`t have access."
+  }
 }

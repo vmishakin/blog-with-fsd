@@ -624,14 +624,21 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN",
+      "roles": ["ADMIN"],
       "avatar": "https://preview.redd.it/7nsk7aswet4a1.jpg?width=640&crop=smart&auto=webp&s=20dfcd757e65684e16f0c04682ab541a038b5154"
     },
     {
       "id": "2",
       "username": "zhmih",
       "password": "123",
-      "role": "USER",
+      "roles": ["USER"],
+      "avatar": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/2b1efa152244281.631a478be72ab.png"
+    },
+    {
+      "id": "3",
+      "username": "manager",
+      "password": "123",
+      "roles": ["MANAGER"],
       "avatar": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/2b1efa152244281.631a478be72ab.png"
     }
   ]
