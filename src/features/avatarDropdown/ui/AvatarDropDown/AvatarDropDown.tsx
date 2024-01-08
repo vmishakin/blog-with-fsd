@@ -7,7 +7,6 @@ import {
 } from 'entities/User';
 import { useDispatch, useSelector } from 'react-redux';
 import { useCallback } from 'react';
-import s from './AvatarDropDown.module.scss';
 
 export const AvatarDropDown = () => {
   const { t } = useTranslation();
