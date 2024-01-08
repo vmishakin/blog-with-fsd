@@ -40,7 +40,6 @@ export const AvatarDropDown = () => {
         { content: t('Logout'), onClick: onLogout },
       ]}
       trigger={<Avatar size={30} src={authData.avatar} />}
-      className={s.dropdown}
       direction="bottomLeft"
     />
   );
