@@ -35,7 +35,7 @@ export const Dropdown = ({
             <button
               type="button"
               disabled={item.disabled}
-              className={classNames(s.item, { [popupCls.active]: active })}
+              className={classNames(s.item, { [s.active]: active })}
               onClick={item.onClick}
             >
               {item.content}

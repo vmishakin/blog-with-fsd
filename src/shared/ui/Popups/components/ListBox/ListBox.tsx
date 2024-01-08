@@ -56,8 +56,8 @@ export const ListBox = ({
               {({ active, selected }) => (
                 <li
                   className={classNames(s.item, {
-                    [popupCls.active]: active,
-                    [popupCls.disabled]: item.disabled,
+                    [s.active]: active,
+                    [s.disabled]: item.disabled,
                   })}
                 >
                   {selected && '>'}
