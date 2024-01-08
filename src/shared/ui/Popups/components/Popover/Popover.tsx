@@ -10,16 +10,23 @@ interface PopoverProps {
   direction?: DropdownDirection
   trigger: ReactNode
   children: ReactNode
+  unmount?: boolean
 }
 
 export const Popover = ({
-  className, direction = 'bottomRight', trigger, children,
+  className, direction = 'bottomRight', trigger, children, unmount = true,
 }: PopoverProps) => {
   return (
     <HPopover className={classNames(s.Popover, {}, [popupCls.popup, className])}>
       <HPopover.Button className={popupCls.trigger}>{trigger}</HPopover.Button>
 
-      <HPopover.Panel className={classNames(s.panel, {}, [popupCls[direction]])}>{children}</HPopover.Panel>
+      <HPopover.Panel
+        className={classNames(s.panel, {}, [popupCls[direction]])}
+        unmount={unmount}
+      >
+        {children}
+
+      </HPopover.Panel>
     </HPopover>
   );
 };

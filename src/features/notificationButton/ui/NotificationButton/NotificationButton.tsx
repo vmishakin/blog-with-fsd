@@ -15,6 +15,7 @@ export const NotificationButton = () => {
         </Button>
       )}
       direction="bottomLeft"
+      unmount={false}
     >
       <NotificationList className={s.notifications} />
     </Popover>
