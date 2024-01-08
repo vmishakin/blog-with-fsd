@@ -33,7 +33,7 @@ export function createReduxStore(
       thunk: {
         extraArgument: extraArg,
       },
-    }),
+    }).concat(rtkApi.middleware),
   });
 
   (store as ReduxStoreWithManager).reducerManager = reducerManager;

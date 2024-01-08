@@ -7,3 +7,13 @@
     stroke: var(--primary-color);
   }
 }
+
+.inverted {
+  &.fill {
+    fill: var(--inverted-primary-color);
+  }
+
+  &.stroke {
+    stroke: var(--inverted-primary-color);
+  }
+}
