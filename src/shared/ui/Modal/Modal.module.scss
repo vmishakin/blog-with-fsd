@@ -15,13 +15,16 @@
     padding: 20px;
     border-radius: 12px;
     background: var(--bg-color);
-    animation: scaleonstart 0.2s;
     max-width: 60%;
   }
 
   &.opened {
     pointer-events: auto;
     z-index: var(--modal-z-index);
+
+    .content {
+      animation: scaleonstart 0.2s;
+    }
   }
 
   &.isClosing {
