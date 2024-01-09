@@ -3,21 +3,38 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { NotificationList } from 'entities/Notification';
 import { Icon } from 'shared/ui/Icon/Icon';
 import NotificationIcon from 'shared/assets/icons/notification-20-20.svg';
+import { BrowserView, MobileView } from 'react-device-detect';
+import { Drawer } from 'shared/ui/Drawer/Drawer';
+import { useState } from 'react';
 import s from './NotificationButton.module.scss';
 
 export const NotificationButton = () => {
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
+  const trigger = (
+    <Button theme={ButtonTheme.CLEAR} onClick={() => setDrawerOpen(true)}>
+      <Icon Svg={NotificationIcon} stroke inverted />
+    </Button>
+  );
+
   return (
-    <Popover
-      className={s.NotificationButton}
-      trigger={(
-        <Button theme={ButtonTheme.CLEAR}>
-          <Icon Svg={NotificationIcon} stroke inverted />
-        </Button>
-      )}
-      direction="bottomLeft"
-      unmount={false}
-    >
-      <NotificationList className={s.notifications} />
-    </Popover>
+    <>
+      <BrowserView>
+        <Popover
+          className={s.NotificationButton}
+          trigger={trigger}
+          direction="bottomLeft"
+          unmount={false}
+        >
+          <NotificationList className={s.notifications} />
+        </Popover>
+      </BrowserView>
+      <MobileView>
+        {trigger}
+        <Drawer isOpen={drawerOpen} onClose={() => setDrawerOpen(false)}>
+          <NotificationList />
+        </Drawer>
+      </MobileView>
+    </>
   );
 };
