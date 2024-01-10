@@ -3,7 +3,7 @@ import {
 } from 'react';
 import { useTheme } from '@/app/providers/ThemeProvider';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { useAnimationLibs } from '@/shared/lib/components/AnimationProvider/AnimationProvider';
+import { AnimationProvider, useAnimationLibs } from '@/shared/lib/components/AnimationProvider/AnimationProvider';
 import s from './Drawer.module.scss';
 import { Portal } from '../Portal/Portal';
 import { OverlaySpring } from '../OverlaySpring/OverlaySpring';
@@ -97,7 +97,7 @@ const DrawerContent = memo(({
   );
 });
 
-export const Drawer = memo((props: DrawerProps) => {
+const DrawerAsync = memo((props: DrawerProps) => {
   const { isLoaded } = useAnimationLibs();
 
   if (!isLoaded) {
@@ -106,3 +106,11 @@ export const Drawer = memo((props: DrawerProps) => {
 
   return <DrawerContent {...props} />;
 });
+
+export const Drawer = (props: DrawerProps) => {
+  return (
+    <AnimationProvider>
+      <DrawerAsync {...props} />
+    </AnimationProvider>
+  );
+};

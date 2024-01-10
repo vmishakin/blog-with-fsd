@@ -6,7 +6,6 @@ import { NotificationList } from '@/entities/Notification';
 import { Icon } from '@/shared/ui/Icon/Icon';
 import NotificationIcon from '@/shared/assets/icons/notification-20-20.svg';
 import { Drawer } from '@/shared/ui/Drawer/Drawer';
-import { AnimationProvider } from '@/shared/lib/components/AnimationProvider/AnimationProvider';
 import s from './NotificationButton.module.scss';
 
 export const NotificationButton = () => {
@@ -32,11 +31,9 @@ export const NotificationButton = () => {
       </BrowserView>
       <MobileView>
         {trigger}
-        <AnimationProvider>
-          <Drawer isOpen={drawerOpen} onClose={() => setDrawerOpen(false)} lazy>
-            <NotificationList />
-          </Drawer>
-        </AnimationProvider>
+        <Drawer isOpen={drawerOpen} onClose={() => setDrawerOpen(false)} lazy>
+          <NotificationList />
+        </Drawer>
       </MobileView>
     </>
   );
