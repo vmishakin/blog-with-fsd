@@ -1,7 +1,7 @@
-import { useGetNotificationsQuery } from 'entities/Notification/api/notificationApi';
-import { VStack } from 'shared/ui/Stack';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { useGetNotificationsQuery } from '@/entities/Notification/api/notificationApi';
+import { VStack } from '@/shared/ui/Stack';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 import s from './NotificationList.module.scss';
 import { NotificationItem } from '../NotificationItem/NotificationItem';
 
@@ -11,7 +11,7 @@ interface NotificationListProps {
 
 export const NotificationList = ({ className }: NotificationListProps) => {
   const { data: notifications, isLoading } = useGetNotificationsQuery(undefined, {
-    pollingInterval: 5000,
+    pollingInterval: 120000,
   });
 
   if (isLoading) {

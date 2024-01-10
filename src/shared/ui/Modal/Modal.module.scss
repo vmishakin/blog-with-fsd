@@ -4,7 +4,6 @@
   bottom: 0;
   right: 0;
   left: 0;
-  z-index: -1;
   pointer-events: none;
   color: var(--primary-color);
   display: flex;
@@ -16,11 +15,11 @@
     border-radius: 12px;
     background: var(--bg-color);
     max-width: 60%;
+    z-index: var(--modal-z-index);
   }
 
   &.opened {
     pointer-events: auto;
-    z-index: var(--modal-z-index);
 
     .content {
       animation: scaleonstart 0.2s;
