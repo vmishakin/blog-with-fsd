@@ -17,5 +17,8 @@
   "Economics articles": "Economics",
   "Recommendations": "Recommendations",
   "Edit": "Edit",
-  "Error when loading articles": "Error when loading articles"
+  "Error when loading articles": "Error when loading articles",
+  "article": {
+    "Article not found": "Article not found"
+  }
 }

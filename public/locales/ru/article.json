@@ -17,5 +17,8 @@
   "Science articles": "Наука",
   "Recommendations": "Рекомендуем",
   "Edit": "Редактировать",
-  "Error when loading articles": "Ошибка при загрузке статей"
+  "Error when loading articles": "Ошибка при загрузке статей",
+  "article": {
+    "Article not found": "Статья не найдена"
+  }
 }

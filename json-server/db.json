@@ -690,22 +690,80 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": ["ADMIN"],
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://preview.redd.it/7nsk7aswet4a1.jpg?width=640&crop=smart&auto=webp&s=20dfcd757e65684e16f0c04682ab541a038b5154"
     },
     {
       "id": "2",
       "username": "zhmih",
       "password": "123",
-      "roles": ["USER"],
+      "roles": [
+        "USER"
+      ],
       "avatar": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/2b1efa152244281.631a478be72ab.png"
     },
     {
       "id": "3",
       "username": "manager",
       "password": "123",
-      "roles": ["MANAGER"],
+      "roles": [
+        "MANAGER"
+      ],
       "avatar": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/2b1efa152244281.631a478be72ab.png"
+    }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "rate": 3,
+      "feedback": "ok",
+      "id": "HUHSusI"
+    },
+    {
+      "userId": "1",
+      "articleId": "4",
+      "rate": 3,
+      "id": "ChQlNkZ"
+    },
+    {
+      "userId": "1",
+      "articleId": "5",
+      "rate": 5,
+      "feedback": "excellent!",
+      "id": "SbkAlny"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хороший профиль",
+      "userId": "1",
+      "profileId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хороший профиль",
+      "userId": "1",
+      "profileId": "2"
     }
   ]
 }

@@ -14,6 +14,7 @@ import { articleDetailsPageReducer } from '../../model/slices/index';
 
 import s from './ArticleDetailsPage.module.scss';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
+import { ArticleRating } from '@/features/articleRating';
 
 const reducers: ReducersList = {
   articleDetailsPage: articleDetailsPageReducer,
@@ -33,6 +34,7 @@ export const ArticleDetailsPage = memo(() => {
         <VStack gap="16" max>
           <ArticleDetailsPageHeader />
           <ArticleDetails id={id} />
+          <ArticleRating articleId={id} />
           <ArticleRecommendationsList />
           <ArticleDetailsComments id={id} />
         </VStack>
