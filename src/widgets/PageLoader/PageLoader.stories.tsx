@@ -5,7 +5,7 @@ import { Theme } from '@/app/providers/ThemeProvider';
 import { PageLoader } from './PageLoader';
 
 export default {
-  title: 'shared/PageLoader',
+  title: 'widgets/PageLoader',
   component: PageLoader,
   argTypes: {
     backgroundColor: { control: 'color' },

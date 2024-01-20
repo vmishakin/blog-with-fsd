@@ -3,7 +3,7 @@ import 'app/styles/index.scss';
 import { StarRating } from './StarRating';
 
 export default {
-  title: 'entities/StarRating',
+  title: 'shared/StarRating',
   component: StarRating,
   argTypes: {
     backgroundColor: { control: 'color' },

@@ -3,7 +3,7 @@ import '@/app/styles/index.scss';
 import { Popover } from './Popover';
 
 export default {
-  title: 'entities/Popover',
+  title: 'shared/Popover',
   component: Popover,
   argTypes: {
     backgroundColor: { control: 'color' },

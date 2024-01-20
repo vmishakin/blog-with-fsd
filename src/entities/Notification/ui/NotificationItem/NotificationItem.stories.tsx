@@ -1,9 +1,10 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import '@/app/styles/index.scss';
 import { NotificationItem } from './NotificationItem';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 export default {
-  title: 'entities/NotificationItem',
+  title: 'entities/Notification/NotificationItem',
   component: NotificationItem,
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -15,4 +16,13 @@ const Template: ComponentStory<typeof NotificationItem> = (args) => {
 };
 
 export const Primary = Template.bind({});
-Primary.args = {};
+Primary.args = {
+  notification: {
+    id: '1',
+    title: 'Уведомление 1',
+    description: 'Произошло какое-то событие',
+  },
+};
+Primary.decorators = [
+  StoreDecorator({}),
+];

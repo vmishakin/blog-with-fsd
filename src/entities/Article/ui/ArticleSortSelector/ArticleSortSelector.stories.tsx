@@ -3,7 +3,7 @@ import '@/app/styles/index.scss';
 import { ArticleSortSelector } from './ArticleSortSelector';
 
 export default {
-  title: 'entities/ArticleSortSelector',
+  title: 'entities/Article/ArticleSortSelector',
   component: ArticleSortSelector,
   argTypes: {
     backgroundColor: { control: 'color' },
