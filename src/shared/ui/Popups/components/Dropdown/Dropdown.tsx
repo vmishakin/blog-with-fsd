@@ -48,7 +48,7 @@ export const Dropdown = ({
                 as={AppLink}
                 to={item.href}
                 disabled={item.disabled}
-                key={i}
+                key={`dropdown-key-${i}`}
               >
                 {content}
               </Menu.Item>
@@ -56,7 +56,7 @@ export const Dropdown = ({
           }
 
           return (
-            <Menu.Item as={Fragment} disabled={item.disabled} key={i}>
+            <Menu.Item as={Fragment} disabled={item.disabled} key={`dropdown-key-${i}`}>
               {content}
             </Menu.Item>
           );

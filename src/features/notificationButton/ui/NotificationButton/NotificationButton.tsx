@@ -13,7 +13,7 @@ export const NotificationButton = () => {
 
   const trigger = (
     <Button theme={ButtonTheme.CLEAR} onClick={() => setDrawerOpen(true)}>
-      <Icon Svg={NotificationIcon} stroke inverted />
+      <Icon Svg={NotificationIcon} isStroked inverted />
     </Button>
   );
 

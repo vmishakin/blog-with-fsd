@@ -37,7 +37,7 @@ export const ArticleViewSelector = ({ view, onViewClick }: ArticleViewSelectorPr
         >
           <Icon
             Svg={viewType.icon}
-            fill={viewType.view === view}
+            isFilled={viewType.view === view}
             className={classNames('', { [s.notSelected]: viewType.view !== view })}
           />
         </Button>

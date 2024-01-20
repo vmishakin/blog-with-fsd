@@ -18,7 +18,7 @@ export const Code = ({ className, text }: CodeProps) => {
   return (
     <pre className={classNames(s.Code, {}, [className])}>
       <Button onClick={onCopy} className={s.copyBtn} theme={ButtonTheme.CLEAR}>
-        <Icon Svg={CopyIcon} fill={false} stroke />
+        <Icon Svg={CopyIcon} isFilled={false} isStroked />
       </Button>
       <code>
         {text}

@@ -9,6 +9,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
 
   .content {
     padding: 20px;
@@ -20,6 +21,7 @@
 
   &.opened {
     pointer-events: auto;
+    opacity: 1;
 
     .content {
       animation: scaleonstart 0.2s;

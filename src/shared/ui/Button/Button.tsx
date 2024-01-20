@@ -25,6 +25,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   square?: boolean;
   size?: ButtonSize;
   disabled?: boolean;
+  fullWidth?: boolean;
 }
 
 export const Button = memo(forwardRef(({
@@ -34,6 +35,7 @@ export const Button = memo(forwardRef(({
   square,
   size = ButtonSize.M,
   disabled,
+  fullWidth,
   ...otherProps
 }: ButtonProps, ref: ForwardedRef<HTMLButtonElement>) => {
   return (
@@ -42,6 +44,7 @@ export const Button = memo(forwardRef(({
       className={classNames(s.Button, {
         [s.square]: square,
         [s.disabled]: disabled,
+        [s.fullWidth]: fullWidth,
       }, [s[theme], s[size], className])}
       disabled={disabled}
       type="button"
