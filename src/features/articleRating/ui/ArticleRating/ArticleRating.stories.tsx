@@ -37,6 +37,7 @@ WithRate.parameters = {
       response: [
         { rate: 4 },
       ],
+      delay: 1000,
     },
   ],
 };

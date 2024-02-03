@@ -5,15 +5,15 @@ import { CommentList } from '@/entities/Comment';
 import { AddCommentForm } from '@/features/addCommentForm';
 import { VStack } from '@/shared/ui/Stack';
 import { Text, TextSize } from '@/shared/ui/Text/Text';
-import { getArticleCommentsIsLoading } from '@/pages/ArticleDetailsPage/model/selectors/comments';
-import { getArticleComments } from '@/pages/ArticleDetailsPage/model/slices/articleDetailsCommentsSlice';
+import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
+import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
   addCommentForArticle,
-} from '@/pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle';
+} from '../../model/services/addCommentForArticle/addCommentForArticle';
 import {
   fetchCommentsByArticleId,
-} from '@/pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+} from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 
 interface ArticleDetailsCommentsProps {

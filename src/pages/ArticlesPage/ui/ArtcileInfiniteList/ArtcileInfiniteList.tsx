@@ -5,8 +5,8 @@ import {
   getArticlesPageIsLoading,
   getArticlesPageView,
   getArticlesPageError,
-} from '@/pages/ArticlesPage/model/selectors/articlesPageSelectors';
-import { getArticles } from '@/pages/ArticlesPage/model/slices/articlesPageSlice';
+} from '../../model/selectors/articlesPageSelectors';
+import { getArticles } from '../../model/slices/articlesPageSlice';
 import { Text } from '@/shared/ui/Text/Text';
 
 interface ArtcileInfiniteListProps {

@@ -7,7 +7,7 @@ import {
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Page } from '@/widgets/Page/Page';
-import { ArtcileInfiniteList } from '@/pages/ArticlesPage/ui/ArtcileInfiniteList/ArtcileInfiniteList';
+import { ArtcileInfiniteList } from '../ArtcileInfiniteList/ArtcileInfiniteList';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import {
