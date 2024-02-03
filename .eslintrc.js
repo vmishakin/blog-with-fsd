@@ -13,7 +13,9 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'eslint-plugin-pena-blog'],
+  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks',
+  // 'eslint-plugin-pena-blog'
+  ],
   rules: {
     'react/jsx-filename-extension': [
       2,
@@ -46,7 +48,7 @@ module.exports = {
     'react/no-array-index-key': 'off',
     'react/prop-types': 'off',
     'react/no-unused-prop-types': 'off',
-    'pena-blog/path-checker': ['error', { alias: '@' }],
+    // 'pena-blog/path-checker': ['error', { alias: '@' }],
   },
   globals: {
     __IS_DEV__: true,
