@@ -14,7 +14,7 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks',
-  // 'eslint-plugin-pena-blog'
+    // 'eslint-plugin-pena-blog',
   ],
   rules: {
     'react/jsx-filename-extension': [
@@ -49,6 +49,7 @@ module.exports = {
     'react/prop-types': 'off',
     'react/no-unused-prop-types': 'off',
     // 'pena-blog/path-checker': ['error', { alias: '@' }],
+    // 'pena-blog/pena-blog-public-api-imports': ['error', { alias: '@' }],
   },
   globals: {
     __IS_DEV__: true,

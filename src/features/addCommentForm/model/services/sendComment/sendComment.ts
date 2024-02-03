@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from '@/app/providers/StoreProvider';
-import { getArticleDetailsData } from '@/entities/Article/model/selectors/articleDetails';
+import { getArticleDetailsData } from '@/entities/Article';
 import { getUserAuthData } from '@/entities/User';
 import i18n from '@/shared/config/i18n/i18n';
 import { getAddCommentFormText } from '../../selectors/addCommentFormSelectors';

@@ -1,3 +1,6 @@
+export { ArticleBlockType } from './model/types/article';
+export { articleDetailsReducer } from './model/slice/articleDetailsSlice';
+export { ArticleList } from './ui/ArticleList/ArticleList';
 export { ArticleTypeTabs } from './ui/ArticleTypeTabs/ArticleTypeTabs';
 export { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelector';
 export type { ArticleDetailsSchema } from './model/types/articleDetailsSchema';
