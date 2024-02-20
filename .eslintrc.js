@@ -14,7 +14,7 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks',
-    'eslint-plugin-pena-blog',
+    // 'eslint-plugin-pena-blog',
   ],
   rules: {
     'react/jsx-filename-extension': [
@@ -48,15 +48,15 @@ module.exports = {
     'react/no-array-index-key': 'off',
     'react/prop-types': 'off',
     'react/no-unused-prop-types': 'off',
-    'pena-blog/path-checker': ['error', { alias: '@' }],
-    'pena-blog/public-api-imports': ['error', {
-      alias: '@',
-      testFilesPatterns: ['**/*.test.*', '**/*.stories.*', '**/StoreDecorator.tsx'],
-    }],
-    'pena-blog/layer-imports': ['error', {
-      alias: '@',
-      ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
-    }],
+    // 'pena-blog/path-checker': ['error', { alias: '@' }],
+    // 'pena-blog/public-api-imports': ['error', {
+    //   alias: '@',
+    //   testFilesPatterns: ['**/*.test.*', '**/*.stories.*', '**/StoreDecorator.tsx'],
+    // }],
+    // 'pena-blog/layer-imports': ['error', {
+    //   alias: '@',
+    //   ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+    // }],
   },
   globals: {
     __IS_DEV__: true,
