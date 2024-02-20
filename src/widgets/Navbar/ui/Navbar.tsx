@@ -5,7 +5,7 @@ import { LoginModal } from '@/features/AuthByUsername';
 import {
   getUserAuthData,
 } from '@/entities/User';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { RoutePath } from '@/shared/constants/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink/AppLink';
 import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
