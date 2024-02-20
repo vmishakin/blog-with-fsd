@@ -1,5 +1,4 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import '@/app/styles/index.scss';
 import { Avatar } from './Avatar';
 import AvatarImg from '../../assets/avatar-for-tests.jpg';
 

@@ -5,7 +5,7 @@ import { Navbar } from '@/widgets/Navbar';
 import { getUserInited, userActions } from '@/entities/User';
 import { AppRouter } from './providers/router';
 import { classNames } from '../shared/lib/classNames/classNames';
-import { useTheme } from './providers/ThemeProvider';
+import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 
 export const App = () => {
   useTheme();

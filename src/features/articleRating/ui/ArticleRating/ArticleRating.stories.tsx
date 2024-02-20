@@ -1,5 +1,4 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import 'app/styles/index.scss';
 import withMock from 'storybook-addon-mock';
 import { ArticleRating } from './ArticleRating';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';

@@ -1,6 +1,5 @@
 /* eslint-disable i18next/no-literal-string */
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import '@/app/styles/index.scss';
 import { Dropdown } from './Dropdown';
 import { Button } from '../../../Button/Button';
 
