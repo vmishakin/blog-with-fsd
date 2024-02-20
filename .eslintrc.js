@@ -49,7 +49,10 @@ module.exports = {
     'react/prop-types': 'off',
     'react/no-unused-prop-types': 'off',
     // 'pena-blog/path-checker': ['error', { alias: '@' }],
-    // 'pena-blog/pena-blog-public-api-imports': ['error', { alias: '@' }],
+    // 'pena-blog/pena-blog-public-api-imports': ['error', {
+    //   alias: '@',
+    //   testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
+    // }],
   },
   globals: {
     __IS_DEV__: true,
