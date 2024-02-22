@@ -1,5 +1,5 @@
 {
-  "name": "pena-blog",
+  "name": "blog-with-fsd",
   "version": "1.0.0",
   "scripts": {
     "build": "webpack --env mode=production apiUrl=https://pena-blog-server.vercel.app/",
@@ -84,11 +84,11 @@
     "eslint": "^8.34.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-standard-with-typescript": "^34.0.0",
+    "eslint-plugin-fsd-tools-mishakin": "^0.0.2",
     "eslint-plugin-i18next": "^6.0.0-6",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-n": "^15.6.1",
-    "eslint-plugin-pena-blog": "file:../eslint-plugin-pena-blog",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
@@ -115,7 +115,7 @@
     "ts-morph": "^21.0.1",
     "ts-node": "^10.9.1",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^4.9.5",
+    "typescript": "^5.3.3",
     "vite": "^3.1.0",
     "vite-plugin-svgr": "^2.4.0",
     "webpack": "^5.69.1",
