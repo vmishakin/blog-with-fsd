@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Button } from '@/shared/ui/Button/Button';
+import { Button } from '@/shared/ui/Button';
 import s from './PageError.module.scss';
 
 export const PageError = () => {

@@ -1,5 +1,5 @@
-import { Card, CardTheme } from '@/shared/ui/Card/Card';
-import { Text } from '@/shared/ui/Text/Text';
+import { Card, CardTheme } from '@/shared/ui/Card';
+import { Text } from '@/shared/ui/Text';
 import { Notification } from '../../model/types/notification';
 import s from './NotificationItem.module.scss';
 

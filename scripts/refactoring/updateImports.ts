@@ -1,3 +1,6 @@
+/**
+ * @fileoverview add alias @ in all absolute imports
+ */
 import { Project } from 'ts-morph';
 
 const project = new Project();

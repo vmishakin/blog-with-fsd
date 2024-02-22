@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 import { RatingCard } from '@/entities/Rating';
 import { useGetArticleRatingQuery, useRateArticleMutation } from '../../api/articleRatingApi';
 import { getUserAuthData } from '@/entities/User';
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 export interface ArticleRatingProps {
   articleId: string

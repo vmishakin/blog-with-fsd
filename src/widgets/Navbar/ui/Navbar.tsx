@@ -7,9 +7,9 @@ import {
 } from '@/entities/User';
 import { RoutePath } from '@/shared/constants/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink/AppLink';
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
-import { Text, TextTheme } from '@/shared/ui/Text/Text';
+import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Text, TextTheme } from '@/shared/ui/Text';
 import { HStack } from '@/shared/ui/Stack';
 import { NotificationButton } from '@/features/notificationButton';
 import { AvatarDropDown } from '@/features/avatarDropdown';
