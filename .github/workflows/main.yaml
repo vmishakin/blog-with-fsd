@@ -14,10 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Starting Node.js 17
+      - name: Starting Node.js 20
         uses: actions/setup-node@v3
         with:
-          node-version: '17'
+          node-version: '20'
       - name: install dependencies
         run: npm ci
       - name: build project
