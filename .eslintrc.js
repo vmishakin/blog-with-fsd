@@ -13,15 +13,14 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks',
-    'fsd-tools-mishakin',
-  ],
+  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'fsd-tools-mishakin', 'unused-imports'],
   rules: {
     'react/jsx-filename-extension': [
       2,
       { extensions: ['.jsx', '.tsx'] },
     ],
     'linebreak-style': 'off',
+    'unused-imports/no-unused-imports': 'warn',
     'react/function-component-definition': 'off',
     'import/prefer-default-export': 'off',
     'react/react-in-jsx-scope': 'off',
