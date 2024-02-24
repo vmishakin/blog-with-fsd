@@ -5,7 +5,7 @@ import { LoginModal } from '@/features/AuthByUsername';
 import {
   getUserAuthData,
 } from '@/entities/User';
-import { RoutePath } from '@/shared/constants/router';
+import { getRouteArticleCreate } from '@/shared/constants/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
@@ -40,7 +40,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
           title={t('FSD blog')}
           theme={TextTheme.INVERTED}
         />
-        <AppLink theme={AppLinkTheme.SECONDARY} to={RoutePath.article_create}>
+        <AppLink theme={AppLinkTheme.SECONDARY} to={getRouteArticleCreate()}>
           {t('Create new article')}
         </AppLink>
         <HStack gap="16" className={s.actions}>

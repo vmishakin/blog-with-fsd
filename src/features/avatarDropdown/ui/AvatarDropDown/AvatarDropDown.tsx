@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { useCallback } from 'react';
-import { RoutePath } from '@/shared/constants/router';
+import { getRouteAdmin, getRouteProfile } from '@/shared/constants/router';
 import { Dropdown } from '@/shared/ui/Popups';
 import { Avatar } from '@/shared/ui/Avatar';
 import {
@@ -31,11 +31,11 @@ export const AvatarDropDown = () => {
       items={[
         ...(isAdminPanelAvailable ? [{
           content: t('Admin panel'),
-          href: `${RoutePath.admin_panel}`,
+          href: getRouteAdmin(),
         }] : []),
         {
           content: t('Profile page'),
-          href: `${RoutePath.profile}/${authData.id}`,
+          href: getRouteProfile(authData.id),
         },
         { content: t('Logout'), onClick: onLogout },
       ]}
