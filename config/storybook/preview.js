@@ -6,7 +6,7 @@ import { SuspenseDecorator } from '../../src/shared/config/storybook/SuspenseDec
 import {
   i18nextDecorator,
 } from '../../src/shared/config/storybook/i18nDecorator/i18nDecorator';
-import {Theme} from '../../src/shared/constants/theme'
+import { Theme } from '../../src/shared/constants/theme';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -16,6 +16,7 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  layout: 'fullscreen',
 };
 
 addDecorator(SuspenseDecorator);
