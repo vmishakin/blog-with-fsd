@@ -1,6 +1,7 @@
 {
   "name": "blog-with-fsd",
   "version": "1.0.0",
+  "author": "vmishakin",
   "scripts": {
     "build": "webpack --env mode=production apiUrl=https://pena-blog-server.vercel.app/",
     "build:dev": "webpack --env mode=development",
