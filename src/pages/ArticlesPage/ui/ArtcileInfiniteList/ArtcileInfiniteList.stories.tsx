@@ -3,7 +3,7 @@ import { ArtcileInfiniteList } from './ArtcileInfiniteList';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 export default {
-  title: 'entities/ArtcileInfiniteList',
+  title: 'pages/ArtcileInfiniteList',
   component: ArtcileInfiniteList,
   argTypes: {
     backgroundColor: { control: 'color' },
