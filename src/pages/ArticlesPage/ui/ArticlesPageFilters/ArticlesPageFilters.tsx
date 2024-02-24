@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
-  ArticleSortField, ArticleView, ArticleViewSelector, ArticleSortSelector,
+  ArticleSortField, ArticleView,
   ArticleType,
 } from '@/entities/Article';
 import { Card } from '@/shared/ui/Card';
@@ -23,7 +23,9 @@ import {
   getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
 import s from './ArticlesPageFilters.module.scss';
-import { ArticleTypeTabs } from '../../../../entities/Article/ui/ArticleTypeTabs/ArticleTypeTabs';
+import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
+import { ArticleSortSelector } from '@/features/ArticleSortSelector';
+import { ArticleViewSelector } from '@/features/ArticleViewSelector';
 
 export const ArticlesPageFilters = () => {
   const { t } = useTranslation('article');
