@@ -105,6 +105,7 @@
     "isomorphic-fetch": "^3.0.0",
     "jest": "^27.5.1",
     "jest-html-reporters": "^3.1.7",
+    "lint-staged": "^15.2.2",
     "loki": "^0.34.0",
     "mini-css-extract-plugin": "^2.8.0",
     "postcss": "^8.4.35",
@@ -145,5 +146,8 @@
         "preset": "iPhone 7"
       }
     }
+  },
+  "lint-staged": {
+    "\"**/*.{ts,tsx}\"": "eslint"
   }
 }
