@@ -1,3 +1,4 @@
-npm run lint:typecheck
-npm run lint:ts
-npm run lint:scss
+# npm run lint:typecheck
+# npm run lint:ts
+# npm run lint:scss
+npx lint-staged
