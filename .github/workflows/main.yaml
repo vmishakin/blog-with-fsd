@@ -33,21 +33,28 @@ jobs:
         run: npm ci --force
       - name: build project
         run: npm run build
+        if: always()
       - name: build storybook
         run: npm run build-storybook
+        if: always()
       - name: screenshot testing
         run: npm run test:ui:ci
+        if: always()
       - name: Generate HTML report
         run: npm run test:ui:report
+        if: always()
       - name: Setup Pages
         uses: actions/configure-pages@v2
+        if: always()
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
           path: '.loki'
+        if: always()
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
+        if: always()
 
   checks:
     runs-on: ubuntu-latest
@@ -64,7 +71,10 @@ jobs:
         run: npm ci --force
       - name: lint typescript
         run: npm run lint:ts
+        if: always()
       - name: lint scss
         run: npm run lint:scss
+        if: always()
       - name: unit testing
         run: npm run test:unit
+        if: always()
