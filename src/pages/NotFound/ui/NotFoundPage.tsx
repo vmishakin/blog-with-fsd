@@ -5,7 +5,7 @@ import s from './NotFoundPage.module.scss';
 export const NotFoundPage = () => {
   const { t } = useTranslation();
   return (
-    <div className={classNames(s.NotFoundPage)}>
+    <div data-testid="NotFoundPage" className={classNames(s.NotFoundPage)}>
       {t('Page not found')}
     </div>
   );
