@@ -1,6 +1,8 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import withMock from 'storybook-addon-mock';
 import { ArticlesPage } from './ArticlesPage';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { ARTICLES_MOCK } from '../../model/mocks/articles.mock';
 
 export default {
   title: 'pages/ArticlesPage',
@@ -8,6 +10,7 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+  decorators: [withMock],
 } as ComponentMeta<typeof ArticlesPage>;
 
 const Template: ComponentStory<typeof ArticlesPage> = () => {
@@ -17,3 +20,13 @@ const Template: ComponentStory<typeof ArticlesPage> = () => {
 export const Primary = Template.bind({});
 Primary.decorators = [StoreDecorator({})];
 Primary.args = {};
+Primary.parameters = {
+  mockData: [
+    {
+      url: `${__API__}/articles?_expand=user&_limit=0&_page=2&_sort=title&_order=asc&q=`,
+      method: 'GET',
+      status: 200,
+      response: ARTICLES_MOCK,
+    },
+  ],
+};
