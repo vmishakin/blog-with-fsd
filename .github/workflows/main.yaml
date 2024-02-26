@@ -43,6 +43,9 @@ jobs:
       - name: Generate HTML report
         run: npm run test:ui:report
         if: always()
+      - name: unit testing
+        run: npm run test:unit
+        if: always()
       - name: move loki report
         run: mv .loki reports/
         if: always()
@@ -78,6 +81,4 @@ jobs:
       - name: lint scss
         run: npm run lint:scss
         if: always()
-      - name: unit testing
-        run: npm run test:unit
-        if: always()
+      
