@@ -13,7 +13,7 @@ const article: Article = {
     avatar: 'https://preview.redd.it/7nsk7aswet4a1.jpg?width=640&crop=smart&auto=webp&s=20dfcd757e65684e16f0c04682ab541a038b5154',
   },
   subtitle: 'Что нового в JS за 2022 год?',
-  img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
+  img: 'https://res.cloudinary.com/teepublic/image/private/s--HGX34F_2--/t_Preview/b_rgb:ffb81c,c_lpad,f_jpg,h_630,q_90,w_1200/v1539273850/production/designs/3302095_0.jpg',
   views: 1022,
   createdAt: '26.02.2022',
   type: [ArticleType.IT],
