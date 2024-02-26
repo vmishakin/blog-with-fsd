@@ -12,7 +12,7 @@ export const AppImage = (props: AppImageProps) => {
     className, src, alt = 'image', errorFallback, fallback, ...otherProps
   } = props;
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [hasError, setHasError] = useState<boolean>(true);
+  const [hasError, setHasError] = useState<boolean>(false);
 
   useLayoutEffect(() => {
     const img = new Image();
@@ -21,6 +21,7 @@ export const AppImage = (props: AppImageProps) => {
       setIsLoading(false);
     };
     img.onerror = () => {
+      setIsLoading(false);
       setHasError(true);
     };
   }, [src]);
