@@ -1,5 +1,3 @@
-#!/usr/bin/env sh
-
 npm run lint:typecheck
 npm run lint:ts
 npm run lint:scss
