@@ -13,20 +13,20 @@ export default {
   decorators: [withMock],
 } as ComponentMeta<typeof ArticlesPage>;
 
-const Template: ComponentStory<typeof ArticlesPage> = () => {
-  return <ArticlesPage />;
-};
+// const Template: ComponentStory<typeof ArticlesPage> = () => {
+//   return <ArticlesPage />;
+// };
 
-export const Primary = Template.bind({});
-Primary.decorators = [StoreDecorator({})];
-Primary.args = {};
-Primary.parameters = {
-  mockData: [
-    {
-      url: `${__API__}/articles?_expand=user&_limit=0&_page=2&_sort=title&_order=asc&q=`,
-      method: 'GET',
-      status: 200,
-      response: ARTICLES_MOCK,
-    },
-  ],
-};
+// export const Primary = Template.bind({});
+// Primary.decorators = [StoreDecorator({})];
+// Primary.args = {};
+// Primary.parameters = {
+//   mockData: [
+//     {
+//       url: `${__API__}/articles?_expand=user&_limit=0&_page=2&_sort=title&_order=asc&q=`,
+//       method: 'GET',
+//       status: 200,
+//       response: ARTICLES_MOCK,
+//     },
+//   ],
+// };
