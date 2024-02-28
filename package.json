@@ -155,6 +155,6 @@
   "lint-staged": {
     "**/*.{ts,tsx}": "eslint",
     "**/*.scss": "stylelint",
-    ".": "prettier --check"
+    "**/*": "prettier --check"
   }
 }
