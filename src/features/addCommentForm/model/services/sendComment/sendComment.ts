@@ -5,6 +5,7 @@ import { getUserAuthData } from '@/entities/User';
 import i18n from '@/shared/config/i18n/i18n';
 import { getAddCommentFormText } from '../../selectors/addCommentFormSelectors';
 
+
 export const sendComment = createAsyncThunk<Comment, void, ThunkConfig<string>>(
   'sendCommentForm/sendComment',
   async (_, thunkApi) => {
