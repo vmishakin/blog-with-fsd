@@ -4,7 +4,12 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: ['plugin:react/recommended', 'airbnb', 'plugin:i18next/recommended'],
+  extends: [
+    'plugin:react/recommended', 
+    'airbnb', 
+    'plugin:i18next/recommended',
+    'prettier'
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     tsconfigRootDir: __dirname,
@@ -22,7 +27,6 @@ module.exports = {
       2,
       { extensions: ['.jsx', '.tsx'] },
     ],
-    'linebreak-style': 'off',
     'unused-imports/no-unused-imports': 'warn',
     'react/function-component-definition': 'off',
     'import/prefer-default-export': 'off',
@@ -38,7 +42,6 @@ module.exports = {
     'react/require-default-props': 'off',
     'no-underscore-dangle': 'off',
     'import/no-extraneous-dependencies': 'off',
-    'max-len': ['warn', { code: 120, ignoreComments: true }],
     'no-console': 'off',
     'i18next/no-literal-string': ['warn', { markupOnly: true, ignoreAttribute: ['data-testid'] }],
     'jsx-a11y/click-events-have-key-events': 'off',
