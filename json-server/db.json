@@ -683,6 +683,17 @@
       "city": "Nightcity",
       "username": "zhmih",
       "avatar": "https://images6.fanpop.com/image/photos/34300000/Kitten-cats-34352405-1600-1200.jpg"
+    },
+    {
+      "id": "4",
+      "first": "test",
+      "lastname": "user",
+      "age": 23,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Nightcity",
+      "username": "testuser",
+      "avatar": "https://www.clarisoft.com/wp-content/uploads/2015/04/icon_qa-e1430393636766.png"
     }
   ],
   "users": [
@@ -712,6 +723,15 @@
         "MANAGER"
       ],
       "avatar": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/2b1efa152244281.631a478be72ab.png"
+    },
+    {
+      "id": "4",
+      "username": "testuser",
+      "password": "123",
+      "roles": [
+        "USER"
+      ],
+      "avatar": "https://www.clarisoft.com/wp-content/uploads/2015/04/icon_qa-e1430393636766.png"
     }
   ],
   "article-ratings": [

@@ -7,12 +7,15 @@ module.exports = {
   extends: ['plugin:react/recommended', 'airbnb', 'plugin:i18next/recommended'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
+    tsconfigRootDir: __dirname,
     ecmaFeatures: {
       jsx: true,
     },
     ecmaVersion: 'latest',
     sourceType: 'module',
+    project: ['tsconfig.json', 'cypress/tsconfig.json']
   },
+  ignorePatterns: ['.eslintrc.js'],
   plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'fsd-tools-mishakin', 'unused-imports'],
   rules: {
     'react/jsx-filename-extension': [

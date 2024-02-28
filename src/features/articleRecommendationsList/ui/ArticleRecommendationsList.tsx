@@ -13,7 +13,7 @@ export const ArticleRecommendationsList = () => {
   }
 
   return (
-    <VStack gap="8">
+    <VStack gap="8" data-testid="ArticleRecommendationsList">
       <Text size={TextSize.L} title={t('Recommendations')} />
       <ArticleList articles={articles} target="_blank" />
     </VStack>

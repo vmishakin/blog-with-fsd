@@ -44,14 +44,21 @@ export const AddCommentForm = ({ onSendComment }: AddCommentFormProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <HStack justify="between" max className={s.AddCommentForm}>
+      <HStack justify="between" max className={s.AddCommentForm} data-testid="AddCommentForm">
         <Input
           className={s.input}
           placeholder={t('Enter comment')}
           value={text}
           onChange={onCommentTextChange}
+          data-testid="AddCommentForm.Input"
         />
-        <Button theme={ButtonTheme.OUTLINE} onClick={onSendHandler}>{t('Send')}</Button>
+        <Button
+          theme={ButtonTheme.OUTLINE}
+          onClick={onSendHandler}
+          data-testid="AddCommentForm.Button"
+        >
+          {t('Send')}
+        </Button>
       </HStack>
     </DynamicModuleLoader>
 

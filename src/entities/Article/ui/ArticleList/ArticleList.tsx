@@ -41,7 +41,7 @@ export const ArticleList = ({
   }
 
   return (
-    <div className={classNames(s.ArticleList, {}, [className, s[view]])}>
+    <div className={classNames(s.ArticleList, {}, [className, s[view]])} data-testid="ArticleList">
       {
         articles.map((article) => (
           <ArticleListItem
