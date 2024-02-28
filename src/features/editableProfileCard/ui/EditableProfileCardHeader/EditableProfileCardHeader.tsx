@@ -34,7 +34,7 @@ export const EditableProfileCardHeader = () => {
   return (
     <HStack max justify="between">
       <Text title={t('Profile')} />
-      {canEdit && readonly ? (
+      {canEdit && (readonly ? (
         <Button
           theme={ButtonTheme.OUTLINE}
           onClick={onEdit}
@@ -59,7 +59,7 @@ export const EditableProfileCardHeader = () => {
             {t('Save')}
           </Button>
         </HStack>
-      )}
+      ))}
 
     </HStack>
   );
