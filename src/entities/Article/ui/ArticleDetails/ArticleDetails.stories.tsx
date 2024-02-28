@@ -10,7 +10,8 @@ const article: Article = {
   user: {
     id: '1',
     username: 'Vadim',
-    avatar: 'https://preview.redd.it/7nsk7aswet4a1.jpg?width=640&crop=smart&auto=webp&s=20dfcd757e65684e16f0c04682ab541a038b5154',
+    avatar:
+      'https://preview.redd.it/7nsk7aswet4a1.jpg?width=640&crop=smart&auto=webp&s=20dfcd757e65684e16f0c04682ab541a038b5154',
   },
   subtitle: 'Что нового в JS за 2022 год?',
   img: 'https://res.cloudinary.com/teepublic/image/private/s--HGX34F_2--/t_Preview/b_rgb:ffb81c,c_lpad,f_jpg,h_630,q_90,w_1200/v1539273850/production/designs/3302095_0.jpg',
@@ -91,18 +92,24 @@ const Template: ComponentStory<typeof ArticleDetails> = (args) => <ArticleDetail
 
 export const Primary = Template.bind({});
 Primary.args = {};
-Primary.decorators = [StoreDecorator({
-  articleDetails: { data: article },
-})];
+Primary.decorators = [
+  StoreDecorator({
+    articleDetails: { data: article },
+  }),
+];
 
 export const Loading = Template.bind({});
 Loading.args = {};
-Loading.decorators = [StoreDecorator({
-  articleDetails: { isLoading: true },
-})];
+Loading.decorators = [
+  StoreDecorator({
+    articleDetails: { isLoading: true },
+  }),
+];
 
 export const Error = Template.bind({});
 Error.args = {};
-Error.decorators = [StoreDecorator({
-  articleDetails: { error: 'error' },
-})];
+Error.decorators = [
+  StoreDecorator({
+    articleDetails: { error: 'error' },
+  }),
+];

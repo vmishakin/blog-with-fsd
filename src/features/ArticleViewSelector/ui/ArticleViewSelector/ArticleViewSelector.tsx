@@ -7,8 +7,8 @@ import { ArticleView } from '../../../../entities/Article/model/types/article';
 import s from './ArticleViewSelector.module.scss';
 
 interface ArticleViewSelectorProps {
-  view: ArticleView | undefined
-  onViewClick: (newView: ArticleView) => void
+  view: ArticleView | undefined;
+  onViewClick: (newView: ArticleView) => void;
 }
 
 const viewTypes = [
@@ -30,11 +30,7 @@ export const ArticleViewSelector = ({ view, onViewClick }: ArticleViewSelectorPr
   return (
     <div className={classNames(s.ArticleViewSelector)}>
       {viewTypes.map((viewType) => (
-        <Button
-          key={viewType.view}
-          theme={ButtonTheme.CLEAR}
-          onClick={onClick(viewType.view)}
-        >
+        <Button key={viewType.view} theme={ButtonTheme.CLEAR} onClick={onClick(viewType.view)}>
           <Icon
             Svg={viewType.icon}
             isFilled={viewType.view === view}

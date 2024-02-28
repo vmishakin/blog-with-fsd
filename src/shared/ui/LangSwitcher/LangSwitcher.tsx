@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Button, ButtonTheme } from '../Button/Button';
 
 interface LangSwitcherProps {
-  collapsed: boolean
+  collapsed: boolean;
 }
 
 export const LangSwitcher = memo(({ collapsed }: LangSwitcherProps) => {
@@ -14,10 +14,7 @@ export const LangSwitcher = memo(({ collapsed }: LangSwitcherProps) => {
   };
 
   return (
-    <Button
-      theme={ButtonTheme.CLEAR}
-      onClick={toggle}
-    >
+    <Button theme={ButtonTheme.CLEAR} onClick={toggle}>
       {collapsed ? t('Language short') : t('Language')}
     </Button>
   );

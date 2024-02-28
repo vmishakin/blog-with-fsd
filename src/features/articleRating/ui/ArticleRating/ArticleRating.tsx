@@ -6,7 +6,7 @@ import { getUserAuthData } from '@/entities/User';
 import { Skeleton } from '@/shared/ui/Skeleton';
 
 export interface ArticleRatingProps {
-  articleId: string
+  articleId: string;
 }
 
 export const ArticleRating = ({ articleId }: ArticleRatingProps) => {
@@ -15,26 +15,35 @@ export const ArticleRating = ({ articleId }: ArticleRatingProps) => {
   const { data, isLoading } = useGetArticleRatingQuery({ articleId, userId: userData?.id ?? '' });
   const [rateArticle] = useRateArticleMutation();
 
-  const handleRateArticle = useCallback(async (starsCount: number, feedback?: string) => {
-    try {
-      await rateArticle({
-        userId: userData?.id ?? '',
-        articleId,
-        rate: starsCount,
-        feedback,
-      });
-    } catch (e) {
-      console.log(e);
-    }
-  }, [articleId, rateArticle, userData?.id]);
+  const handleRateArticle = useCallback(
+    async (starsCount: number, feedback?: string) => {
+      try {
+        await rateArticle({
+          userId: userData?.id ?? '',
+          articleId,
+          rate: starsCount,
+          feedback,
+        });
+      } catch (e) {
+        console.log(e);
+      }
+    },
+    [articleId, rateArticle, userData?.id],
+  );
 
-  const onAccept = useCallback((starsCount: number, feedback?: string) => {
-    handleRateArticle(starsCount, feedback);
-  }, [handleRateArticle]);
+  const onAccept = useCallback(
+    (starsCount: number, feedback?: string) => {
+      handleRateArticle(starsCount, feedback);
+    },
+    [handleRateArticle],
+  );
 
-  const onCancel = useCallback((starsCount: number) => {
-    handleRateArticle(starsCount);
-  }, [handleRateArticle]);
+  const onCancel = useCallback(
+    (starsCount: number) => {
+      handleRateArticle(starsCount);
+    },
+    [handleRateArticle],
+  );
 
   if (isLoading) {
     return <Skeleton width="100%" height="120px" />;

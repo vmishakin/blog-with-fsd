@@ -9,12 +9,12 @@ interface ArticleCodeBlockComponentProps {
   block: ArticleCodeBlock;
 }
 
-export const ArticleCodeBlockComponent = memo(({
-  className, block,
-}: ArticleCodeBlockComponentProps) => {
-  return (
-    <div className={classNames(s.ArticleCodeBlockComponent, {}, [className])}>
-      <Code text={block.code} />
-    </div>
-  );
-});
+export const ArticleCodeBlockComponent = memo(
+  ({ className, block }: ArticleCodeBlockComponentProps) => {
+    return (
+      <div className={classNames(s.ArticleCodeBlockComponent, {}, [className])}>
+        <Code text={block.code} />
+      </div>
+    );
+  },
+);

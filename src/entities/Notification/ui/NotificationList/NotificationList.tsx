@@ -6,7 +6,7 @@ import s from './NotificationList.module.scss';
 import { NotificationItem } from '../NotificationItem/NotificationItem';
 
 interface NotificationListProps {
-  className?: string
+  className?: string;
 }
 
 export const NotificationList = ({ className }: NotificationListProps) => {
@@ -26,7 +26,9 @@ export const NotificationList = ({ className }: NotificationListProps) => {
 
   return (
     <VStack gap="16" max className={classNames(s.NotificationList, {}, [className])}>
-      {notifications?.map((notification) => (<NotificationItem key={notification.id} notification={notification} />))}
+      {notifications?.map((notification) => (
+        <NotificationItem key={notification.id} notification={notification} />
+      ))}
     </VStack>
   );
 };

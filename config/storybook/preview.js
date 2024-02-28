@@ -3,9 +3,7 @@ import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator
 import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator';
 import { SuspenseDecorator } from '../../src/shared/config/storybook/SuspenseDecorator/SuspenseDecorator';
-import {
-  i18nextDecorator,
-} from '../../src/shared/config/storybook/i18nDecorator/i18nDecorator';
+import { i18nextDecorator } from '../../src/shared/config/storybook/i18nDecorator/i18nDecorator';
 import { Theme } from '../../src/shared/constants/theme';
 
 export const parameters = {

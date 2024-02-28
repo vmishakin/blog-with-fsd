@@ -4,12 +4,7 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: [
-    'plugin:react/recommended', 
-    'airbnb', 
-    'plugin:i18next/recommended',
-    'prettier'
-  ],
+  extends: ['plugin:react/recommended', 'airbnb', 'plugin:i18next/recommended', 'prettier'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     tsconfigRootDir: __dirname,
@@ -18,15 +13,19 @@ module.exports = {
     },
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: ['tsconfig.json', 'cypress/tsconfig.json']
+    project: ['tsconfig.json', 'cypress/tsconfig.json'],
   },
   ignorePatterns: ['.eslintrc.js'],
-  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'fsd-tools-mishakin', 'unused-imports'],
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'i18next',
+    'react-hooks',
+    'fsd-tools-mishakin',
+    'unused-imports',
+  ],
   rules: {
-    'react/jsx-filename-extension': [
-      2,
-      { extensions: ['.jsx', '.tsx'] },
-    ],
+    'react/jsx-filename-extension': [2, { extensions: ['.jsx', '.tsx'] }],
     'unused-imports/no-unused-imports': 'warn',
     'react/function-component-definition': 'off',
     'import/prefer-default-export': 'off',
@@ -54,14 +53,20 @@ module.exports = {
     'react/prop-types': 'off',
     'react/no-unused-prop-types': 'off',
     'fsd-tools-mishakin/path-checker': ['error', { alias: '@' }],
-    'fsd-tools-mishakin/public-api-imports': ['error', {
-      alias: '@',
-      testFilesPatterns: ['**/*.test.*', '**/*.stories.*', '**/StoreDecorator.tsx'],
-    }],
-    'fsd-tools-mishakin/layer-imports': ['error', {
-      alias: '@',
-      ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
-    }],
+    'fsd-tools-mishakin/public-api-imports': [
+      'error',
+      {
+        alias: '@',
+        testFilesPatterns: ['**/*.test.*', '**/*.stories.*', '**/StoreDecorator.tsx'],
+      },
+    ],
+    'fsd-tools-mishakin/layer-imports': [
+      'error',
+      {
+        alias: '@',
+        ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+      },
+    ],
   },
   globals: {
     __IS_DEV__: true,

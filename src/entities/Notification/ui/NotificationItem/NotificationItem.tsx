@@ -4,7 +4,7 @@ import { Notification } from '../../model/types/notification';
 import s from './NotificationItem.module.scss';
 
 interface NotificationItemProps {
-  notification: Notification
+  notification: Notification;
 }
 
 export const NotificationItem = ({ notification }: NotificationItemProps) => {

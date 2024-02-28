@@ -22,21 +22,30 @@ interface RatingCardProps {
 }
 
 export const RatingCard = ({
-  className, title, feedbackTitle, hasFeedback, onCancel, onAccept, rate,
+  className,
+  title,
+  feedbackTitle,
+  hasFeedback,
+  onCancel,
+  onAccept,
+  rate,
 }: RatingCardProps) => {
   const { t } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [starsCount, setStarsCount] = useState(rate ?? 0);
   const [feedback, setFeedback] = useState('');
 
-  const onSelectStars = useCallback((selectedStarsCount: number) => {
-    setStarsCount(selectedStarsCount);
-    if (hasFeedback) {
-      setIsModalOpen(true);
-    } else {
-      onAccept?.(selectedStarsCount);
-    }
-  }, [hasFeedback, onAccept]);
+  const onSelectStars = useCallback(
+    (selectedStarsCount: number) => {
+      setStarsCount(selectedStarsCount);
+      if (hasFeedback) {
+        setIsModalOpen(true);
+      } else {
+        onAccept?.(selectedStarsCount);
+      }
+    },
+    [hasFeedback, onAccept],
+  );
 
   const acceptHandle = useCallback(() => {
     setIsModalOpen(false);
@@ -72,7 +81,11 @@ export const RatingCard = ({
           <VStack max gap="32">
             {modalContent}
             <HStack max gap="16" justify="end">
-              <Button onClick={cancelHandle} theme={ButtonTheme.OUTLINE_RED} data-testid="RatingCard.Close">
+              <Button
+                onClick={cancelHandle}
+                theme={ButtonTheme.OUTLINE_RED}
+                data-testid="RatingCard.Close"
+              >
                 {t('Close')}
               </Button>
               <Button onClick={acceptHandle} data-testid="RatingCard.Send">

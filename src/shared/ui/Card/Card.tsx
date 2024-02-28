@@ -4,22 +4,26 @@ import s from './Card.module.scss';
 
 export enum CardTheme {
   NORMAL = 'normal',
-  OUTLINED = 'outlined'
+  OUTLINED = 'outlined',
 }
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
   className?: string;
-  children: ReactNode
-  theme?: CardTheme
-  max?: boolean
+  children: ReactNode;
+  theme?: CardTheme;
+  max?: boolean;
 }
 
 export const Card = ({
-  children, className, theme = CardTheme.NORMAL, max, ...otherProps
+  children,
+  className,
+  theme = CardTheme.NORMAL,
+  max,
+  ...otherProps
 }: CardProps) => {
   return (
     <div className={classNames(s.Card, { [s.max]: max }, [className, s[theme]])} {...otherProps}>
-      { children }
+      {children}
     </div>
   );
 };

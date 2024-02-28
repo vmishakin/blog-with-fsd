@@ -6,7 +6,7 @@ import s from './ArticleEditPage.module.scss';
 
 export const ArticleEditPage = () => {
   const { t } = useTranslation();
-  const { id } = useParams<{id: string}>();
+  const { id } = useParams<{ id: string }>();
   const isEdit = Boolean(id);
 
   return (

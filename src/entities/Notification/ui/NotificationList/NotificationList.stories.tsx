@@ -16,9 +16,7 @@ const Template: ComponentStory<typeof NotificationList> = (args) => {
 
 export const Primary = Template.bind({});
 Primary.args = {};
-Primary.decorators = [
-  StoreDecorator({}),
-];
+Primary.decorators = [StoreDecorator({})];
 Primary.parameters = {
   mockData: [
     {

@@ -22,6 +22,4 @@ Primary.args = {
     description: 'Произошло какое-то событие',
   },
 };
-Primary.decorators = [
-  StoreDecorator({}),
-];
+Primary.decorators = [StoreDecorator({})];

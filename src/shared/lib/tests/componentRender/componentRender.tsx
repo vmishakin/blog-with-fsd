@@ -13,30 +13,27 @@ import '@/app/styles/index.scss';
 
 export interface renderWithRouterOptions {
   route?: string;
-  initialState?: PartialDeep<StateSchema>
-  asyncReducers?: PartialDeep<ReducersMapObject<StateSchema>>
-  theme?: Theme
+  initialState?: PartialDeep<StateSchema>;
+  asyncReducers?: PartialDeep<ReducersMapObject<StateSchema>>;
+  theme?: Theme;
 }
 
 interface TestProviderProps {
-  children: ReactNode
-  options?: renderWithRouterOptions
+  children: ReactNode;
+  options?: renderWithRouterOptions;
 }
 
 export function TestProvider(props: TestProviderProps) {
   const {
-    children, options: {
-      route = '/', initialState, asyncReducers, theme = Theme.LIGHT,
-    } = {},
+    children,
+    options: { route = '/', initialState, asyncReducers, theme = Theme.LIGHT } = {},
   } = props;
   return (
     <MemoryRouter initialEntries={[route]}>
       <StoreProvider initialState={initialState} asyncReducers={asyncReducers}>
         <I18nextProvider i18n={i18nForTests}>
           <ThemeProvider initialTheme={theme}>
-            <div className={`app ${theme}`}>
-              {children}
-            </div>
+            <div className={`app ${theme}`}>{children}</div>
           </ThemeProvider>
         </I18nextProvider>
       </StoreProvider>

@@ -3,9 +3,5 @@ import { Page } from '@/widgets/Page';
 
 export const ForbiddenPage = () => {
   const { t } = useTranslation();
-  return (
-    <Page data-testid="ForbiddenPage">
-      {t('Forbidden. You don`t have access.')}
-    </Page>
-  );
+  return <Page data-testid="ForbiddenPage">{t('Forbidden. You don`t have access.')}</Page>;
 };

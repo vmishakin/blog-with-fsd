@@ -37,11 +37,14 @@ export const CommentCard = ({ className, comment, isLoading }: CommentCardProps)
   }
 
   return (
-    <VStack gap="8" max className={classNames(s.CommentCard, {}, [className])} data-testid="CommentCard.Content">
+    <VStack
+      gap="8"
+      max
+      className={classNames(s.CommentCard, {}, [className])}
+      data-testid="CommentCard.Content"
+    >
       <AppLink to={getRouteProfile(comment.user.id)} className={s.header}>
-        {comment.user.avatar && (
-          <Avatar size={30} src={comment.user.avatar} />
-        )}
+        {comment.user.avatar && <Avatar size={30} src={comment.user.avatar} />}
         <Text className={s.username} title={comment.user.username} />
       </AppLink>
       <Text className={s.text} text={comment.text} />

@@ -2,18 +2,13 @@ import { useCallback, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import {
-  ArticleSortField, ArticleView,
-  ArticleType,
-} from '@/entities/Article';
+import { ArticleSortField, ArticleView, ArticleType } from '@/entities/Article';
 import { Card } from '@/shared/ui/Card';
 import { Input } from '@/shared/ui/Input';
 import { SortOrder } from '@/shared/types/sort';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
 import { TabItem } from '@/shared/ui/Tabs';
-import {
-  fetchArticlesList,
-} from '../../model/services/fetchArticlesList/fetchArticlesList';
+import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import { articlesPageActions } from '../../model/slices/articlesPageSlice';
 import {
   getArticlesPageOrder,
@@ -43,52 +38,70 @@ export const ArticlesPageFilters = () => {
 
   const debouncedFetchData = useDebounce(fetchData, 500);
 
-  const onChangeView = useCallback((newView: ArticleView) => {
-    dispatch(articlesPageActions.setView(newView));
-  }, [dispatch]);
-
-  const onChangeOrder = useCallback((newOrder: SortOrder) => {
-    dispatch(articlesPageActions.setOrder(newOrder));
-    dispatch(articlesPageActions.setPage(1));
-    fetchData();
-  }, [dispatch, fetchData]);
-
-  const onChangeSort = useCallback((newSort: ArticleSortField) => {
-    dispatch(articlesPageActions.setSort(newSort));
-    dispatch(articlesPageActions.setPage(1));
-    fetchData();
-  }, [dispatch, fetchData]);
-
-  const onChangeSearch = useCallback((newSearch: string) => {
-    dispatch(articlesPageActions.setSearch(newSearch));
-    dispatch(articlesPageActions.setPage(1));
-    debouncedFetchData();
-  }, [dispatch, debouncedFetchData]);
-
-  const onChangeType = useCallback((tab: TabItem<ArticleType>) => {
-    dispatch(articlesPageActions.setType(tab.value));
-    dispatch(articlesPageActions.setPage(1));
-    fetchData();
-  }, [dispatch, fetchData]);
-
-  const typeTabs = useMemo<TabItem<ArticleType>[]>(() => [
-    {
-      value: ArticleType.ALL,
-      content: t('All articles'),
+  const onChangeView = useCallback(
+    (newView: ArticleView) => {
+      dispatch(articlesPageActions.setView(newView));
     },
-    {
-      value: ArticleType.IT,
-      content: t('It articles'),
+    [dispatch],
+  );
+
+  const onChangeOrder = useCallback(
+    (newOrder: SortOrder) => {
+      dispatch(articlesPageActions.setOrder(newOrder));
+      dispatch(articlesPageActions.setPage(1));
+      fetchData();
     },
-    {
-      value: ArticleType.ECONOMICS,
-      content: t('Economics articles'),
+    [dispatch, fetchData],
+  );
+
+  const onChangeSort = useCallback(
+    (newSort: ArticleSortField) => {
+      dispatch(articlesPageActions.setSort(newSort));
+      dispatch(articlesPageActions.setPage(1));
+      fetchData();
     },
-    {
-      value: ArticleType.SCIENCE,
-      content: t('Science articles'),
+    [dispatch, fetchData],
+  );
+
+  const onChangeSearch = useCallback(
+    (newSearch: string) => {
+      dispatch(articlesPageActions.setSearch(newSearch));
+      dispatch(articlesPageActions.setPage(1));
+      debouncedFetchData();
     },
-  ], [t]);
+    [dispatch, debouncedFetchData],
+  );
+
+  const onChangeType = useCallback(
+    (tab: TabItem<ArticleType>) => {
+      dispatch(articlesPageActions.setType(tab.value));
+      dispatch(articlesPageActions.setPage(1));
+      fetchData();
+    },
+    [dispatch, fetchData],
+  );
+
+  const typeTabs = useMemo<TabItem<ArticleType>[]>(
+    () => [
+      {
+        value: ArticleType.ALL,
+        content: t('All articles'),
+      },
+      {
+        value: ArticleType.IT,
+        content: t('It articles'),
+      },
+      {
+        value: ArticleType.ECONOMICS,
+        content: t('Economics articles'),
+      },
+      {
+        value: ArticleType.SCIENCE,
+        content: t('Science articles'),
+      },
+    ],
+    [t],
+  );
 
   return (
     <div className={s.ArticlesPageFilters}>
@@ -102,11 +115,7 @@ export const ArticlesPageFilters = () => {
         <ArticleViewSelector view={view} onViewClick={onChangeView} />
       </div>
       <Card className={s.search}>
-        <Input
-          placeholder={t('Search')}
-          value={search}
-          onChange={onChangeSearch}
-        />
+        <Input placeholder={t('Search')} value={search} onChange={onChangeSearch} />
       </Card>
       <ArticleTypeTabs
         type={type}

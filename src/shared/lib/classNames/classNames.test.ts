@@ -10,8 +10,9 @@ describe('classNames', () => {
   });
 
   test('several additional classes', () => {
-    expect(classNames('simpleClass', {}, ['additional1 additional2']))
-      .toEqual('simpleClass additional1 additional2');
+    expect(classNames('simpleClass', {}, ['additional1 additional2'])).toEqual(
+      'simpleClass additional1 additional2',
+    );
   });
 
   test('mode class true', () => {
@@ -19,8 +20,9 @@ describe('classNames', () => {
   });
 
   test('several mode classes', () => {
-    expect(classNames('simpleClass', { mode1: true, mode2: true }))
-      .toEqual('simpleClass mode1 mode2');
+    expect(classNames('simpleClass', { mode1: true, mode2: true })).toEqual(
+      'simpleClass mode1 mode2',
+    );
   });
 
   test('mod class false', () => {
@@ -36,8 +38,9 @@ describe('classNames', () => {
   });
 
   test('class, mods, additional classes', () => {
-    expect(classNames('simpleClass', { mode1: true, mode2: false }, ['additional1', 'additional2']))
-      .toEqual('simpleClass additional1 additional2 mode1');
+    expect(
+      classNames('simpleClass', { mode1: true, mode2: false }, ['additional1', 'additional2']),
+    ).toEqual('simpleClass additional1 additional2 mode1');
   });
 
   test('empty', () => {

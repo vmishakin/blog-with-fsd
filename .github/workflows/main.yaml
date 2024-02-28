@@ -79,4 +79,3 @@ jobs:
       - name: lint scss
         run: npm run lint:scss
         if: always()
-      

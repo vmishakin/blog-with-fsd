@@ -22,8 +22,8 @@
 - Styles: `SCSS Modules`
 - i18n: `i18next`
 - Lint:
-   TS: `eslint`
-   SCSS: `stylelint`
+  TS: `eslint`
+  SCSS: `stylelint`
 - Formatter: `prettier`
 - Testing:
   Unit: `jest`, `react testing library`
@@ -105,10 +105,10 @@ npm run start:dev:vite
 используется собственный eslint plugin `eslint-plugin-fsd-tools-mishakin`,
 который содержит 3 правила
 
-1) path-checker - запрещает использовать абсолютные импорты в рамках одного модуля, имеет auto fix
-2) layer-imports - проверяет корректность использования слоев с точки зрения FSD
+1. path-checker - запрещает использовать абсолютные импорты в рамках одного модуля, имеет auto fix
+2. layer-imports - проверяет корректность использования слоев с точки зрения FSD
    (например widgets нельзя использовать в features и entitites)
-3) public-api-imports - разрешает импорт из других модулей только из public api. Имеет auto fix
+3. public-api-imports - разрешает импорт из других модулей только из public api. Имеет auto fix
 
 ## Storybook
 
@@ -143,7 +143,7 @@ npm run start:dev:vite
 Таким образом, согласно FSD, нужно делать такие абсолютные импорты при при импорте из другого слоя:
 
 ```ts
-import {Product} from '@/entities/Product'
+import { Product } from '@/entities/Product';
 ```
 
 ## CI pipeline и pre commit хуки

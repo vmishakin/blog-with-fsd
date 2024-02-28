@@ -10,14 +10,23 @@ interface IconProps extends React.SVGProps<SVGSVGElement> {
 }
 
 export const Icon = ({
-  className, Svg, isFilled = true, isStroked, inverted, ...otherProps
+  className,
+  Svg,
+  isFilled = true,
+  isStroked,
+  inverted,
+  ...otherProps
 }: IconProps) => {
   return (
     <Svg
-      className={classNames(inverted ? s.inverted : s.Icon, {
-        [s.fill]: isFilled,
-        [s.stroke]: isStroked,
-      }, [className])}
+      className={classNames(
+        inverted ? s.inverted : s.Icon,
+        {
+          [s.fill]: isFilled,
+          [s.stroke]: isStroked,
+        },
+        [className],
+      )}
       {...otherProps}
     />
   );

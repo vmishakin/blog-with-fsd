@@ -90,18 +90,24 @@ const Template: ComponentStory<typeof ArticleDetailsPage> = () => <ArticleDetail
 
 export const Primary = Template.bind({});
 Primary.args = {};
-Primary.decorators = [StoreDecorator({
-  articleDetails: { data: article },
-})];
+Primary.decorators = [
+  StoreDecorator({
+    articleDetails: { data: article },
+  }),
+];
 
 export const Loading = Template.bind({});
 Loading.args = {};
-Loading.decorators = [StoreDecorator({
-  articleDetails: { isLoading: true },
-})];
+Loading.decorators = [
+  StoreDecorator({
+    articleDetails: { isLoading: true },
+  }),
+];
 
 export const Error = Template.bind({});
 Error.args = {};
-Error.decorators = [StoreDecorator({
-  articleDetails: { error: 'error' },
-})];
+Error.decorators = [
+  StoreDecorator({
+    articleDetails: { error: 'error' },
+  }),
+];

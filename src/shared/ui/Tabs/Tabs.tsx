@@ -9,20 +9,21 @@ export interface TabItem<T extends string> {
 }
 
 interface TabsProps<T extends string> {
-  className?: string
+  className?: string;
   tabs: TabItem<T>[];
   value: T;
   onTabClick: (tab: TabItem<T>) => void;
 }
 
-export const Tabs = <T extends string>({
-  onTabClick, tabs, value, className,
-}: TabsProps<T>) => {
-  const clickHandle = useCallback((tab: TabItem<T>) => {
-    return () => {
-      onTabClick(tab);
-    };
-  }, [onTabClick]);
+export const Tabs = <T extends string>({ onTabClick, tabs, value, className }: TabsProps<T>) => {
+  const clickHandle = useCallback(
+    (tab: TabItem<T>) => {
+      return () => {
+        onTabClick(tab);
+      };
+    },
+    [onTabClick],
+  );
 
   return (
     <div className={classNames(s.Tabs, {}, [className])}>

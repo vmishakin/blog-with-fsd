@@ -13,9 +13,7 @@ interface ArtcileInfiniteListProps {
   className?: string;
 }
 
-export const ArtcileInfiniteList = ({
-  className,
-}: ArtcileInfiniteListProps) => {
+export const ArtcileInfiniteList = ({ className }: ArtcileInfiniteListProps) => {
   const { t } = useTranslation();
   const error = useSelector(getArticlesPageError);
 
@@ -28,11 +26,6 @@ export const ArtcileInfiniteList = ({
   }
 
   return (
-    <ArticleList
-      view={view}
-      isLoading={isLoading}
-      articles={articles}
-      className={className}
-    />
+    <ArticleList view={view} isLoading={isLoading} articles={articles} className={className} />
   );
 };

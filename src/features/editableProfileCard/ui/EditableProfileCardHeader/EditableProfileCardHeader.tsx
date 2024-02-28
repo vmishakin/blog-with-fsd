@@ -34,33 +34,33 @@ export const EditableProfileCardHeader = () => {
   return (
     <HStack max justify="between">
       <Text title={t('Profile')} />
-      {canEdit && (readonly ? (
-        <Button
-          theme={ButtonTheme.OUTLINE}
-          onClick={onEdit}
-          data-testid="EditableProfileCardHeader.EditButton"
-        >
-          {t('Edit')}
-        </Button>
-      ) : (
-        <HStack gap="8">
-          <Button
-            theme={ButtonTheme.OUTLINE_RED}
-            onClick={onCancelEdit}
-            data-testid="EditableProfileCardHeader.CancelButton"
-          >
-            {t('Cancel')}
-          </Button>
+      {canEdit &&
+        (readonly ? (
           <Button
             theme={ButtonTheme.OUTLINE}
-            onClick={onSave}
-            data-testid="EditableProfileCardHeader.SaveButton"
+            onClick={onEdit}
+            data-testid="EditableProfileCardHeader.EditButton"
           >
-            {t('Save')}
+            {t('Edit')}
           </Button>
-        </HStack>
-      ))}
-
+        ) : (
+          <HStack gap="8">
+            <Button
+              theme={ButtonTheme.OUTLINE_RED}
+              onClick={onCancelEdit}
+              data-testid="EditableProfileCardHeader.CancelButton"
+            >
+              {t('Cancel')}
+            </Button>
+            <Button
+              theme={ButtonTheme.OUTLINE}
+              onClick={onSave}
+              data-testid="EditableProfileCardHeader.SaveButton"
+            >
+              {t('Save')}
+            </Button>
+          </HStack>
+        ))}
     </HStack>
   );
 };

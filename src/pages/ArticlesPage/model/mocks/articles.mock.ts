@@ -8,9 +8,7 @@ export const ARTICLES_MOCK = [
     views: 10222,
     createdAt: '26.02.2020',
     userId: '1',
-    type: [
-      'IT',
-    ],
+    type: ['IT'],
     blocks: [
       {
         id: '1',
@@ -27,10 +25,9 @@ export const ARTICLES_MOCK = [
       id: '1',
       username: 'admin',
       password: '123',
-      roles: [
-        'ADMIN',
-      ],
-      avatar: 'https://preview.redd.it/7nsk7aswet4a1.jpg?width=640&crop=smart&auto=webp&s=20dfcd757e65684e16f0c04682ab541a038b5154',
+      roles: ['ADMIN'],
+      avatar:
+        'https://preview.redd.it/7nsk7aswet4a1.jpg?width=640&crop=smart&auto=webp&s=20dfcd757e65684e16f0c04682ab541a038b5154',
     },
   },
   {
@@ -41,9 +38,7 @@ export const ARTICLES_MOCK = [
     views: 1022,
     createdAt: '26.02.2022',
     userId: '1',
-    type: [
-      'IT',
-    ],
+    type: ['IT'],
     blocks: [
       {
         id: '1',
@@ -60,10 +55,9 @@ export const ARTICLES_MOCK = [
       id: '1',
       username: 'admin',
       password: '123',
-      roles: [
-        'ADMIN',
-      ],
-      avatar: 'https://preview.redd.it/7nsk7aswet4a1.jpg?width=640&crop=smart&auto=webp&s=20dfcd757e65684e16f0c04682ab541a038b5154',
+      roles: ['ADMIN'],
+      avatar:
+        'https://preview.redd.it/7nsk7aswet4a1.jpg?width=640&crop=smart&auto=webp&s=20dfcd757e65684e16f0c04682ab541a038b5154',
     },
   },
   {
@@ -74,9 +68,7 @@ export const ARTICLES_MOCK = [
     views: 1022,
     createdAt: '26.02.2022',
     userId: '1',
-    type: [
-      'IT',
-    ],
+    type: ['IT'],
     blocks: [
       {
         id: '1',
@@ -141,10 +133,9 @@ export const ARTICLES_MOCK = [
       id: '1',
       username: 'admin',
       password: '123',
-      roles: [
-        'ADMIN',
-      ],
-      avatar: 'https://preview.redd.it/7nsk7aswet4a1.jpg?width=640&crop=smart&auto=webp&s=20dfcd757e65684e16f0c04682ab541a038b5154',
+      roles: ['ADMIN'],
+      avatar:
+        'https://preview.redd.it/7nsk7aswet4a1.jpg?width=640&crop=smart&auto=webp&s=20dfcd757e65684e16f0c04682ab541a038b5154',
     },
   },
   {
@@ -155,9 +146,7 @@ export const ARTICLES_MOCK = [
     views: 1022,
     createdAt: '26.02.2022',
     userId: '1',
-    type: [
-      'IT',
-    ],
+    type: ['IT'],
     blocks: [
       {
         id: '1',
@@ -174,10 +163,9 @@ export const ARTICLES_MOCK = [
       id: '1',
       username: 'admin',
       password: '123',
-      roles: [
-        'ADMIN',
-      ],
-      avatar: 'https://preview.redd.it/7nsk7aswet4a1.jpg?width=640&crop=smart&auto=webp&s=20dfcd757e65684e16f0c04682ab541a038b5154',
+      roles: ['ADMIN'],
+      avatar:
+        'https://preview.redd.it/7nsk7aswet4a1.jpg?width=640&crop=smart&auto=webp&s=20dfcd757e65684e16f0c04682ab541a038b5154',
     },
   },
   {
@@ -188,9 +176,7 @@ export const ARTICLES_MOCK = [
     views: 1022,
     createdAt: '26.02.2022',
     userId: '1',
-    type: [
-      'IT',
-    ],
+    type: ['IT'],
     blocks: [
       {
         id: '1',
@@ -207,10 +193,9 @@ export const ARTICLES_MOCK = [
       id: '1',
       username: 'admin',
       password: '123',
-      roles: [
-        'ADMIN',
-      ],
-      avatar: 'https://preview.redd.it/7nsk7aswet4a1.jpg?width=640&crop=smart&auto=webp&s=20dfcd757e65684e16f0c04682ab541a038b5154',
+      roles: ['ADMIN'],
+      avatar:
+        'https://preview.redd.it/7nsk7aswet4a1.jpg?width=640&crop=smart&auto=webp&s=20dfcd757e65684e16f0c04682ab541a038b5154',
     },
   },
   {
@@ -221,9 +206,7 @@ export const ARTICLES_MOCK = [
     views: 1022,
     createdAt: '26.02.2022',
     userId: '1',
-    type: [
-      'IT',
-    ],
+    type: ['IT'],
     blocks: [
       {
         id: '1',
@@ -240,10 +223,9 @@ export const ARTICLES_MOCK = [
       id: '1',
       username: 'admin',
       password: '123',
-      roles: [
-        'ADMIN',
-      ],
-      avatar: 'https://preview.redd.it/7nsk7aswet4a1.jpg?width=640&crop=smart&auto=webp&s=20dfcd757e65684e16f0c04682ab541a038b5154',
+      roles: ['ADMIN'],
+      avatar:
+        'https://preview.redd.it/7nsk7aswet4a1.jpg?width=640&crop=smart&auto=webp&s=20dfcd757e65684e16f0c04682ab541a038b5154',
     },
   },
   {
@@ -254,9 +236,7 @@ export const ARTICLES_MOCK = [
     views: 1022,
     createdAt: '26.02.2022',
     userId: '1',
-    type: [
-      'IT',
-    ],
+    type: ['IT'],
     blocks: [
       {
         id: '1',
@@ -273,10 +253,9 @@ export const ARTICLES_MOCK = [
       id: '1',
       username: 'admin',
       password: '123',
-      roles: [
-        'ADMIN',
-      ],
-      avatar: 'https://preview.redd.it/7nsk7aswet4a1.jpg?width=640&crop=smart&auto=webp&s=20dfcd757e65684e16f0c04682ab541a038b5154',
+      roles: ['ADMIN'],
+      avatar:
+        'https://preview.redd.it/7nsk7aswet4a1.jpg?width=640&crop=smart&auto=webp&s=20dfcd757e65684e16f0c04682ab541a038b5154',
     },
   },
   {
@@ -287,9 +266,7 @@ export const ARTICLES_MOCK = [
     views: 1022,
     createdAt: '26.02.2022',
     userId: '1',
-    type: [
-      'IT',
-    ],
+    type: ['IT'],
     blocks: [
       {
         id: '1',
@@ -306,10 +283,9 @@ export const ARTICLES_MOCK = [
       id: '1',
       username: 'admin',
       password: '123',
-      roles: [
-        'ADMIN',
-      ],
-      avatar: 'https://preview.redd.it/7nsk7aswet4a1.jpg?width=640&crop=smart&auto=webp&s=20dfcd757e65684e16f0c04682ab541a038b5154',
+      roles: ['ADMIN'],
+      avatar:
+        'https://preview.redd.it/7nsk7aswet4a1.jpg?width=640&crop=smart&auto=webp&s=20dfcd757e65684e16f0c04682ab541a038b5154',
     },
   },
   {
@@ -320,9 +296,7 @@ export const ARTICLES_MOCK = [
     views: 1022,
     createdAt: '26.02.2022',
     userId: '1',
-    type: [
-      'IT',
-    ],
+    type: ['IT'],
     blocks: [
       {
         id: '1',
@@ -339,10 +313,9 @@ export const ARTICLES_MOCK = [
       id: '1',
       username: 'admin',
       password: '123',
-      roles: [
-        'ADMIN',
-      ],
-      avatar: 'https://preview.redd.it/7nsk7aswet4a1.jpg?width=640&crop=smart&auto=webp&s=20dfcd757e65684e16f0c04682ab541a038b5154',
+      roles: ['ADMIN'],
+      avatar:
+        'https://preview.redd.it/7nsk7aswet4a1.jpg?width=640&crop=smart&auto=webp&s=20dfcd757e65684e16f0c04682ab541a038b5154',
     },
   },
 ];

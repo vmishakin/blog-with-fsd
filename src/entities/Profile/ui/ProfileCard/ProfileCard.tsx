@@ -11,18 +11,18 @@ import s from './ProfileCard.module.scss';
 import { Profile } from '../../model/types/profile';
 
 interface ProfileCardProps {
-  data?: Profile
-  error?: string
-  isLoading?: boolean
-  readonly?: boolean
-  onChangeFirstname?: (value?: string) => void
-  onChangeLastname?: (value?: string) => void
-  onChangeCity?: (value?: string) => void
-  onChangeAge?: (value?: string) => void
-  onChangeUsername?: (value?: string) => void
-  onChangeAvatar?: (value?: string) => void
-  onChangeCurrency?: (value: Currency) => void
-  onChangeCountry?: (value: Country) => void
+  data?: Profile;
+  error?: string;
+  isLoading?: boolean;
+  readonly?: boolean;
+  onChangeFirstname?: (value?: string) => void;
+  onChangeLastname?: (value?: string) => void;
+  onChangeCity?: (value?: string) => void;
+  onChangeAge?: (value?: string) => void;
+  onChangeUsername?: (value?: string) => void;
+  onChangeAvatar?: (value?: string) => void;
+  onChangeCurrency?: (value: Currency) => void;
+  onChangeCountry?: (value: Country) => void;
 }
 
 export const ProfileCard = ({
@@ -65,9 +65,9 @@ export const ProfileCard = ({
   return (
     <VStack max gap="8" className={classNames(s.ProfileCard, { [s.readonly]: readonly })}>
       {data?.avatar && (
-      <HStack justify="center" max className={s.avatarWrapper}>
-        <Avatar src={data.avatar} size={150} />
-      </HStack>
+        <HStack justify="center" max className={s.avatarWrapper}>
+          <Avatar src={data.avatar} size={150} />
+        </HStack>
       )}
       <Input
         className={s.input}

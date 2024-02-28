@@ -3,14 +3,12 @@ import { useAnimationLibs } from '@/shared/lib/components/AnimationProvider/Anim
 import s from './OverlaySpring.module.scss';
 
 interface OverlaySpringProps {
-  className?: string
-  onClick?: () => void
-  opacity?: import('@react-spring/web').SpringValue<number>
+  className?: string;
+  onClick?: () => void;
+  opacity?: import('@react-spring/web').SpringValue<number>;
 }
 
-export const OverlaySpring = ({
-  className, onClick, opacity,
-}: OverlaySpringProps) => {
+export const OverlaySpring = ({ className, onClick, opacity }: OverlaySpringProps) => {
   const { Spring } = useAnimationLibs();
 
   return (

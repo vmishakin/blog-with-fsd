@@ -2,7 +2,8 @@ import { memo, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import {
-  DynamicModuleLoader, ReducersList,
+  DynamicModuleLoader,
+  ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Avatar } from '@/shared/ui/Avatar';
@@ -13,9 +14,7 @@ import CalendarIcon from '@/shared/assets/icons/calendar-20-20.svg';
 import { Icon } from '@/shared/ui/Icon';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
-import {
-  fetchArticleById,
-} from '../../model/services/fetchArticleById/fetchArticleById';
+import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import {
   getArticleDetailsData,
   getArticleDetailsError,
@@ -24,13 +23,11 @@ import {
 import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
 import s from './ArticleDetails.module.scss';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
-import {
-  ArticleImageBlockComponent,
-} from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
+import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 
 interface ArticleDetailsProps {
-  id: string
+  id: string;
 }
 
 const reducers: ReducersList = {
@@ -47,29 +44,11 @@ export const ArticleDetails = memo(({ id }: ArticleDetailsProps) => {
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {
       case ArticleBlockType.CODE:
-        return (
-          <ArticleCodeBlockComponent
-            key={block.id}
-            className={s.block}
-            block={block}
-          />
-        );
+        return <ArticleCodeBlockComponent key={block.id} className={s.block} block={block} />;
       case ArticleBlockType.IMAGE:
-        return (
-          <ArticleImageBlockComponent
-            key={block.id}
-            className={s.block}
-            block={block}
-          />
-        );
+        return <ArticleImageBlockComponent key={block.id} className={s.block} block={block} />;
       case ArticleBlockType.TEXT:
-        return (
-          <ArticleTextBlockComponent
-            key={block.id}
-            className={s.block}
-            block={block}
-          />
-        );
+        return <ArticleTextBlockComponent key={block.id} className={s.block} block={block} />;
       default:
         return null;
     }
@@ -94,35 +73,22 @@ export const ArticleDetails = memo(({ id }: ArticleDetailsProps) => {
       </>
     );
   } else if (error) {
-    content = (
-      <Text align={TextAlign.CENTER} title={t('Article not found')} />
-    );
+    content = <Text align={TextAlign.CENTER} title={t('Article not found')} />;
   } else {
     content = (
       <>
         <HStack justify="center" max className={s.avatarWrapper}>
           <Avatar size={200} src={article?.img} className={s.avatar} />
-
         </HStack>
         <VStack gap="4" max data-testid="ArticleDetails.Info">
-          <Text
-            className={s.title}
-            title={article?.title}
-            text={article?.subtitle}
-          />
+          <Text className={s.title} title={article?.title} text={article?.subtitle} />
           <HStack gap="8" className={s.articleInfo}>
             <Icon Svg={EyeIcon} className={s.icon} />
-            <Text
-              size={TextSize.L}
-              text={article?.views.toString()}
-            />
+            <Text size={TextSize.L} text={article?.views.toString()} />
           </HStack>
           <HStack gap="8" className={s.articleInfo}>
             <Icon Svg={CalendarIcon} className={s.icon} />
-            <Text
-              size={TextSize.L}
-              text={article?.createdAt.toString()}
-            />
+            <Text size={TextSize.L} text={article?.createdAt.toString()} />
           </HStack>
         </VStack>
         {article?.blocks.map(renderBlock)}

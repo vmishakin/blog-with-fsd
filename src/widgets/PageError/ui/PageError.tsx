@@ -12,9 +12,7 @@ export const PageError = () => {
   return (
     <div className={s.PageError}>
       <p>{t('Page error')}</p>
-      <Button onClick={reloadPage}>
-        {t('Reload page')}
-      </Button>
+      <Button onClick={reloadPage}>{t('Reload page')}</Button>
     </div>
   );
 };

@@ -33,9 +33,12 @@ export const AddCommentForm = ({ onSendComment }: AddCommentFormProps) => {
   // const error = useSelector(getAddCommentFormError);
   const dispatch = useAppDispatch();
 
-  const onCommentTextChange = useCallback((value: string) => {
-    dispatch(addCommentFormActions.setText(value));
-  }, [dispatch]);
+  const onCommentTextChange = useCallback(
+    (value: string) => {
+      dispatch(addCommentFormActions.setText(value));
+    },
+    [dispatch],
+  );
 
   const onSendHandler = useCallback(() => {
     onSendComment(text || '');
@@ -61,6 +64,5 @@ export const AddCommentForm = ({ onSendComment }: AddCommentFormProps) => {
         </Button>
       </HStack>
     </DynamicModuleLoader>
-
   );
 };

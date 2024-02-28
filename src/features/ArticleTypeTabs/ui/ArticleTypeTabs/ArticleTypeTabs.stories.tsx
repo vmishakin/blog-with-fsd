@@ -17,20 +17,22 @@ const Template: ComponentStory<typeof ArticleTypeTabs> = (args) => {
 export const Primary = Template.bind({});
 Primary.args = {
   type: ArticleType.ECONOMICS,
-  typeTabs: [{
-    value: ArticleType.ALL,
-    content: 'All articles',
-  },
-  {
-    value: ArticleType.IT,
-    content: 'It articles',
-  },
-  {
-    value: ArticleType.ECONOMICS,
-    content: 'Economics articles',
-  },
-  {
-    value: ArticleType.SCIENCE,
-    content: 'Science articles',
-  }],
+  typeTabs: [
+    {
+      value: ArticleType.ALL,
+      content: 'All articles',
+    },
+    {
+      value: ArticleType.IT,
+      content: 'It articles',
+    },
+    {
+      value: ArticleType.ECONOMICS,
+      content: 'Economics articles',
+    },
+    {
+      value: ArticleType.SCIENCE,
+      content: 'Science articles',
+    },
+  ],
 };

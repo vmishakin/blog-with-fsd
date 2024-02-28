@@ -32,8 +32,6 @@ describe('validateProfile.test', () => {
   test('incorrect country', async () => {
     const result = validateProfile({ ...userData, country: undefined });
 
-    expect(result).toEqual([
-      ValidateProfileError.INCORRECT_COUNTRY,
-    ]);
+    expect(result).toEqual([ValidateProfileError.INCORRECT_COUNTRY]);
   });
 });

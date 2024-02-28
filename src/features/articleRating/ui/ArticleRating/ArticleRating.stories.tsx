@@ -31,9 +31,7 @@ WithRate.parameters = {
       url: `${__API__}/article-ratings?articleId=1&userId=1`,
       method: 'GET',
       status: 200,
-      response: [
-        { rate: 4 },
-      ],
+      response: [{ rate: 4 }],
       delay: 1000,
     },
   ],

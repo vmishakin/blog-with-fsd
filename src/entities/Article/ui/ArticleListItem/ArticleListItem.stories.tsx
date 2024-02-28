@@ -13,14 +13,10 @@ const article = {
   user: {
     id: '1',
     username: 'Vadim',
-    avatar: 'https://preview.redd.it/7nsk7aswet4a1.jpg?width=640&crop=smart&auto=webp&s=20dfcd757e65684e16f0c04682ab541a038b5154',
+    avatar:
+      'https://preview.redd.it/7nsk7aswet4a1.jpg?width=640&crop=smart&auto=webp&s=20dfcd757e65684e16f0c04682ab541a038b5154',
   },
-  type: [
-    'IT',
-    'SCIENCE',
-    'POLITICS',
-    'ECONOMICS',
-  ],
+  type: ['IT', 'SCIENCE', 'POLITICS', 'ECONOMICS'],
   blocks: [
     {
       id: '1',

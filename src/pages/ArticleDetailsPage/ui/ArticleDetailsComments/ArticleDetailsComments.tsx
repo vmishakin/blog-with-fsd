@@ -8,16 +8,12 @@ import { Text, TextSize } from '@/shared/ui/Text';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import {
-  addCommentForArticle,
-} from '../../model/services/addCommentForArticle/addCommentForArticle';
-import {
-  fetchCommentsByArticleId,
-} from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
+import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 
 interface ArticleDetailsCommentsProps {
-  id: string
+  id: string;
 }
 
 export const ArticleDetailsComments = ({ id }: ArticleDetailsCommentsProps) => {
@@ -27,9 +23,12 @@ export const ArticleDetailsComments = ({ id }: ArticleDetailsCommentsProps) => {
   const comments = useSelector(getArticleComments.selectAll);
   const isCommentsLoading = useSelector(getArticleCommentsIsLoading);
 
-  const onSendComment = useCallback((text: string) => {
-    dispatch(addCommentForArticle(text));
-  }, [dispatch]);
+  const onSendComment = useCallback(
+    (text: string) => {
+      dispatch(addCommentForArticle(text));
+    },
+    [dispatch],
+  );
 
   useInitialEffect(() => {
     dispatch(fetchCommentsByArticleId(id));
@@ -37,10 +36,7 @@ export const ArticleDetailsComments = ({ id }: ArticleDetailsCommentsProps) => {
 
   return (
     <VStack gap="16" max>
-      <Text
-        size={TextSize.L}
-        title={t('Comments')}
-      />
+      <Text size={TextSize.L} title={t('Comments')} />
       <Suspense fallback="Loading...">
         <AddCommentForm onSendComment={onSendComment} />
       </Suspense>

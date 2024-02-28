@@ -2,9 +2,7 @@ import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { LoginModal } from '@/features/AuthByUsername';
-import {
-  getUserAuthData,
-} from '@/entities/User';
+import { getUserAuthData } from '@/entities/User';
 import { getRouteArticleCreate } from '@/shared/constants/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
@@ -35,11 +33,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   if (authData) {
     return (
       <header className={classNames(s.navbar, {}, [className])}>
-        <Text
-          className={classNames(s.appName)}
-          title={t('FSD blog')}
-          theme={TextTheme.INVERTED}
-        />
+        <Text className={classNames(s.appName)} title={t('FSD blog')} theme={TextTheme.INVERTED} />
         <AppLink theme={AppLinkTheme.SECONDARY} to={getRouteArticleCreate()}>
           {t('Create new article')}
         </AppLink>
@@ -56,16 +50,10 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
   return (
     <header className={classNames(s.navbar, {}, [className])}>
-      <Button
-        theme={ButtonTheme.CLEAR_INVERTED}
-        className={s.links}
-        onClick={onOpenAuthModal}
-      >
+      <Button theme={ButtonTheme.CLEAR_INVERTED} className={s.links} onClick={onOpenAuthModal}>
         {t('Login')}
       </Button>
-      {isAuthModal && (
-        <LoginModal isOpen={isAuthModal} onClose={onCloseAuthModal} />
-      )}
+      {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseAuthModal} />}
     </header>
   );
 });

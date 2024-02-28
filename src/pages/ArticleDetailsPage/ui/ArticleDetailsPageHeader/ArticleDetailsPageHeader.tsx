@@ -10,7 +10,7 @@ import { getCanEditArticle } from '../../model/selectors/article';
 import { getRouteArticles, getRouteArticleEdit } from '@/shared/constants/router';
 
 interface ArticleDetailsPageHeaderProps {
-  className?: string
+  className?: string;
 }
 
 export const ArticleDetailsPageHeader = ({ className }: ArticleDetailsPageHeaderProps) => {
@@ -30,19 +30,12 @@ export const ArticleDetailsPageHeader = ({ className }: ArticleDetailsPageHeader
   }, [article, navigate]);
 
   return (
-    <HStack
-      max
-      justify="between"
-      className={classNames('', {}, [className])}
-    >
+    <HStack max justify="between" className={classNames('', {}, [className])}>
       <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
         {t('Back to list')}
       </Button>
       {canEdit && (
-        <Button
-          theme={ButtonTheme.OUTLINE}
-          onClick={onEditArticle}
-        >
+        <Button theme={ButtonTheme.OUTLINE} onClick={onEditArticle}>
           {t('Edit')}
         </Button>
       )}

@@ -51,9 +51,11 @@ Dark.parameters = {
 
 export const Auth = Template.bind({});
 Auth.args = {};
-Auth.decorators = [StoreDecorator({
-  user: { authData: { id: '1', username: 'Vasya' } },
-})];
+Auth.decorators = [
+  StoreDecorator({
+    user: { authData: { id: '1', username: 'Vasya' } },
+  }),
+];
 Auth.parameters = {
   mockData: [
     {

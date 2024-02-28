@@ -3,13 +3,11 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { Card } from '@/shared/ui/Card';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import s from './ArticleListItem.module.scss';
-import {
-  ArticleView,
-} from '../../model/types/article';
+import { ArticleView } from '../../model/types/article';
 
 interface ArticleListItemSkeletonProps {
-  className?: string
-  view: ArticleView
+  className?: string;
+  view: ArticleView;
 }
 
 export const ArticleListItemSkeleton = memo(({ view, className }: ArticleListItemSkeletonProps) => {

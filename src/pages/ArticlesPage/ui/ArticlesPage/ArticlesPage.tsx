@@ -10,9 +10,7 @@ import { Page } from '@/widgets/Page';
 import { ArtcileInfiniteList } from '../ArtcileInfiniteList/ArtcileInfiniteList';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
-import {
-  articlesPageReducer,
-} from '../../model/slices/articlesPageSlice';
+import { articlesPageReducer } from '../../model/slices/articlesPageSlice';
 import s from './ArticlesPage.module.scss';
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
 

@@ -29,11 +29,12 @@ export function createReduxStore(
     reducer: reducerManager.reduce,
     devTools: __IS_DEV__,
     preloadedState: initialState,
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
-      thunk: {
-        extraArgument: extraArg,
-      },
-    }).concat(rtkApi.middleware),
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware({
+        thunk: {
+          extraArgument: extraArg,
+        },
+      }).concat(rtkApi.middleware),
   });
 
   (store as ReduxStoreWithManager).reducerManager = reducerManager;

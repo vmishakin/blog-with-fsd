@@ -7,7 +7,7 @@ import s from './Code.module.scss';
 
 interface CodeProps {
   className?: string;
-  text: string
+  text: string;
 }
 
 export const Code = ({ className, text }: CodeProps) => {
@@ -20,9 +20,7 @@ export const Code = ({ className, text }: CodeProps) => {
       <Button onClick={onCopy} className={s.copyBtn} theme={ButtonTheme.CLEAR}>
         <Icon Svg={CopyIcon} isFilled={false} isStroked />
       </Button>
-      <code>
-        {text}
-      </code>
+      <code>{text}</code>
     </pre>
   );
 };

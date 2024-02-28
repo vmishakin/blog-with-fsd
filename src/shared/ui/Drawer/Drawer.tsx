@@ -1,26 +1,25 @@
-import {
-  ReactNode, memo, useCallback, useEffect,
-} from 'react';
+import { ReactNode, memo, useCallback, useEffect } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { AnimationProvider, useAnimationLibs } from '@/shared/lib/components/AnimationProvider/AnimationProvider';
+import {
+  AnimationProvider,
+  useAnimationLibs,
+} from '@/shared/lib/components/AnimationProvider/AnimationProvider';
 import s from './Drawer.module.scss';
 import { Portal } from '../Portal/Portal';
 import { OverlaySpring } from '../OverlaySpring/OverlaySpring';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 
 interface DrawerProps {
-  className?: string
-  children: ReactNode
-  isOpen?: boolean
-  onClose?: () => void
-  lazy?: boolean
+  className?: string;
+  children: ReactNode;
+  isOpen?: boolean;
+  onClose?: () => void;
+  lazy?: boolean;
 }
 
 const height = window.innerHeight - 100;
 
-const DrawerContent = memo(({
-  className, children, isOpen, onClose,
-}: DrawerProps) => {
+const DrawerContent = memo(({ className, children, isOpen, onClose }: DrawerProps) => {
   const { theme } = useTheme();
   const { Spring, Gesture } = useAnimationLibs();
   const [{ y, opacity }, api] = Spring.useSpring(() => ({ y: height, opacity: 1 }));
@@ -46,13 +45,7 @@ const DrawerContent = memo(({
   };
 
   const bind = Gesture.useDrag(
-    ({
-      last,
-      velocity: [, vy],
-      direction: [, dy],
-      movement: [, my],
-      cancel,
-    }) => {
+    ({ last, velocity: [, vy], direction: [, dy], movement: [, my], cancel }) => {
       if (my < -70) cancel();
 
       if (last) {
@@ -66,7 +59,10 @@ const DrawerContent = memo(({
       }
     },
     {
-      from: () => [0, y.get()], filterTaps: true, bounds: { top: 0 }, rubberband: true,
+      from: () => [0, y.get()],
+      filterTaps: true,
+      bounds: { top: 0 },
+      rubberband: true,
     },
   );
 
@@ -78,12 +74,7 @@ const DrawerContent = memo(({
 
   return (
     <Portal>
-      <div className={classNames(
-        s.Drawer,
-        {},
-        [className, theme, 'app_drawer'],
-      )}
-      >
+      <div className={classNames(s.Drawer, {}, [className, theme, 'app_drawer'])}>
         <OverlaySpring onClick={() => close()} opacity={opacity} />
         <Spring.a.div
           className={s.sheet}

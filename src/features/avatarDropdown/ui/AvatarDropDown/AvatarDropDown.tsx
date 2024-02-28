@@ -4,9 +4,7 @@ import { useCallback } from 'react';
 import { getRouteAdmin, getRouteProfile } from '@/shared/constants/router';
 import { Dropdown } from '@/shared/ui/Popups';
 import { Avatar } from '@/shared/ui/Avatar';
-import {
-  getUserAuthData, isUserAdmin, isUserManager, userActions,
-} from '@/entities/User';
+import { getUserAuthData, isUserAdmin, isUserManager, userActions } from '@/entities/User';
 
 export const AvatarDropDown = () => {
   const { t } = useTranslation();
@@ -29,10 +27,14 @@ export const AvatarDropDown = () => {
   return (
     <Dropdown
       items={[
-        ...(isAdminPanelAvailable ? [{
-          content: t('Admin panel'),
-          href: getRouteAdmin(),
-        }] : []),
+        ...(isAdminPanelAvailable
+          ? [
+              {
+                content: t('Admin panel'),
+                href: getRouteAdmin(),
+              },
+            ]
+          : []),
         {
           content: t('Profile page'),
           href: getRouteProfile(authData.id),

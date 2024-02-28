@@ -8,31 +8,18 @@ import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitial
 import { Text, TextTheme } from '@/shared/ui/Text';
 import { ProfileCard } from '@/entities/Profile';
 import {
-  DynamicModuleLoader, ReducersList,
+  DynamicModuleLoader,
+  ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { VStack } from '@/shared/ui/Stack';
 import { ValidateProfileError } from '../../model/consts/consts';
-import {
-  getProfileError,
-} from '../../model/selectors/getProfileError/getProfileError';
-import {
-  getProfileForm,
-} from '../../model/selectors/getProfileForm/getProfileForm';
-import {
-  getProfileIsLoading,
-} from '../../model/selectors/getProfileIsLoading/getProfileIsLoading';
-import {
-  getProfileReadonly,
-} from '../../model/selectors/getProfileReadonly/getProfileReadonly';
-import {
-  getProfileValidateError,
-} from '../../model/selectors/getProfileValidateError/getProfileValidateError';
-import {
-  fetchProfileData,
-} from '../../model/services/fetchProfileData/fetchProfileData';
-import {
-  profileActions, profileReducer,
-} from '../../model/slice/profileSlice';
+import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
+import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
+import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading';
+import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
+import { getProfileValidateError } from '../../model/selectors/getProfileValidateError/getProfileValidateError';
+import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
+import { profileActions, profileReducer } from '../../model/slice/profileSlice';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
 
 const reducers: ReducersList = {
@@ -40,7 +27,7 @@ const reducers: ReducersList = {
 };
 
 interface EditableProfileCardProps {
-  id: string
+  id: string;
 }
 
 export const EditableProfileCard = ({ id }: EditableProfileCardProps) => {
@@ -86,9 +73,7 @@ export const EditableProfileCard = ({ id }: EditableProfileCardProps) => {
   const onChangeAge = useCallback(
     (value?: string) => {
       if (value && !/^[0-9]*$/.test(value)) return;
-      dispatch(
-        profileActions.updateProfile({ age: value ? Number(value) : 0 }),
-      );
+      dispatch(profileActions.updateProfile({ age: value ? Number(value) : 0 }));
     },
     [dispatch],
   );
@@ -132,8 +117,8 @@ export const EditableProfileCard = ({ id }: EditableProfileCardProps) => {
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <VStack gap="16" max>
         <EditableProfileCardHeader />
-        {validateErrors?.length
-          && validateErrors.map((err) => (
+        {validateErrors?.length &&
+          validateErrors.map((err) => (
             <Text
               theme={TextTheme.ERROR}
               text={validateErrorTranslates[err]}

@@ -9,7 +9,7 @@ export enum ArticleSortField {
 export enum ArticleBlockType {
   CODE = 'CODE',
   IMAGE = 'IMAGE',
-  TEXT = 'TEXT'
+  TEXT = 'TEXT',
 }
 
 export interface ArticleBlockBase {
@@ -23,24 +23,24 @@ export interface ArticleCodeBlock extends ArticleBlockBase {
 }
 
 export interface ArticleImageBlock extends ArticleBlockBase {
-  type: ArticleBlockType.IMAGE
-  src: string
-  title: string
+  type: ArticleBlockType.IMAGE;
+  src: string;
+  title: string;
 }
 
 export interface ArticleTextBlock extends ArticleBlockBase {
-  type: ArticleBlockType.TEXT
-  title?: string
-  paragraphs: string[]
+  type: ArticleBlockType.TEXT;
+  title?: string;
+  paragraphs: string[];
 }
 
-export type ArticleBlock = ArticleCodeBlock | ArticleImageBlock | ArticleTextBlock
+export type ArticleBlock = ArticleCodeBlock | ArticleImageBlock | ArticleTextBlock;
 
 export enum ArticleType {
   ALL = 'ALL',
   IT = 'IT',
   SCIENCE = 'SCIENCE',
-  ECONOMICS = 'ECONOMICS'
+  ECONOMICS = 'ECONOMICS',
 }
 
 export interface Article {

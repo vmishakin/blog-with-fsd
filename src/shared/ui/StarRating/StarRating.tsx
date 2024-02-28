@@ -14,7 +14,10 @@ interface StarRatingProps {
 const stars = [1, 2, 3, 4, 5];
 
 export const StarRating = ({
-  className, size = 30, selectedStars = 0, onSelect,
+  className,
+  size = 30,
+  selectedStars = 0,
+  onSelect,
 }: StarRatingProps) => {
   const [currentStarCount, setCurrentStarCount] = useState(selectedStars ?? 0);
   const [isSelected, setIsSelected] = useState(Boolean(selectedStars));
@@ -43,11 +46,9 @@ export const StarRating = ({
     <div className={classNames(s.StarRating, {}, [className])}>
       {stars.map((starNumber) => (
         <Icon
-          className={classNames(
-            s.starIcon,
-            { [s.selected]: isSelected },
-            [currentStarCount >= starNumber ? s.hovered : s.normal],
-          )}
+          className={classNames(s.starIcon, { [s.selected]: isSelected }, [
+            currentStarCount >= starNumber ? s.hovered : s.normal,
+          ])}
           isFilled={false}
           Svg={StarIcon}
           key={starNumber}
