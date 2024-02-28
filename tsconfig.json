@@ -106,7 +106,11 @@
     }
   },
   "include": [
-    "./config/jest/setupTests.ts",
-    "src"
+    "./src",
+    // TODO: move to a separate none.tsconfig.josn
+    "./config",
+    "./scripts",
+    "./webpack.config.ts",
+    "./vite.config.ts"
   ]
 }
