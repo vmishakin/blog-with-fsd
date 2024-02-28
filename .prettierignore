@@ -5,3 +5,4 @@ storybook-static
 extractedTranslations
 node_modules
 reports/unit
+.loki
