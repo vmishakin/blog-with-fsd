@@ -55,8 +55,8 @@ server.use((req, res, next) => {
 server.use(router);
 
 const httpsOptions = {
-  key: fs.readFileSync(path.resolve(__dirname, '..', '..', 'https_certs', 'server.key')),
-  cert: fs.readFileSync(path.resolve(__dirname, '..', '..', 'https_certs', 'server.cert')),
+  key: fs.readFileSync('/etc/letsencrypt/live/vmishakin.ru/privkey.pem'),
+  cert: fs.readFileSync('/etc/letsencrypt/live/vmishakin.ru/fullchain.pem'),
 };
 
 const httpsServer = https.createServer(httpsOptions, server);
