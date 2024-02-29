@@ -1,23 +1,24 @@
 const fs = require('fs');
 const jsonServer = require('json-server');
 const path = require('path');
+const https = require('https');
 
 const server = jsonServer.create();
 
 const router = jsonServer.router(path.resolve(__dirname, 'db.json'));
 
-const PORT = 7001;
+const PORT = 8443;
 
 server.use(jsonServer.defaults({}));
 server.use(jsonServer.bodyParser);
 
 // Нужно для небольшой задержки, чтобы запрос проходил не мгновенно, имитация реального апи
-server.use(async (req, res, next) => {
-  await new Promise((res) => {
-    setTimeout(res, 800);
-  });
-  next();
-});
+// server.use(async (req, res, next) => {
+//   await new Promise((resolve) => {
+//     setTimeout(resolve, 800);
+//   });
+//   next();
+// });
 
 // Эндпоинт для логина
 server.post('/login', (req, res) => {
@@ -53,7 +54,14 @@ server.use((req, res, next) => {
 
 server.use(router);
 
+const httpsOptions = {
+  key: fs.readFileSync(path.resolve(__dirname, '..', '..', 'https_certs', 'server.key')),
+  cert: fs.readFileSync(path.resolve(__dirname, '..', '..', 'https_certs', 'server.cert')),
+};
+
+const httpsServer = https.createServer(httpsOptions, server);
+
 // запуск сервера
-server.listen(PORT, () => {
+httpsServer.listen(PORT, () => {
   console.log(`server is running on ${PORT} port`);
 });

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "author": "vmishakin",
   "scripts": {
-    "build": "webpack --env mode=production apiUrl=https://pena-blog-server.vercel.app/",
+    "build": "webpack --env mode=production",
     "build:dev": "webpack --env mode=development",
     "lint:scss": "npx stylelint \"**/*.scss\" --max-warnings 0",
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",

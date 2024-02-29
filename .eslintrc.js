@@ -13,7 +13,7 @@ module.exports = {
     },
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: ['tsconfig.json', 'cypress/tsconfig.json'],
+    project: ['tsconfig.json', 'cypress/tsconfig.json', 'json-server/jsconfig.json'],
   },
   ignorePatterns: ['.eslintrc.js'],
   plugins: [
