@@ -165,7 +165,7 @@ import { Product } from '@/entities/Product';
 
 ## Работа с feature-flags
 
-Разрешено использование feature flags только с помощью хелпера toggleFeatures,
+Разрешено использование feature flags только с помощью хелпера toggleFeatures и его компонентной версии ToggleFeatures,
 для удобства автоматизации и кодогенерации
 
 toggleFeatures принимает объект с опциями:
@@ -180,12 +180,20 @@ toggleFeatures принимает объект с опциями:
 
 Пример:
 
-```tsx
-const articleRatingCard = toggleFeatures({
-  name: 'isArticleRatingEnabled',
-  on: () => <ArticleRating articleId={id} />,
-  off: () => <Card>{t('Оценка статей скоро появится!')}</Card>,
+```ts
+const avatarSize = toggleFeatures({
+  name: 'newAvatarSize',
+  on: () => 50,
+  off: () => 30,
 });
+```
+
+```tsx
+<ToggleFeatures
+  name="isArticleRatingEnabled"
+  on={<ArticleRating articleId={id} />}
+  off={<Card>{t('Оценка статей скоро появится!')}</Card>}
+/>
 ```
 
 Для автоматического удаления фичи можно использовать скрипт `remove-feature.ts`,
@@ -202,6 +210,12 @@ ts-node scripts/remove-feature.ts isArticleRatingEnabled on
 
 Код выше превратится в:
 
+```ts
+const avatarSize = 50
+```
+
+и
+
 ```tsx
-const articleRatingCard = <ArticleRating articleId={id} />
+<ArticleRating articleId={id} />
 ```

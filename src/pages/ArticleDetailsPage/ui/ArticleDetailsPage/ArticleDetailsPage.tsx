@@ -12,7 +12,7 @@ import { Page } from '@/widgets/Page';
 import { articleDetailsPageReducer } from '../../model/slices/index';
 import { ArticleDetailsPageHeader } from '../../ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { ArticleRating } from '@/features/articleRating';
-import { toggleFeatures } from '@/shared/lib/features';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 import s from './ArticleDetailsPage.module.scss';
 import { Card } from '@/shared/ui/Card';
@@ -29,19 +29,17 @@ export const ArticleDetailsPage = memo(() => {
     return <Page>{t('Article not found')}</Page>;
   }
 
-  const articleRatingCard = toggleFeatures({
-    name: 'isArticleRatingEnabled',
-    on: () => <ArticleRating articleId={id} />,
-    off: () => <Card>{t('Оценка статей скоро появится!')}</Card>,
-  });
-
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={s.ArticleDetailsPage}>
         <VStack gap="16" max>
           <ArticleDetailsPageHeader />
           <ArticleDetails id={id} />
-          {articleRatingCard}
+          <ToggleFeatures
+            name="isArticleRatingEnabled"
+            on={<ArticleRating articleId={id} />}
+            off={<Card>{t('Оценка статей скоро появится!')}</Card>}
+          />
           <ArticleRecommendationsList />
           <ArticleDetailsComments id={id} />
         </VStack>
