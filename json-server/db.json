@@ -2004,28 +2004,44 @@
       "username": "admin",
       "password": "123",
       "roles": ["ADMIN"],
-      "avatar": "https://preview.redd.it/7nsk7aswet4a1.jpg?width=640&crop=smart&auto=webp&s=20dfcd757e65684e16f0c04682ab541a038b5154"
+      "avatar": "https://preview.redd.it/7nsk7aswet4a1.jpg?width=640&crop=smart&auto=webp&s=20dfcd757e65684e16f0c04682ab541a038b5154",
+      "features": {
+        "isArticleRatingEnabled": true,
+        "isCounterEnabled": true
+      }
     },
     {
       "id": "2",
       "username": "zhmih",
       "password": "123",
       "roles": ["USER"],
-      "avatar": "https://images6.fanpop.com/image/photos/34300000/Kitten-cats-34352405-1600-1200.jpg"
+      "avatar": "https://images6.fanpop.com/image/photos/34300000/Kitten-cats-34352405-1600-1200.jpg",
+      "features": {
+        "isArticleRatingEnabled": false,
+        "isCounterEnabled": true
+      }
     },
     {
       "id": "3",
       "username": "manager",
       "password": "123",
       "roles": ["MANAGER"],
-      "avatar": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/2b1efa152244281.631a478be72ab.png"
+      "avatar": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/2b1efa152244281.631a478be72ab.png",
+      "features": {
+        "isArticleRatingEnabled": false,
+        "isCounterEnabled": false
+      }
     },
     {
       "id": "4",
       "username": "testuser",
       "password": "123",
       "roles": ["USER"],
-      "avatar": "https://www.clarisoft.com/wp-content/uploads/2015/04/icon_qa-e1430393636766.png"
+      "avatar": "https://www.clarisoft.com/wp-content/uploads/2015/04/icon_qa-e1430393636766.png",
+      "features": {
+        "isArticleRatingEnabled": true,
+        "isCounterEnabled": true
+      }
     }
   ],
   "article-ratings": [
