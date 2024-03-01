@@ -7,7 +7,8 @@ const server = jsonServer.create();
 
 const router = jsonServer.router(path.resolve(__dirname, 'db.json'));
 
-const PORT = 8443;
+const HTTP_PORT = 8080;
+const HTTPS_PORT = 8443;
 
 server.use(jsonServer.defaults({}));
 server.use(jsonServer.bodyParser);
@@ -61,7 +62,10 @@ const httpsOptions = {
 
 const httpsServer = https.createServer(httpsOptions, server);
 
-// запуск сервера
-httpsServer.listen(PORT, () => {
-  console.log(`server is running on ${PORT} port`);
+httpsServer.listen(HTTPS_PORT, () => {
+  console.log(`server is running on ${HTTPS_PORT} port`);
+});
+
+server.listen(HTTP_PORT, () => {
+  console.log(`server is running on ${HTTP_PORT} port`);
 });
