@@ -7,6 +7,7 @@ export const MainPage = () => {
 
   return (
     <Page data-testid="MainPage">
+      <div>1123</div>
       <Counter />
       <p>{t('Main page')}</p>
     </Page>
