@@ -196,7 +196,7 @@ const articleRatingCard = toggleFeatures({
 
 Пример:
 
-```
+```sh
 ts-node scripts/remove-feature.ts isArticleRatingEnabled on
 ```
 
