@@ -162,3 +162,46 @@ import { Product } from '@/entities/Product';
 
 Для асинхронного подключения редюсеров (чтобы не тянуть их в общий бандл) используется
 [DynamicModuleLoader](/src/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader.tsx)
+
+## Работа с feature-flags
+
+Разрешено использование feature flags только с помощью хелпера toggleFeatures,
+для удобства автоматизации и кодогенерации
+
+toggleFeatures принимает объект с опциями:
+
+```text
+{
+   name: название фича-флага,
+   on: функция, которая отработает после Включения фичи
+   of: функция, которая отработает после ВЫключения фичи
+}
+```
+
+Пример:
+
+```tsx
+const articleRatingCard = toggleFeatures({
+  name: 'isArticleRatingEnabled',
+  on: () => <ArticleRating articleId={id} />,
+  off: () => <Card>{t('Оценка статей скоро появится!')}</Card>,
+});
+```
+
+Для автоматического удаления фичи можно использовать скрипт `remove-feature.ts`,
+который принимает 2 аргумента
+
+1. Название удаляемого фича-флага
+2. Состояние (on\off)
+
+Пример:
+
+```
+ts-node scripts/remove-feature.ts isArticleRatingEnabled on
+```
+
+Код выше превратится в:
+
+```tsx
+const articleRatingCard = <ArticleRating articleId={id} />
+```

@@ -1,22 +1,21 @@
-import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { memo } from 'react';
 import { useParams } from 'react-router-dom';
 import { ArticleDetails } from '@/entities/Article';
+import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 import {
   DynamicModuleLoader,
   ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { Page } from '@/widgets/Page';
 import { VStack } from '@/shared/ui/Stack';
-import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
-import { ArticleDetailsPageHeader } from '../../ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader';
+import { Page } from '@/widgets/Page';
 import { articleDetailsPageReducer } from '../../model/slices/index';
-
-import s from './ArticleDetailsPage.module.scss';
-import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
+import { ArticleDetailsPageHeader } from '../../ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { ArticleRating } from '@/features/articleRating';
-import { getFeatureFlag } from '@/shared/lib/features';
-import { Counter } from '@/entities/Counter';
+import { toggleFeatures } from '@/shared/lib/features';
+import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
+import s from './ArticleDetailsPage.module.scss';
+import { Card } from '@/shared/ui/Card';
 
 const reducers: ReducersList = {
   articleDetailsPage: articleDetailsPageReducer,
@@ -25,12 +24,16 @@ const reducers: ReducersList = {
 export const ArticleDetailsPage = memo(() => {
   const { t } = useTranslation('article');
   const { id } = useParams<{ id: string }>();
-  const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled');
-  const isCounterEnabled = getFeatureFlag('isCounterEnabled');
 
   if (!id) {
     return <Page>{t('Article not found')}</Page>;
   }
+
+  const articleRatingCard = toggleFeatures({
+    name: 'isArticleRatingEnabled',
+    on: () => <ArticleRating articleId={id} />,
+    off: () => <Card>{t('Оценка статей скоро появится!')}</Card>,
+  });
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
@@ -38,8 +41,7 @@ export const ArticleDetailsPage = memo(() => {
         <VStack gap="16" max>
           <ArticleDetailsPageHeader />
           <ArticleDetails id={id} />
-          {isCounterEnabled && <Counter />}
-          {isArticleRatingEnabled && <ArticleRating articleId={id} />}
+          {articleRatingCard}
           <ArticleRecommendationsList />
           <ArticleDetailsComments id={id} />
         </VStack>
