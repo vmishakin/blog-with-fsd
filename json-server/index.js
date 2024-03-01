@@ -55,17 +55,19 @@ server.use((req, res, next) => {
 
 server.use(router);
 
-const httpsOptions = {
-  key: fs.readFileSync('/etc/letsencrypt/live/vmishakin.ru/privkey.pem'),
-  cert: fs.readFileSync('/etc/letsencrypt/live/vmishakin.ru/fullchain.pem'),
-};
+if (!process.env.skipHttps) {
+  const httpsOptions = {
+    key: fs.readFileSync('/etc/letsencrypt/live/vmishakin.ru/privkey.pem'),
+    cert: fs.readFileSync('/etc/letsencrypt/live/vmishakin.ru/fullchain.pem'),
+  };
 
-const httpsServer = https.createServer(httpsOptions, server);
+  const httpsServer = https.createServer(httpsOptions, server);
 
-httpsServer.listen(HTTPS_PORT, () => {
-  console.log(`server is running on ${HTTPS_PORT} port`);
-});
+  httpsServer.listen(HTTPS_PORT, () => {
+    console.log(`https server is running on ${HTTPS_PORT} port`);
+  });
+}
 
 server.listen(HTTP_PORT, () => {
-  console.log(`server is running on ${HTTP_PORT} port`);
+  console.log(`http server is running on ${HTTP_PORT} port`);
 });
