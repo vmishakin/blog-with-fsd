@@ -13,6 +13,7 @@ import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPag
 import { articlesPageReducer } from '../../model/slices/articlesPageSlice';
 import s from './ArticlesPage.module.scss';
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
+import { ArticlePageGreeting } from '@/features/articlePageGreeting';
 
 const reducers: ReducersList = {
   articlesPage: articlesPageReducer,
@@ -35,6 +36,7 @@ export const ArticlesPage = memo(() => {
       <Page onScrollEnd={onLoadNextPart} className={s.ArticlesPage} data-testid="ArticlesPage">
         <ArticlesPageFilters />
         <ArtcileInfiniteList className={s.list} />
+        <ArticlePageGreeting />
       </Page>
     </DynamicModuleLoader>
   );

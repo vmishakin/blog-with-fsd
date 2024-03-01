@@ -2012,7 +2012,8 @@
       "jsonSettings": {
         "theme": "app_magneta_theme",
         "isFirstVisit": true,
-        "settingsPageHasBeenOpened": false
+        "settingsPageHasBeenOpened": false,
+        "isArtcilesPageWasOpened": true
       }
     },
     {
