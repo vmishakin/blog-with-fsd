@@ -22,7 +22,7 @@ i18n
   .init({
     fallbackLng: 'en',
     defaultNS: 'translation',
-    debug: __IS_DEV__,
+    debug: false,
     interpolation: {
       escapeValue: false,
     },

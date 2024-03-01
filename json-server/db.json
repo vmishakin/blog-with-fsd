@@ -2008,6 +2008,11 @@
       "features": {
         "isArticleRatingEnabled": true,
         "isCounterEnabled": true
+      },
+      "jsonSettings": {
+        "theme": "app_magneta_theme",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpened": false
       }
     },
     {

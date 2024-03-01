@@ -14,12 +14,12 @@ server.use(jsonServer.defaults({}));
 server.use(jsonServer.bodyParser);
 
 // Нужно для небольшой задержки, чтобы запрос проходил не мгновенно, имитация реального апи
-// server.use(async (req, res, next) => {
-//   await new Promise((resolve) => {
-//     setTimeout(resolve, 800);
-//   });
-//   next();
-// });
+server.use(async (req, res, next) => {
+  await new Promise((resolve) => {
+    setTimeout(resolve, 800);
+  });
+  next();
+});
 
 // Эндпоинт для логина
 server.post('/login', (req, res) => {
