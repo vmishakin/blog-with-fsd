@@ -10,6 +10,7 @@ import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitial
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 import s from './Page.module.scss';
 import { TestProps } from '@/shared/types/tests';
+import { toggleFeatures } from '@/shared/lib/features';
 
 interface PageProps extends TestProps {
   className?: string;
@@ -53,7 +54,15 @@ export const Page = ({
   return (
     <main
       ref={wrapperRef}
-      className={classNames(s.Page, {}, [className])}
+      className={classNames(
+        toggleFeatures({
+          name: 'isAppRedesigned',
+          on: () => s.PageRedesigned,
+          off: () => s.Page,
+        }),
+        {},
+        [className],
+      )}
       onScroll={onScroll}
       id={PAGE_ID}
       data-testid={dataTestId ?? 'Page'}

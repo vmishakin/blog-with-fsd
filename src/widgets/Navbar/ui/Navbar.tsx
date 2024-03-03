@@ -12,6 +12,7 @@ import { HStack } from '@/shared/ui/Stack';
 import { NotificationButton } from '@/features/notificationButton';
 import { AvatarDropDown } from '@/features/avatarDropdown';
 import s from './Navbar.module.scss';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 interface NavbarProps {
   className?: string;
@@ -32,19 +33,36 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
   if (authData) {
     return (
-      <header className={classNames(s.navbar, {}, [className])}>
-        <Text className={classNames(s.appName)} title={t('FSD blog')} theme={TextTheme.INVERTED} />
-        <AppLink theme={AppLinkTheme.SECONDARY} to={getRouteArticleCreate()}>
-          {t('Create new article')}
-        </AppLink>
-        <HStack gap="16" className={s.actions}>
-          <NotificationButton />
-          <AvatarDropDown />
-        </HStack>
-        {/* <Button theme={ButtonTheme.CLEAR_INVERTED} className={s.links} onClick={onLogout}>
-          {t('Logout')}
-        </Button> */}
-      </header>
+      <ToggleFeatures
+        name="isAppRedesigned"
+        on={
+          <header className={classNames(s.NavbarRedesigned, {}, [className])}>
+            <HStack gap="16" className={s.actions}>
+              <NotificationButton />
+              <AvatarDropDown />
+            </HStack>
+          </header>
+        }
+        off={
+          <header className={classNames(s.navbar, {}, [className])}>
+            <Text
+              className={classNames(s.appName)}
+              title={t('FSD blog')}
+              theme={TextTheme.INVERTED}
+            />
+            <AppLink theme={AppLinkTheme.SECONDARY} to={getRouteArticleCreate()}>
+              {t('Create new article')}
+            </AppLink>
+            <HStack gap="16" className={s.actions}>
+              <NotificationButton />
+              <AvatarDropDown />
+            </HStack>
+            {/* <Button theme={ButtonTheme.CLEAR_INVERTED} className={s.links} onClick={onLogout}>
+        {t('Logout')}
+      </Button> */}
+          </header>
+        }
+      />
     );
   }
 
