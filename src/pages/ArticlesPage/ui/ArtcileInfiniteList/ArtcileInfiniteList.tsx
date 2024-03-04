@@ -7,7 +7,7 @@ import {
   getArticlesPageError,
 } from '../../model/selectors/articlesPageSelectors';
 import { getArticles } from '../../model/slices/articlesPageSlice';
-import { Text } from '@/shared/ui/Text';
+import { Text } from '@/shared/ui/deprecated/Text';
 
 interface ArtcileInfiniteListProps {
   className?: string;

@@ -1,8 +1,8 @@
 # Ignore artifacts:
-build
-coverage
-storybook-static
-extractedTranslations
-node_modules
-reports/unit
-.loki
+/build
+/coverage
+/storybook-static
+/extractedTranslations
+/node_modules
+/reports/unit
+/.loki

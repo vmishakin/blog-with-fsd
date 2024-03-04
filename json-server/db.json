@@ -2037,6 +2037,10 @@
       "features": {
         "isArticleRatingEnabled": false,
         "isCounterEnabled": false
+      },
+      "jsonSettings": {
+        "theme": "app_magneta_theme",
+        "isArtcilesPageWasOpened": true
       }
     },
     {

@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
-import { Text, TextSize } from '@/shared/ui/Text';
+import { Text, TextSize } from '@/shared/ui/deprecated/Text';
 import { ArticleList } from '@/entities/Article';
-import { VStack } from '@/shared/ui/Stack';
+import { VStack } from '@/shared/ui/deprecated/Stack';
 import { useGetArticleRecommendationsList } from '../api/articleRecommendationsApi';
 
 export const ArticleRecommendationsList = () => {
