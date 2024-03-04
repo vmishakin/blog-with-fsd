@@ -1,30 +1,43 @@
-.SidebarItem {
+.item {
   display: flex;
   align-items: center;
+}
+
+.link {
+  margin-left: 10px;
+  opacity: 1;
+}
+
+.icon {
+  fill: var(--inverted-primary-color);
+}
+
+.collapsed {
+  .link {
+    opacity: 0;
+    transition: 0.2s opacity;
+    width: 0;
+  }
+}
+
+.itemRedesigned {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0 16px;
+}
+
+.collapsedRedesigned {
+  padding: 0 8px;
 
   .link {
-    display: flex;
-    align-items: center;
-
-    .icon {
-      fill: var(--primary-color);
-    }
-
-    .link_label {
-      margin-left: 10px;
-      opacity: 1;
-      white-space: nowrap;
-      transition: margin 0.3s, opacity 0.2s;
-    }
+    opacity: 0;
+    width: 0;
+    margin: 0;
   }
+}
 
-  &.collapsed {
-    .link {
-      .link_label {
-        margin: 0;
-        opacity: 0;
-        width: 0;
-      }
-    }
-  }
+.active {
+  background: linear-gradient(89.97deg, rgb(29 89 255 / 30%) 1.15%, rgb(94 211 243 / 0%) 99.97%);
+  border-left: solid 2px var(--accent-redesigned);
 }

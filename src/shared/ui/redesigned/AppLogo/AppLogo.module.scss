@@ -1,0 +1,24 @@
+.AppLogo {
+  border-radius: 20%;
+  animation: showlogo 0.7s cubic-bezier(0.175, 0, 0.32, 1.3);
+}
+
+// .gradientBig {
+//   pointer-events: none;
+//   position: absolute;
+//   width: 200px;
+//   height: 200px;
+//   background: radial-gradient(#e66465,rgba(146, 243, 94, 0), rgba(146, 243, 94, 0));
+//   border-radius: 50%;
+//   opacity: 60%;
+// }
+
+@keyframes showlogo {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}

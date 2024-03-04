@@ -1,22 +1,20 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { HStack } from '../Stack';
 import AppSvg from '@/shared/assets/icons/logo.svg';
 // import AppSvg from '@/shared/assets/icons/copy-20-20.svg';
 import s from './AppLogo.module.scss';
+import { HStack } from '../../deprecated/Stack';
 
 interface AppLogoProps {
   className?: string;
+  size?: number;
 }
 
-/**
- * @deprecated
- */
-export const AppLogo = ({ className }: AppLogoProps) => {
+export const AppLogo = ({ className, size = 100 }: AppLogoProps) => {
   return (
     <HStack max justify="center" className={classNames(s.appLogoWrapper, {}, [className])}>
-      {/* <div className={s.gradientBig} />
-      <div className={s.gradientSmall} /> */}
-      <AppSvg className={s.AppLogo} />
+      {/* <div className={s.gradientBig} /> */}
+      {/* <div className={s.gradientSmall} /> */}
+      <AppSvg className={s.AppLogo} width={size} height={size} />
     </HStack>
   );
 };
