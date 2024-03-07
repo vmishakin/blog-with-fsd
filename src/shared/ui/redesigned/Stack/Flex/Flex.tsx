@@ -44,9 +44,6 @@ const gapClasses: Record<FlexGap, string> = {
   32: s.gap32,
 };
 
-/**
- * @deprecated
- */
 export const Flex = ({
   children,
   className,

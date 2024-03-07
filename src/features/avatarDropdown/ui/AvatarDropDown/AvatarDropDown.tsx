@@ -2,10 +2,13 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useCallback } from 'react';
 import { getRouteAdmin, getRouteProfile } from '@/shared/constants/router';
-import { Dropdown } from '@/shared/ui/deprecated/Popups';
-import { Avatar } from '@/shared/ui/deprecated/Avatar';
+import { Dropdown as DropdownDeprecated } from '@/shared/ui/deprecated/Popups';
+import { Avatar as AvatarDeprecated } from '@/shared/ui/deprecated/Avatar';
+import { Dropdown } from '@/shared/ui/redesigned/Popups';
+import { Avatar } from '@/shared/ui/redesigned/Avatar';
 import { getUserAuthData, isUserAdmin, isUserManager, userActions } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 export const AvatarDropDown = () => {
   const { t } = useTranslation();
@@ -25,25 +28,39 @@ export const AvatarDropDown = () => {
     return null;
   }
 
+  const items = [
+    ...(isAdminPanelAvailable
+      ? [
+          {
+            content: t('Admin panel'),
+            href: getRouteAdmin(),
+          },
+        ]
+      : []),
+    {
+      content: t('Profile page'),
+      href: getRouteProfile(authData.id),
+    },
+    { content: t('Logout'), onClick: onLogout },
+  ];
+
   return (
-    <Dropdown
-      items={[
-        ...(isAdminPanelAvailable
-          ? [
-              {
-                content: t('Admin panel'),
-                href: getRouteAdmin(),
-              },
-            ]
-          : []),
-        {
-          content: t('Profile page'),
-          href: getRouteProfile(authData.id),
-        },
-        { content: t('Logout'), onClick: onLogout },
-      ]}
-      trigger={<Avatar size={30} src={authData.avatar} fallbackInverted />}
-      direction="bottomLeft"
+    <ToggleFeatures
+      name="isAppRedesigned"
+      on={
+        <Dropdown
+          items={items}
+          trigger={<Avatar size={40} src={authData.avatar} />}
+          direction="bottomLeft"
+        />
+      }
+      off={
+        <DropdownDeprecated
+          items={items}
+          trigger={<AvatarDeprecated size={30} src={authData.avatar} fallbackInverted />}
+          direction="bottomLeft"
+        />
+      }
     />
   );
 };

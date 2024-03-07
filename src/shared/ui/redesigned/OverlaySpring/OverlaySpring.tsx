@@ -8,9 +8,6 @@ interface OverlaySpringProps {
   opacity?: import('@react-spring/web').SpringValue<number>;
 }
 
-/**
- * @deprecated
- */
 export const OverlaySpring = ({ className, onClick, opacity }: OverlaySpringProps) => {
   const { Spring } = useAnimationLibs();
 

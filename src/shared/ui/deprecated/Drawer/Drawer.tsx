@@ -5,8 +5,8 @@ import {
   useAnimationLibs,
 } from '@/shared/lib/components/AnimationProvider/AnimationProvider';
 import s from './Drawer.module.scss';
-import { Portal } from '../Portal/Portal';
-import { OverlaySpring } from '../OverlaySpring/OverlaySpring';
+import { Portal } from '../../redesigned/Portal/Portal';
+import { OverlaySpring } from '../../redesigned/OverlaySpring/OverlaySpring';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 
 interface DrawerProps {

@@ -16,7 +16,7 @@ const Template: ComponentStory<typeof NotificationItem> = (args) => {
 
 export const Primary = Template.bind({});
 Primary.args = {
-  notification: {
+  item: {
     id: '1',
     title: 'Уведомление 1',
     description: 'Произошло какое-то событие',

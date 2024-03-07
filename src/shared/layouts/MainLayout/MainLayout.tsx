@@ -15,8 +15,8 @@ export const MainLayout = (props: MainLayoutProps) => {
 
   return (
     <div className={classNames(s.MainLayout, {}, [className])}>
-      <div className={s.content}>{content}</div>
       <div className={s.sidebar}>{sidebar}</div>
+      <div className={s.content}>{content}</div>
       <div className={s.rightbar}>
         <div className={s.header}>{header}</div>
         <div className={s.toolbar}>{toolbar}</div>

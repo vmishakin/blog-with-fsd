@@ -7,9 +7,6 @@ interface OverlayProps {
   closing?: boolean;
 }
 
-/**
- * @deprecated
- */
 export const Overlay = ({ className, onClick, closing }: OverlayProps) => {
   return (
     <div

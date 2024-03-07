@@ -1,5 +1,5 @@
 import { useGetNotificationsQuery } from '../../api/notificationApi';
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
 import s from './NotificationList.module.scss';
@@ -27,7 +27,7 @@ export const NotificationList = ({ className }: NotificationListProps) => {
   return (
     <VStack gap="16" max className={classNames(s.NotificationList, {}, [className])}>
       {notifications?.map((notification) => (
-        <NotificationItem key={notification.id} notification={notification} />
+        <NotificationItem key={notification.id} item={notification} />
       ))}
     </VStack>
   );
