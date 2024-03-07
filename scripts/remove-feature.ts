@@ -104,6 +104,7 @@ files.forEach((sourceFile) => {
     if (node.isKind(SyntaxKind.CallExpression) && isToogleFunction(node)) {
       replaceToggleFunctions(node);
       counter++;
+      return;
     }
     if (node.isKind(SyntaxKind.JsxSelfClosingElement) && isToogleComponent(node)) {
       replaceComponent(node);
