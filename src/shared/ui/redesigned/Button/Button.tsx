@@ -2,7 +2,7 @@ import { ButtonHTMLAttributes, ForwardedRef, forwardRef, memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import s from './Button.module.scss';
 
-export type ButtonVariant = 'clear' | 'outline';
+export type ButtonVariant = 'clear' | 'outline' | 'filled';
 
 export type ButtonSize = 'm' | 'l' | 'xl';
 

@@ -3,6 +3,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import s from './Card.module.scss';
 
 export type CardVariant = 'normal' | 'outlined' | 'light';
+export type CardBorder = 'round-border' | 'normal-border';
 export type CardPadding = '0' | '8' | '16' | '24';
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
@@ -11,6 +12,7 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
   variant?: CardVariant;
   max?: boolean;
   padding?: CardPadding;
+  border?: CardBorder;
 }
 
 const mapPaddingToClass: Record<CardPadding, string> = {
@@ -26,13 +28,19 @@ export const Card = ({
   variant = 'normal',
   max,
   padding = '8',
+  border = 'normal-border',
   ...otherProps
 }: CardProps) => {
   const paddingClass = mapPaddingToClass[padding];
 
   return (
     <div
-      className={classNames(s.Card, { [s.max]: max }, [className, s[variant], s[paddingClass]])}
+      className={classNames(s.Card, { [s.max]: max }, [
+        className,
+        s[variant],
+        s[paddingClass],
+        s[border],
+      ])}
       {...otherProps}
     >
       {children}
