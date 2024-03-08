@@ -68,6 +68,7 @@ export const ArticleViewSelector = ({
                 className={classNames('', {
                   [s.notSelected]: viewType.view !== view,
                 })}
+                key={viewType.view}
               />
             ))}
           </HStack>

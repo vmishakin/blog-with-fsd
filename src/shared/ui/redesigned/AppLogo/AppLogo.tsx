@@ -11,10 +11,19 @@ interface AppLogoProps {
 
 export const AppLogo = ({ className, size = 100 }: AppLogoProps) => {
   return (
-    <HStack max justify="center" className={classNames(s.appLogoWrapper, {}, [className])}>
+    <HStack
+      max
+      justify="center"
+      className={classNames(s.appLogoWrapper, {}, [className])}
+    >
       <div className={s.gradientBig} />
       <div className={s.gradientSmall} />
-      <AppImage src="images/logo.png" width={size} height={size} className={s.AppLogo} />
+      <AppImage
+        src="/images/logo.png"
+        width={size}
+        height={size}
+        className={s.AppLogo}
+      />
     </HStack>
   );
 };
