@@ -48,7 +48,7 @@ export const ArticlesPage = memo(() => {
               className={s.ArticlesPage}
               data-testid="ArticlesPage"
             >
-              <ArtcileInfiniteList className={s.list} />
+              <ArtcileInfiniteList />
               <ArticlePageGreeting />
             </Page>
           }
