@@ -6,6 +6,8 @@ import s from './ListBox.module.scss';
 import { Button } from '../../../Button/Button';
 import { HStack } from '../../../../redesigned/Stack';
 import popupCls from '../../styles/popup.module.scss';
+import { Icon } from '../../../Icon';
+import ArrowIcon from '@/shared/assets/icons/redesign/arrow-bottom.svg';
 
 export interface ListBoxItem<T extends string> {
   value: T;
@@ -49,7 +51,11 @@ export const ListBox = <T extends string>({
         disabled={readonly}
       >
         <HListBox.Button className={s.trigger}>
-          <Button variant="filled" disabled={readonly}>
+          <Button
+            variant="filled"
+            disabled={readonly}
+            addonRight={<Icon Svg={ArrowIcon} />}
+          >
             {selectedItem?.content ?? defaultValue}
           </Button>
         </HListBox.Button>

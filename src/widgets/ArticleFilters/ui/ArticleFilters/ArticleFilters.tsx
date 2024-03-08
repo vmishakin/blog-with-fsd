@@ -5,9 +5,11 @@ import { SortOrder } from '@/shared/types/sort';
 import { Card } from '@/shared/ui/redesigned/Card';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import s from './ArticleFilters.module.scss';
-import { Input } from '@/shared/ui/deprecated/Input';
+import { Input } from '@/shared/ui/redesigned/Input';
 import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
 import { ArticleSortSelector } from '@/features/ArticleSortSelector';
+import { Icon } from '@/shared/ui/redesigned/Icon';
+import SearchIcon from '@/shared/assets/icons/redesign/search.svg';
 
 interface ArticleFiltersProps {
   className?: string;
@@ -33,18 +35,20 @@ export const ArticleFilters = (props: ArticleFiltersProps) => {
     order,
     type,
   } = props;
-  const { t } = useTranslation();
+  const { t } = useTranslation('article');
 
   return (
     <Card
       className={classNames(s.ArticleFilters, {}, [className])}
       padding="24"
+      border="round-border"
     >
       <VStack gap="32">
         <Input
           onChange={onChangeSearch}
           value={search}
-          placeholder={t('Поиск')}
+          placeholder={t('Search')}
+          addonLeft={<Icon Svg={SearchIcon} />}
         />
         <ArticleTypeTabs
           type={type}
