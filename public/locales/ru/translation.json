@@ -25,13 +25,10 @@
   "Edit article with ID": "Редактировать статью с идентификатором = ",
   "Create new article": "Создать новую статью",
   "FSD blog": "FSD блог",
-  "translation": {
-    "Admin panel": "Панель администратора"
-  },
-  "Forbidden": {
-    " You don": "Запрещенный. \nУ вас нет доступа."
-  },
+  "Admin panel": "Панель администратора",
+  "Forbidden": "У вас нет доступа.",
   "Close": "Закрывать",
   "Welcome to the articles page": "Добро пожаловать на страницу статей",
-  "Here you can search and view articles on various topics": "Здесь вы можете искать и просматривать статьи на различные темы"
+  "Here you can search and view articles on various topics": "Здесь вы можете искать и просматривать статьи на различные темы",
+  "User settings": "Настройки пользователя"
 }

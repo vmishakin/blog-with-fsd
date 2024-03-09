@@ -27,14 +27,11 @@
   "Edit article with ID": "Edit article with ID = ",
   "Create new article": "Create new article",
   "FSD blog": "FSD blog",
-  "translation": {
-    "Admin panel": "Admin panel"
-  },
-  "Forbidden": {
-    " You don": "Forbidden. You don`t have access."
-  },
+  "Admin panel": "Admin panel",
+  "Forbidden": "Forbidden. You don`t have access.",
   "Close": "Close",
   "add five": "add five",
   "Welcome to the articles page": "Welcome to the articles page",
-  "Here you can search and view articles on various topics": "Here you can search and view articles on various topics"
+  "Here you can search and view articles on various topics": "Here you can search and view articles on various topics",
+  "User settings": "User settings"
 }

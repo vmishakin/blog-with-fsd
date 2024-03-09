@@ -1,12 +1,21 @@
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useCallback } from 'react';
-import { getRouteAdmin, getRouteProfile } from '@/shared/constants/router';
+import {
+  getRouteAdmin,
+  getRouteProfile,
+  getRouteSettings,
+} from '@/shared/constants/router';
 import { Dropdown as DropdownDeprecated } from '@/shared/ui/deprecated/Popups';
 import { Avatar as AvatarDeprecated } from '@/shared/ui/deprecated/Avatar';
 import { Dropdown } from '@/shared/ui/redesigned/Popups';
 import { Avatar } from '@/shared/ui/redesigned/Avatar';
-import { getUserAuthData, isUserAdmin, isUserManager, userActions } from '@/entities/User';
+import {
+  getUserAuthData,
+  isUserAdmin,
+  isUserManager,
+  userActions,
+} from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { ToggleFeatures } from '@/shared/lib/features';
 
@@ -38,6 +47,10 @@ export const AvatarDropDown = () => {
         ]
       : []),
     {
+      content: t('User settings'),
+      href: getRouteSettings(),
+    },
+    {
       content: t('Profile page'),
       href: getRouteProfile(authData.id),
     },
@@ -57,7 +70,13 @@ export const AvatarDropDown = () => {
       off={
         <DropdownDeprecated
           items={items}
-          trigger={<AvatarDeprecated size={30} src={authData.avatar} fallbackInverted />}
+          trigger={
+            <AvatarDeprecated
+              size={30}
+              src={authData.avatar}
+              fallbackInverted
+            />
+          }
           direction="bottomLeft"
         />
       }
