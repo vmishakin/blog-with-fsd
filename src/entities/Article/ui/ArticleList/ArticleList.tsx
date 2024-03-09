@@ -18,7 +18,9 @@ interface ArticleListProps {
 const getSkeletons = (view: ArticleView) => {
   return new Array(view === ArticleView.SMALL ? 9 : 3)
     .fill(0)
-    .map((_, index) => <ArticleListItemSkeleton key={index} className={s.card} view={view} />);
+    .map((_, index) => (
+      <ArticleListItemSkeleton key={index} className={s.card} view={view} />
+    ));
 };
 
 export const ArticleList = ({
@@ -39,7 +41,10 @@ export const ArticleList = ({
   }
 
   return (
-    <div className={classNames(s.ArticleList, {}, [className, s[view]])} data-testid="ArticleList">
+    <div
+      className={classNames(s.ArticleList, {}, [className, s[view]])}
+      data-testid="ArticleList"
+    >
       {articles.map((article) => (
         <ArticleListItem
           key={article.id}
