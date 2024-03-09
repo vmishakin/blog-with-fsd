@@ -6,10 +6,10 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/deprecated/Text';
 import { StarRating } from '@/shared/ui/deprecated/StarRating';
-import { Modal } from '@/shared/ui/deprecated/Modal';
+import { Modal } from '@/shared/ui/redesigned/Modal';
 import { Input } from '@/shared/ui/deprecated/Input';
 import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/deprecated/Button';
-import { Drawer } from '@/shared/ui/deprecated/Drawer';
+import { Drawer } from '@/shared/ui/redesigned/Drawer';
 
 interface RatingCardProps {
   className?: string;
@@ -71,10 +71,18 @@ export const RatingCard = ({
   );
 
   return (
-    <Card className={classNames('', {}, [className])} max data-testid="RatingCard">
+    <Card
+      className={classNames('', {}, [className])}
+      max
+      data-testid="RatingCard"
+    >
       <VStack max align="center" gap="8">
         <Text title={starsCount ? 'Thanks for feedback!' : title} />
-        <StarRating size={40} onSelect={onSelectStars} selectedStars={starsCount} />
+        <StarRating
+          size={40}
+          onSelect={onSelectStars}
+          selectedStars={starsCount}
+        />
       </VStack>
       <BrowserView>
         <Modal isOpen={isModalOpen} onClose={cancelHandle} lazy>

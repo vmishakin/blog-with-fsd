@@ -2,7 +2,6 @@
   position: fixed;
   inset: 0;
   pointer-events: none;
-  color: var(--primary-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,9 +10,20 @@
   .content {
     padding: 20px;
     border-radius: 12px;
-    background: var(--bg-color);
     max-width: 60%;
     z-index: var(--modal-z-index);
+  }
+
+  &.modalNew {
+    .content {
+      background: var(--light-bg-redesigned);
+    }
+  }
+
+  &.modalOld {
+    .content {
+      background: var(--bg-color);
+    }
   }
 
   &.opened {

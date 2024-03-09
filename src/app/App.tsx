@@ -28,7 +28,7 @@ export const App = () => {
     <ToggleFeatures
       name="isAppRedesigned"
       off={
-        <div className={classNames('app', {}, [])}>
+        <div id="app" className={classNames('app', {}, [])}>
           <Suspense fallback="">
             <Navbar />
             <div className="content-page">
@@ -39,7 +39,7 @@ export const App = () => {
         </div>
       }
       on={
-        <div className={classNames('app_redesigned', {}, [])}>
+        <div id="app" className={classNames('app_redesigned', {}, [])}>
           <Suspense fallback="">
             <MainLayout
               header={<Navbar />}
