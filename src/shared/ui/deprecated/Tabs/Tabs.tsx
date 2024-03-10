@@ -18,7 +18,12 @@ interface TabsProps<T extends string> {
 /**
  * @deprecated
  */
-export const Tabs = <T extends string>({ onTabClick, tabs, value, className }: TabsProps<T>) => {
+export const Tabs = <T extends string>({
+  onTabClick,
+  tabs,
+  value,
+  className,
+}: TabsProps<T>) => {
   const clickHandle = useCallback(
     (tab: TabItem<T>) => {
       return () => {

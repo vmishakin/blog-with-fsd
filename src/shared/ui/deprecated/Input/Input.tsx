@@ -1,7 +1,13 @@
 // import {
 //   ChangeEvent, InputHTMLAttributes, memo, SyntheticEvent, useEffect, useRef, useState,
 // } from 'react';
-import { ChangeEvent, InputHTMLAttributes, memo, useEffect, useRef } from 'react';
+import {
+  ChangeEvent,
+  InputHTMLAttributes,
+  memo,
+  useEffect,
+  useRef,
+} from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import s from './Input.module.scss';
 
@@ -64,7 +70,9 @@ export const Input = memo(
 
     return (
       <div className={classNames(s.InputWrapper, {}, [className])}>
-        {placeholder && <div className={s.placeholder}>{`${placeholder}>`}</div>}
+        {placeholder && (
+          <div className={s.placeholder}>{`${placeholder}>`}</div>
+        )}
         <div className={s.caretWrapper}>
           <input
             className={classNames(s.input, { [s.readonly]: readonly })}

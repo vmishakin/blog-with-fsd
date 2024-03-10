@@ -211,7 +211,7 @@ ts-node scripts/remove-feature.ts isArticleRatingEnabled on
 Код выше превратится в:
 
 ```ts
-const avatarSize = 50
+const avatarSize = 50;
 ```
 
 и

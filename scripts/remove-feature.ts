@@ -1,4 +1,10 @@
-import { CallExpression, JsxAttribute, JsxSelfClosingElement, Project, SyntaxKind } from 'ts-morph';
+import {
+  CallExpression,
+  JsxAttribute,
+  JsxSelfClosingElement,
+  Project,
+  SyntaxKind,
+} from 'ts-morph';
 
 const removedFeatureNameArg = process.argv[2]; // example isArticleEnabled
 const featureStateArg = process.argv[3]; // example off/on
@@ -7,7 +13,10 @@ if (!removedFeatureNameArg) {
   throw new Error('Укажите название флага');
 }
 
-if (!featureStateArg || (featureStateArg !== 'on' && featureStateArg !== 'off')) {
+if (
+  !featureStateArg ||
+  (featureStateArg !== 'on' && featureStateArg !== 'off')
+) {
   throw new Error('Укажите состояние флага [on|off]');
 }
 
@@ -22,7 +31,10 @@ const files = project.getSourceFiles();
 function isToogleFunction(node: CallExpression) {
   let isToggleFeatures = false;
   node.forEachChild((child) => {
-    if (child.isKind(SyntaxKind.Identifier) && child.getText() === toggleFunctionName) {
+    if (
+      child.isKind(SyntaxKind.Identifier) &&
+      child.getText() === toggleFunctionName
+    ) {
       isToggleFeatures = true;
     }
   });
@@ -35,7 +47,9 @@ function isToogleComponent(node: JsxSelfClosingElement) {
 }
 
 function replaceToggleFunctions(node: CallExpression) {
-  const objectOptions = node.getFirstDescendantByKind(SyntaxKind.ObjectLiteralExpression);
+  const objectOptions = node.getFirstDescendantByKind(
+    SyntaxKind.ObjectLiteralExpression,
+  );
   if (!objectOptions) return;
   const featureNameProperty = objectOptions.getProperty('name');
   const onFuncProperty = objectOptions.getProperty('on');
@@ -45,8 +59,12 @@ function replaceToggleFunctions(node: CallExpression) {
     ?.getFirstDescendantByKind(SyntaxKind.StringLiteral)
     ?.getText()
     .slice(1, -1);
-  const onFunction = onFuncProperty?.getFirstDescendantByKind(SyntaxKind.ArrowFunction);
-  const offFunction = offFuncProperty?.getFirstDescendantByKind(SyntaxKind.ArrowFunction);
+  const onFunction = onFuncProperty?.getFirstDescendantByKind(
+    SyntaxKind.ArrowFunction,
+  );
+  const offFunction = offFuncProperty?.getFirstDescendantByKind(
+    SyntaxKind.ArrowFunction,
+  );
 
   if (featureName !== removedFeatureNameArg) return;
   if (featureStateArg === 'on' && onFunction) {
@@ -57,7 +75,10 @@ function replaceToggleFunctions(node: CallExpression) {
   }
 }
 
-const getAttributeNodeByName = (jsxAttributes: JsxAttribute[], name: string) => {
+const getAttributeNodeByName = (
+  jsxAttributes: JsxAttribute[],
+  name: string,
+) => {
   return jsxAttributes.find((node) => node.getNameNode().getText() === name);
 };
 
@@ -106,7 +127,10 @@ files.forEach((sourceFile) => {
       counter++;
       return;
     }
-    if (node.isKind(SyntaxKind.JsxSelfClosingElement) && isToogleComponent(node)) {
+    if (
+      node.isKind(SyntaxKind.JsxSelfClosingElement) &&
+      isToogleComponent(node)
+    ) {
       replaceComponent(node);
       counter++;
     }

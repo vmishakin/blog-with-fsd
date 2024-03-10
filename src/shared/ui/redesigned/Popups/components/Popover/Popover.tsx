@@ -21,12 +21,17 @@ export const Popover = ({
   unmount = true,
 }: PopoverProps) => {
   return (
-    <HPopover className={classNames(s.Popover, {}, [popupCls.popup, className])}>
+    <HPopover
+      className={classNames(s.Popover, {}, [popupCls.popup, className])}
+    >
       <HPopover.Button as="div" className={popupCls.trigger}>
         {trigger}
       </HPopover.Button>
 
-      <HPopover.Panel className={classNames(s.panel, {}, [popupCls[direction]])} unmount={unmount}>
+      <HPopover.Panel
+        className={classNames(s.panel, {}, [popupCls[direction]])}
+        unmount={unmount}
+      >
         {children}
       </HPopover.Panel>
     </HPopover>

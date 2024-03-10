@@ -7,13 +7,18 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { HStack } from '@/shared/ui/redesigned/Stack';
 import { getCanEditArticle } from '../../model/selectors/article';
-import { getRouteArticles, getRouteArticleEdit } from '@/shared/constants/router';
+import {
+  getRouteArticles,
+  getRouteArticleEdit,
+} from '@/shared/constants/router';
 
 interface ArticleDetailsPageHeaderProps {
   className?: string;
 }
 
-export const ArticleDetailsPageHeader = ({ className }: ArticleDetailsPageHeaderProps) => {
+export const ArticleDetailsPageHeader = ({
+  className,
+}: ArticleDetailsPageHeaderProps) => {
   const { t } = useTranslation('article');
   const navigate = useNavigate();
   const canEdit = useSelector(getCanEditArticle);

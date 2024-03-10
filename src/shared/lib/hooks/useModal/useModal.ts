@@ -8,7 +8,11 @@ interface UseModalProps {
 
 const ANIMATION_DELAY = 190;
 
-export function useModal({ onClose, isOpen, animationDelay = ANIMATION_DELAY }: UseModalProps) {
+export function useModal({
+  onClose,
+  isOpen,
+  animationDelay = ANIMATION_DELAY,
+}: UseModalProps) {
   const [isMounted, setIsMounted] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const timerRef = useRef<number>();

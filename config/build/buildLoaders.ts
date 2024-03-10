@@ -46,5 +46,11 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
   const codeBabelLoader = buildBabelLoader({ ...options, isTsx: false });
   const tsxCodeBabelLoader = buildBabelLoader({ ...options, isTsx: true });
 
-  return [codeBabelLoader, tsxCodeBabelLoader, cssLoader, svgLoader, fileLoader];
+  return [
+    codeBabelLoader,
+    tsxCodeBabelLoader,
+    cssLoader,
+    svgLoader,
+    fileLoader,
+  ];
 }

@@ -73,7 +73,9 @@ export const EditableProfileCard = ({ id }: EditableProfileCardProps) => {
   const onChangeAge = useCallback(
     (value?: string) => {
       if (value && !/^[0-9]*$/.test(value)) return;
-      dispatch(profileActions.updateProfile({ age: value ? Number(value) : 0 }));
+      dispatch(
+        profileActions.updateProfile({ age: value ? Number(value) : 0 }),
+      );
     },
     [dispatch],
   );

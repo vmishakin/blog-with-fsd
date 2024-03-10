@@ -5,7 +5,11 @@ import { UIReducer } from '@/features/UI';
 import { $api } from '@/shared/api/api';
 import { rtkApi } from '@/shared/api/rtkApi';
 import { createReducerManager } from './reducerManager';
-import { ReduxStoreWithManager, StateSchema, ThunkExtraArg } from './StateSchema';
+import {
+  ReduxStoreWithManager,
+  StateSchema,
+  ThunkExtraArg,
+} from './StateSchema';
 
 export function createReduxStore(
   initialState?: StateSchema,

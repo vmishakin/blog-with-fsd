@@ -30,7 +30,10 @@ export const Dropdown = ({
   direction = 'bottomRight',
 }: DropdownProps) => {
   return (
-    <Menu as="div" className={classNames(s.Dropdown, {}, [popupCls.popup, className])}>
+    <Menu
+      as="div"
+      className={classNames(s.Dropdown, {}, [popupCls.popup, className])}
+    >
       <Menu.Button className={popupCls.trigger}>{trigger}</Menu.Button>
       <Menu.Items className={classNames(s.menu, {}, [popupCls[direction]])}>
         {items.map((item, i) => {
@@ -59,7 +62,11 @@ export const Dropdown = ({
           }
 
           return (
-            <Menu.Item as={Fragment} disabled={item.disabled} key={`dropdown-key-${i}`}>
+            <Menu.Item
+              as={Fragment}
+              disabled={item.disabled}
+              key={`dropdown-key-${i}`}
+            >
               {content}
             </Menu.Item>
           );

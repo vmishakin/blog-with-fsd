@@ -19,7 +19,8 @@ export const resetProfile = (profileId: string) => {
       country: 'Russia',
       city: 'Nightcity',
       username: 'testuser',
-      avatar: 'https://www.clarisoft.com/wp-content/uploads/2015/04/icon_qa-e1430393636766.png',
+      avatar:
+        'https://www.clarisoft.com/wp-content/uploads/2015/04/icon_qa-e1430393636766.png',
     },
   });
 };

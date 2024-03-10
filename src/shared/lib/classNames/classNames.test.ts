@@ -6,7 +6,9 @@ describe('classNames', () => {
   });
 
   test('additional class', () => {
-    expect(classNames('simpleClass', {}, ['additional'])).toEqual('simpleClass additional');
+    expect(classNames('simpleClass', {}, ['additional'])).toEqual(
+      'simpleClass additional',
+    );
   });
 
   test('several additional classes', () => {
@@ -16,7 +18,9 @@ describe('classNames', () => {
   });
 
   test('mode class true', () => {
-    expect(classNames('simpleClass', { mode: true })).toEqual('simpleClass mode');
+    expect(classNames('simpleClass', { mode: true })).toEqual(
+      'simpleClass mode',
+    );
   });
 
   test('several mode classes', () => {
@@ -30,16 +34,23 @@ describe('classNames', () => {
   });
 
   test('mod class undefined', () => {
-    expect(classNames('simpleClass', { mode: undefined })).toEqual('simpleClass');
+    expect(classNames('simpleClass', { mode: undefined })).toEqual(
+      'simpleClass',
+    );
   });
 
   test('mod class mixed', () => {
-    expect(classNames('simpleClass', { mode1: true, mode2: false })).toEqual('simpleClass mode1');
+    expect(classNames('simpleClass', { mode1: true, mode2: false })).toEqual(
+      'simpleClass mode1',
+    );
   });
 
   test('class, mods, additional classes', () => {
     expect(
-      classNames('simpleClass', { mode1: true, mode2: false }, ['additional1', 'additional2']),
+      classNames('simpleClass', { mode1: true, mode2: false }, [
+        'additional1',
+        'additional2',
+      ]),
     ).toEqual('simpleClass additional1 additional2 mode1');
   });
 
@@ -50,6 +61,8 @@ describe('classNames', () => {
   test('superlong additional', () => {
     const superlong = new Array(100).fill('additional');
 
-    expect(classNames('simpleClass', {}, superlong)).toEqual(`simpleClass ${superlong.join(' ')}`);
+    expect(classNames('simpleClass', {}, superlong)).toEqual(
+      `simpleClass ${superlong.join(' ')}`,
+    );
   });
 });

@@ -10,9 +10,14 @@ interface ThemeProviderProps {
   children: ReactNode;
 }
 
-export const ThemeProvider: FC<ThemeProviderProps> = ({ children, initialTheme }) => {
+export const ThemeProvider: FC<ThemeProviderProps> = ({
+  children,
+  initialTheme,
+}) => {
   const { theme: defaultTheme } = useJsonSettings();
-  const [theme, setTheme] = useState<Theme>(initialTheme ?? defaultTheme ?? Theme.LIGHT);
+  const [theme, setTheme] = useState<Theme>(
+    initialTheme ?? defaultTheme ?? Theme.LIGHT,
+  );
 
   useEffect(() => {
     if (defaultTheme) {
@@ -32,5 +37,9 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({ children, initialTheme }
     [theme],
   );
 
-  return <ThemeContext.Provider value={defaultProp}>{children}</ThemeContext.Provider>;
+  return (
+    <ThemeContext.Provider value={defaultProp}>
+      {children}
+    </ThemeContext.Provider>
+  );
 };

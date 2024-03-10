@@ -14,7 +14,10 @@ export function buildSlice<
     const dispatch = useAppDispatch();
 
     // @ts-ignore
-    return useMemo(() => bindActionCreators(slice.actions, dispatch), [dispatch]);
+    return useMemo(
+      () => bindActionCreators(slice.actions, dispatch),
+      [dispatch],
+    );
   };
 
   return {

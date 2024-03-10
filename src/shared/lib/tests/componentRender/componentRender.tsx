@@ -26,7 +26,12 @@ interface TestProviderProps {
 export function TestProvider(props: TestProviderProps) {
   const {
     children,
-    options: { route = '/', initialState, asyncReducers, theme = Theme.LIGHT } = {},
+    options: {
+      route = '/',
+      initialState,
+      asyncReducers,
+      theme = Theme.LIGHT,
+    } = {},
   } = props;
   return (
     <MemoryRouter initialEntries={[route]}>
@@ -41,6 +46,9 @@ export function TestProvider(props: TestProviderProps) {
   );
 }
 
-export function componentRender(component: ReactNode, options?: renderWithRouterOptions) {
+export function componentRender(
+  component: ReactNode,
+  options?: renderWithRouterOptions,
+) {
   return render(<TestProvider options={options}>{component}</TestProvider>);
 }

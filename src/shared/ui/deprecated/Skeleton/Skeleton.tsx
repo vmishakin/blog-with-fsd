@@ -12,12 +12,19 @@ interface SkeletonProps {
 /**
  * @deprecated
  */
-export const Skeleton = ({ className, height, width, border }: SkeletonProps) => {
+export const Skeleton = ({
+  className,
+  height,
+  width,
+  border,
+}: SkeletonProps) => {
   const styles: CSSProperties = {
     width,
     height,
     borderRadius: border,
   };
 
-  return <div className={classNames(s.Skeleton, {}, [className])} style={styles} />;
+  return (
+    <div className={classNames(s.Skeleton, {}, [className])} style={styles} />
+  );
 };

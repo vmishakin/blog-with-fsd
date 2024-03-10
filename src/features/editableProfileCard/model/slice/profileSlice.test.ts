@@ -20,15 +20,22 @@ describe('profileSlice.test', () => {
     const state: PartialDeep<ProfileSchema> = {
       readonly: false,
     };
-    expect(profileReducer(state as ProfileSchema, profileActions.setReadonly(true))).toEqual({
+    expect(
+      profileReducer(state as ProfileSchema, profileActions.setReadonly(true)),
+    ).toEqual({
       readonly: true,
     });
   });
 
   test('test cancel edit', () => {
-    const state: PartialDeep<ProfileSchema> = { data: userData, form: { username: '' } };
+    const state: PartialDeep<ProfileSchema> = {
+      data: userData,
+      form: { username: '' },
+    };
 
-    expect(profileReducer(state as ProfileSchema, profileActions.cancelEdit())).toEqual({
+    expect(
+      profileReducer(state as ProfileSchema, profileActions.cancelEdit()),
+    ).toEqual({
       readonly: true,
       validateError: undefined,
       data: userData,
@@ -41,7 +48,10 @@ describe('profileSlice.test', () => {
       form: userData,
     };
     expect(
-      profileReducer(state as ProfileSchema, profileActions.updateProfile({ username: 'lol' })),
+      profileReducer(
+        state as ProfileSchema,
+        profileActions.updateProfile({ username: 'lol' }),
+      ),
     ).toEqual({ form: { ...userData, username: 'lol' } });
   });
 
@@ -50,7 +60,9 @@ describe('profileSlice.test', () => {
       isLoading: false,
       validateError: [ValidateProfileError.SERVER_ERROR],
     };
-    expect(profileReducer(state as ProfileSchema, updateProfileData.pending)).toEqual({
+    expect(
+      profileReducer(state as ProfileSchema, updateProfileData.pending),
+    ).toEqual({
       isLoading: true,
       validateError: undefined,
     });
@@ -61,7 +73,10 @@ describe('profileSlice.test', () => {
       isLoading: true,
     };
     expect(
-      profileReducer(state as ProfileSchema, updateProfileData.fulfilled(userData, '')),
+      profileReducer(
+        state as ProfileSchema,
+        updateProfileData.fulfilled(userData, ''),
+      ),
     ).toEqual({
       isLoading: false,
       data: userData,

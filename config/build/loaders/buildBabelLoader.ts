@@ -3,10 +3,13 @@ import { BuildOptions } from '../types/config';
 import babelRemovePropsPlugin from '../../babel/babelRemovePropsPlugin';
 
 interface BuildBabelLoaderProps extends BuildOptions {
-  isTsx?: boolean
+  isTsx?: boolean;
 }
 
-export function buildBabelLoader({ isDev, isTsx }: BuildBabelLoaderProps): webpack.RuleSetRule {
+export function buildBabelLoader({
+  isDev,
+  isTsx,
+}: BuildBabelLoaderProps): webpack.RuleSetRule {
   const isProd = !isDev;
   return {
     test: isTsx ? /\.(jsx|tsx)$/ : /\.(js|ts)$/,
@@ -22,12 +25,14 @@ export function buildBabelLoader({ isDev, isTsx }: BuildBabelLoaderProps): webpa
           //   { locales: ['ru', 'en'], keyAsDefaultValue: true },
           // ],
           [
-            '@babel/plugin-transform-typescript', {
+            '@babel/plugin-transform-typescript',
+            {
               isTsx,
             },
           ],
           '@babel/plugin-transform-runtime',
-          isTsx && isProd && [babelRemovePropsPlugin(), { props: ['data-testid'] }],
+          isTsx &&
+            isProd && [babelRemovePropsPlugin(), { props: ['data-testid'] }],
           isDev && require.resolve('react-refresh/babel'),
         ].filter(Boolean),
       },

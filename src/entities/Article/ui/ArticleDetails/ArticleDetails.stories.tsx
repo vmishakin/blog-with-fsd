@@ -1,7 +1,11 @@
 /* eslint-disable max-len */
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { Article, ArticleBlockType, ArticleType } from '../../model/types/article';
+import {
+  Article,
+  ArticleBlockType,
+  ArticleType,
+} from '../../model/types/article';
 import { ArticleDetails } from './ArticleDetails';
 
 const article: Article = {
@@ -88,7 +92,9 @@ export default {
   },
 } as ComponentMeta<typeof ArticleDetails>;
 
-const Template: ComponentStory<typeof ArticleDetails> = (args) => <ArticleDetails {...args} />;
+const Template: ComponentStory<typeof ArticleDetails> = (args) => (
+  <ArticleDetails {...args} />
+);
 
 export const Primary = Template.bind({});
 Primary.args = {};

@@ -31,14 +31,22 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
       on={
         <aside
           data-testid="sidebar"
-          className={classNames(s.SidebarRedesigned, { [s.collapsedRedesigned]: collapsed }, [
-            className,
-          ])}
+          className={classNames(
+            s.SidebarRedesigned,
+            { [s.collapsedRedesigned]: collapsed },
+            [className],
+          )}
         >
           <AppLogo className={s.appLogo} size={collapsed ? 30 : 100} />
           <VStack className={s.items} gap="8" role="navigation">
             {sidebarItemsList.map((item) => {
-              return <SidebarItem item={item} collapsed={collapsed} key={item.path} />;
+              return (
+                <SidebarItem
+                  item={item}
+                  collapsed={collapsed}
+                  key={item.path}
+                />
+              );
             })}
           </VStack>
           <Icon
@@ -57,11 +65,19 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
       off={
         <aside
           data-testid="sidebar"
-          className={classNames(s.Sidebar, { [s.collapsed]: collapsed }, [className])}
+          className={classNames(s.Sidebar, { [s.collapsed]: collapsed }, [
+            className,
+          ])}
         >
           <VStack className={s.items} gap="8" role="navigation">
             {sidebarItemsList.map((item) => {
-              return <SidebarItem item={item} collapsed={collapsed} key={item.path} />;
+              return (
+                <SidebarItem
+                  item={item}
+                  collapsed={collapsed}
+                  key={item.path}
+                />
+              );
             })}
           </VStack>
 
