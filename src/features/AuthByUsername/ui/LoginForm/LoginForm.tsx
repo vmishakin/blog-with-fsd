@@ -22,6 +22,9 @@ import { Button } from '@/shared/ui/redesigned/Button';
 import { Input } from '@/shared/ui/redesigned/Input';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { User } from '@/entities/User';
+import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
+import { getFeatureFlag } from '@/shared/lib/features/lib/setGetFeatures';
 
 const initialReducers: ReducersList = {
   loginForm: loginReducer,
@@ -99,7 +102,7 @@ export const LoginForm = memo(({ onSuccess }: LoginFormProps) => {
           <div className={s.LoginForm}>
             <TextDeprecated title={t('Authorization')} />
             {error && <TextDeprecated text={error} theme={TextTheme.ERROR} />}
-            <Input
+            <InputDeprecated
               autofocus
               placeholder={t('Username')}
               type="text"
