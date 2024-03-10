@@ -1,9 +1,11 @@
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text } from '@/shared/ui/deprecated/Text';
+import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text';
+import { Text } from '@/shared/ui/redesigned/Text';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Comment } from '../../model/types/comment';
 import { CommentCard } from '../CommentCard/CommentCard';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 interface CommentListProps {
   className?: string;
@@ -11,7 +13,11 @@ interface CommentListProps {
   isLoading?: boolean;
 }
 
-export const CommentList = ({ className, comments, isLoading }: CommentListProps) => {
+export const CommentList = ({
+  className,
+  comments,
+  isLoading,
+}: CommentListProps) => {
   const { t } = useTranslation();
 
   if (isLoading) {
@@ -28,10 +34,18 @@ export const CommentList = ({ className, comments, isLoading }: CommentListProps
     <VStack gap="16" max className={classNames('', {}, [className])}>
       {comments?.length ? (
         comments?.map((comment) => (
-          <CommentCard key={comment.id} isLoading={isLoading} comment={comment} />
+          <CommentCard
+            key={comment.id}
+            isLoading={isLoading}
+            comment={comment}
+          />
         ))
       ) : (
-        <Text text={t('No comments')} />
+        <ToggleFeatures
+          name="isAppRedesigned"
+          on={<Text text={t('No comments')} />}
+          off={<TextDeprecated text={t('No comments')} />}
+        />
       )}
     </VStack>
   );

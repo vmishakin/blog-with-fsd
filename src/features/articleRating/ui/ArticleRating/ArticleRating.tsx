@@ -1,7 +1,11 @@
 import { useSelector } from 'react-redux';
 import { useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import { RatingCard } from '@/entities/Rating';
-import { useGetArticleRatingQuery, useRateArticleMutation } from '../../api/articleRatingApi';
+import {
+  useGetArticleRatingQuery,
+  useRateArticleMutation,
+} from '../../api/articleRatingApi';
 import { getUserAuthData } from '@/entities/User';
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
 
@@ -11,8 +15,12 @@ export interface ArticleRatingProps {
 
 export const ArticleRating = ({ articleId }: ArticleRatingProps) => {
   const userData = useSelector(getUserAuthData);
+  const { t } = useTranslation('article');
 
-  const { data, isLoading } = useGetArticleRatingQuery({ articleId, userId: userData?.id ?? '' });
+  const { data, isLoading } = useGetArticleRatingQuery({
+    articleId,
+    userId: userData?.id ?? '',
+  });
   const [rateArticle] = useRateArticleMutation();
 
   const handleRateArticle = useCallback(
@@ -53,8 +61,8 @@ export const ArticleRating = ({ articleId }: ArticleRatingProps) => {
 
   return (
     <RatingCard
-      title="Как вам статья?"
-      feedbackTitle="Оставьте отзыв о статье"
+      title={t('How do you like the article')}
+      feedbackTitle={t('Leave a review about the article')}
       hasFeedback
       rate={rating?.rate}
       onAccept={onAccept}

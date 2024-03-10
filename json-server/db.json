@@ -2089,6 +2089,36 @@
       "rate": 5,
       "feedback": "excellent!",
       "id": "SbkAlny"
+    },
+    {
+      "userId": "1",
+      "articleId": "6",
+      "rate": 5,
+      "id": "EuLyyyH"
+    },
+    {
+      "userId": "1",
+      "articleId": "6",
+      "rate": 3,
+      "id": "OQejVCH"
+    },
+    {
+      "userId": "1",
+      "articleId": "9",
+      "rate": 3,
+      "id": "nE8ai1C"
+    },
+    {
+      "userId": "1",
+      "articleId": "15",
+      "rate": 3,
+      "id": "C1NQOz3"
+    },
+    {
+      "userId": "1",
+      "articleId": "11",
+      "rate": 4,
+      "id": "CLuMG2a"
     }
   ],
   "profile-ratings": [

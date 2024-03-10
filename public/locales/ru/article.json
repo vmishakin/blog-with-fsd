@@ -21,5 +21,11 @@
   "views_count_zero": "{{count}} просмотров",
   "views_count_one": "{{count}} просмотр",
   "views_count_few": "{{count}} просмотра",
-  "views_count_many": "{{count}} просмотров"
+  "views_count_many": "{{count}} просмотров",
+  "How do you like the article": "Как вам статья?",
+  "Leave a review about the article": "Оставьте отзыв о статье",
+  "Your feedback": "Ваш отзыв",
+  "Thanks for the review": "Спасибо за оценку!",
+  "Close": "Закрыть",
+  "Send": "Отправить"
 }

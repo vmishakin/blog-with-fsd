@@ -19,5 +19,11 @@
   "Edit": "Edit",
   "Error when loading articles": "Error when loading articles",
   "views_count_one": "{{count}} view",
-  "views_count_other": "{{count}} views"
+  "views_count_other": "{{count}} views",
+  "How do you like the article": "How do you like the article?",
+  "Leave a review about the article": "Leave a review about the article",
+  "Your feedback": "Your feedback",
+  "Thanks for the review": "Thanks for the review",
+  "Close": "Close",
+  "Send": "Send"
 }
