@@ -30,5 +30,6 @@
   "Close": "Закрывать",
   "Welcome to the articles page": "Добро пожаловать на страницу статей",
   "Here you can search and view articles on various topics": "Здесь вы можете искать и просматривать статьи на различные темы",
-  "User settings": "Настройки пользователя"
+  "User settings": "Настройки пользователя",
+  "Wrong password": "Вы ввели неверный логин или пароль"
 }

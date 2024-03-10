@@ -6,13 +6,17 @@ import { getUserAuthData } from '@/entities/User';
 import { getRouteArticleCreate } from '@/shared/constants/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink, AppLinkTheme } from '@/shared/ui/deprecated/AppLink';
-import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
+import {
+  Button as ButtonDeprecated,
+  ButtonTheme,
+} from '@/shared/ui/deprecated/Button';
+import { Button } from '@/shared/ui/redesigned/Button';
 import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
 import { HStack } from '@/shared/ui/redesigned/Stack';
 import { NotificationButton } from '@/features/notificationButton';
 import { AvatarDropDown } from '@/features/avatarDropdown';
 import s from './Navbar.module.scss';
-import { ToggleFeatures } from '@/shared/lib/features';
+import { toggleFeatures, ToggleFeatures } from '@/shared/lib/features';
 
 interface NavbarProps {
   className?: string;
@@ -31,12 +35,18 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     setIsAuthModal(true);
   }, []);
 
+  const mainClass = toggleFeatures({
+    name: 'isAppRedesigned',
+    on: () => s.NavbarRedesigned,
+    off: () => s.navbar,
+  });
+
   if (authData) {
     return (
       <ToggleFeatures
         name="isAppRedesigned"
         on={
-          <header className={classNames(s.NavbarRedesigned, {}, [className])}>
+          <header className={classNames(mainClass, {}, [className])}>
             <HStack gap="16" className={s.actions}>
               <NotificationButton />
               <AvatarDropDown />
@@ -44,13 +54,16 @@ export const Navbar = memo(({ className }: NavbarProps) => {
           </header>
         }
         off={
-          <header className={classNames(s.navbar, {}, [className])}>
+          <header className={classNames(mainClass, {}, [className])}>
             <Text
               className={classNames(s.appName)}
               title={t('FSD blog')}
               theme={TextTheme.INVERTED}
             />
-            <AppLink theme={AppLinkTheme.SECONDARY} to={getRouteArticleCreate()}>
+            <AppLink
+              theme={AppLinkTheme.SECONDARY}
+              to={getRouteArticleCreate()}
+            >
               {t('Create new article')}
             </AppLink>
             <HStack gap="16" className={s.actions}>
@@ -67,11 +80,27 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   }
 
   return (
-    <header className={classNames(s.navbar, {}, [className])}>
-      <Button theme={ButtonTheme.CLEAR_INVERTED} className={s.links} onClick={onOpenAuthModal}>
-        {t('Login')}
-      </Button>
-      {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseAuthModal} />}
+    <header className={classNames(mainClass, {}, [className])}>
+      <ToggleFeatures
+        name="isAppRedesigned"
+        on={
+          <Button variant="clear" className={s.links} onClick={onOpenAuthModal}>
+            {t('Login')}
+          </Button>
+        }
+        off={
+          <ButtonDeprecated
+            theme={ButtonTheme.CLEAR_INVERTED}
+            className={s.links}
+            onClick={onOpenAuthModal}
+          >
+            {t('Login')}
+          </ButtonDeprecated>
+        }
+      />
+      {isAuthModal && (
+        <LoginModal isOpen={isAuthModal} onClose={onCloseAuthModal} />
+      )}
     </header>
   );
 });

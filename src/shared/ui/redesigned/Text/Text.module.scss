@@ -1,4 +1,8 @@
 .Text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
   .title {
     color: var(--text-redesigned);
   }
