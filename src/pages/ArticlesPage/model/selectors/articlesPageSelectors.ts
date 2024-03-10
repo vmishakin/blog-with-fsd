@@ -3,7 +3,7 @@ import { ArticleSortField, ArticleType } from '@/entities/Article';
 import { buildSelector } from '@/shared/lib/store';
 
 export const getArticlesPageIsLoading = (state: StateSchema) => {
-  return state.articlesPage?.isLoading ?? false;
+  return state.articlesPage?.isLoading ?? true;
 };
 export const getArticlesPageError = (state: StateSchema) =>
   state.articlesPage?.error;

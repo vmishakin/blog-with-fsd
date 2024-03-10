@@ -10,9 +10,10 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { PageLoader } from '@/widgets/PageLoader';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { MainLayout } from '@/shared/layouts/MainLayout/MainLayout';
+import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout';
 
 export const App = () => {
-  useTheme();
+  const { theme } = useTheme();
   const dispatch = useAppDispatch();
   const inited = useSelector(getUserInited);
 
@@ -20,8 +21,20 @@ export const App = () => {
     dispatch(initAuthData());
   }, [dispatch]);
 
+  console.log(inited);
+
   if (!inited) {
-    return <PageLoader />;
+    return (
+      <ToggleFeatures
+        name="isAppRedesigned"
+        on={
+          <div id="app" className={classNames('app_redesigned', {}, [theme])}>
+            <AppLoaderLayout />
+          </div>
+        }
+        off={<PageLoader />}
+      />
+    );
   }
 
   return (
@@ -33,7 +46,7 @@ export const App = () => {
             <Navbar />
             <div className="content-page">
               <Sidebar />
-              {inited && <AppRouter />}
+              <AppRouter />
             </div>
           </Suspense>
         </div>
