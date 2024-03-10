@@ -17,5 +17,7 @@
   "Economics articles": "Economics",
   "Recommendations": "Recommendations",
   "Edit": "Edit",
-  "Error when loading articles": "Error when loading articles"
+  "Error when loading articles": "Error when loading articles",
+  "views_count_one": "{{count}} view",
+  "views_count_other": "{{count}} views"
 }

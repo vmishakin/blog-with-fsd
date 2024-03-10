@@ -17,5 +17,9 @@
   "Science articles": "Наука",
   "Recommendations": "Рекомендуем",
   "Edit": "Редактировать",
-  "Error when loading articles": "Ошибка при загрузке статей"
+  "Error when loading articles": "Ошибка при загрузке статей",
+  "views_count_zero": "{{count}} просмотров",
+  "views_count_one": "{{count}} просмотр",
+  "views_count_few": "{{count}} просмотра",
+  "views_count_many": "{{count}} просмотров"
 }
