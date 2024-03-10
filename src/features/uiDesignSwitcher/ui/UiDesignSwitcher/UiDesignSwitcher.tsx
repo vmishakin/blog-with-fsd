@@ -52,7 +52,7 @@ export const UiDesignSwitcher = memo((props: UiDesignSwitcherProps) => {
     <HStack gap="8">
       <Text text={t('Choose design')} />
       {isLoading ? (
-        <Skeleton width={100} height={40} />
+        <Skeleton width={100} height={40} border="32px" />
       ) : (
         <ListBox
           onChange={onChange}
