@@ -1,0 +1,8 @@
+.ScrollToolbar {
+  transition: opacity 0.3s ease-out;
+  opacity: 0;
+
+  &.show {
+    opacity: 1;
+  }
+}

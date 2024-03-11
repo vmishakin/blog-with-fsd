@@ -2,6 +2,9 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 import { ProfileCard } from './ProfileCard';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/constants/theme';
 
 export default {
   title: 'entities/ProfileCard',
@@ -18,8 +21,7 @@ const Template: ComponentStory<typeof ProfileCard> = (args) => (
   <ProfileCard {...args} />
 );
 
-export const Primary = Template.bind({});
-Primary.args = {
+const PrimaryArgs = {
   data: {
     first: 'vadya',
     lastname: 'programmer',
@@ -30,6 +32,13 @@ Primary.args = {
     username: 'admin',
   },
 };
+
+export const Primary = Template.bind({});
+Primary.args = PrimaryArgs;
+
+export const PrimaryRedesigned = Template.bind({});
+PrimaryRedesigned.args = PrimaryArgs;
+PrimaryRedesigned.decorators = [NewDesignDecorator, ThemeDecorator(Theme.DARK)];
 
 export const withError = Template.bind({});
 withError.args = {

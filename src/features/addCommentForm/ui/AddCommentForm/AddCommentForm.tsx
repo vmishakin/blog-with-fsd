@@ -62,7 +62,7 @@ export const AddCommentForm = ({ onSendComment }: AddCommentFormProps) => {
             <HStack
               data-testid="AddCommentForm"
               justify="between"
-              max
+              fullWidth
               gap="16"
               className={classNames(s.AddCommentFormRedesigned)}
             >
@@ -86,7 +86,7 @@ export const AddCommentForm = ({ onSendComment }: AddCommentFormProps) => {
         off={
           <HStack
             justify="between"
-            max
+            fullWidth
             className={s.AddCommentForm}
             data-testid="AddCommentForm"
           >

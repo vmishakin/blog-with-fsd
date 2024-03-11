@@ -43,10 +43,10 @@ const Deprecated = () => {
   const article = useSelector(getArticleDetailsData);
   return (
     <>
-      <HStack justify="center" max className={s.avatarWrapper}>
+      <HStack justify="center" fullWidth className={s.avatarWrapper}>
         <Avatar size={200} src={article?.img} className={s.avatar} />
       </HStack>
-      <VStack gap="4" max data-testid="ArticleDetails.Info">
+      <VStack gap="4" fullWidth data-testid="ArticleDetails.Info">
         <TextDeprecated
           className={s.title}
           title={article?.title}
@@ -92,12 +92,12 @@ export const ArticleDetailsSkeleton = () => {
     off: () => SkeletonDeprecated,
   });
   return (
-    <VStack gap="16" max>
+    <VStack gap="16" fullWidth>
       <Skeleton className={s.avatar} width={200} height={200} border="50%" />
-      <Skeleton className={s.title} width={300} height={32} />
-      <Skeleton className={s.skeleton} width={600} height={24} />
-      <Skeleton className={s.skeleton} width="100%" height={200} />
-      <Skeleton className={s.skeleton} width="100%" height={200} />
+      <Skeleton className={s.title} width={300} height={32} border="8px" />
+      <Skeleton className={s.skeleton} width={600} height={24} border="8px" />
+      <Skeleton className={s.skeleton} width="100%" height={200} border="8px" />
+      <Skeleton className={s.skeleton} width="100%" height={200} border="8px" />
     </VStack>
   );
 };
@@ -134,7 +134,7 @@ export const ArticleDetails = memo(({ id }: ArticleDetailsProps) => {
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <VStack
         gap="16"
-        max
+        fullWidth
         className={s.ArticleDetails}
         data-testid="ArticleDetails"
       >

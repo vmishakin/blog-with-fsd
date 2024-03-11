@@ -7,7 +7,10 @@ import {
   useRateArticleMutation,
 } from '../../api/articleRatingApi';
 import { getUserAuthData } from '@/entities/User';
-import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton';
+import { Skeleton as SkeletonRedesigned } from '@/shared/ui/redesigned/Skeleton';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Card } from '@/shared/ui/redesigned/Card';
 
 export interface ArticleRatingProps {
   articleId: string;
@@ -54,7 +57,17 @@ export const ArticleRating = ({ articleId }: ArticleRatingProps) => {
   );
 
   if (isLoading) {
-    return <Skeleton width="100%" height="120px" />;
+    return (
+      <ToggleFeatures
+        name="isAppRedesigned"
+        on={
+          <Card border="round-border" max>
+            <SkeletonRedesigned border="32px" width="100%" height="140px" />
+          </Card>
+        }
+        off={<SkeletonDeprecated width="100%" height="140px" />}
+      />
+    );
   }
 
   const rating = data?.[0];

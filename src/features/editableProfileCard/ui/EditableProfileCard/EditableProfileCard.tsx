@@ -117,7 +117,7 @@ export const EditableProfileCard = ({ id }: EditableProfileCardProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <VStack gap="16" max>
+      <VStack gap="16" fullWidth>
         <EditableProfileCardHeader />
         {validateErrors?.length &&
           validateErrors.map((err) => (

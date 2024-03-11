@@ -29,7 +29,7 @@ export const NotificationList = ({ className }: NotificationListProps) => {
     return (
       <VStack
         gap="16"
-        max
+        fullWidth
         className={classNames(s.NotificationList, {}, [className])}
       >
         <Skeleton width="100%" border="8px" height="80px" />
@@ -42,7 +42,7 @@ export const NotificationList = ({ className }: NotificationListProps) => {
   return (
     <VStack
       gap="16"
-      max
+      fullWidth
       className={classNames(s.NotificationList, {}, [className])}
     >
       {notifications?.map((notification) => (

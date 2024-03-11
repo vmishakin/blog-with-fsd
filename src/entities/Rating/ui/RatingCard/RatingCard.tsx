@@ -95,7 +95,7 @@ export const RatingCard = ({
 
   const content = (
     <>
-      <VStack align="center" gap="8" max>
+      <VStack align="center" gap="8" fullWidth>
         <ToggleFeatures
           name="isAppRedesigned"
           on={<Text title={starsCount ? t('Thanks for the review') : title} />}
@@ -113,12 +113,12 @@ export const RatingCard = ({
       </VStack>
       <BrowserView>
         <Modal isOpen={isModalOpen} lazy>
-          <VStack max gap="32">
+          <VStack fullWidth gap="32">
             {modalContent}
             <ToggleFeatures
               name="isAppRedesigned"
               on={
-                <HStack max gap="16" justify="end">
+                <HStack fullWidth gap="16" justify="end">
                   <Button data-testid="RatingCard.Close" onClick={cancelHandle}>
                     {t('Close')}
                   </Button>
@@ -128,7 +128,7 @@ export const RatingCard = ({
                 </HStack>
               }
               off={
-                <HStack max gap="16" justify="end">
+                <HStack fullWidth gap="16" justify="end">
                   <ButtonDeprecated
                     data-testid="RatingCard.Close"
                     onClick={cancelHandle}

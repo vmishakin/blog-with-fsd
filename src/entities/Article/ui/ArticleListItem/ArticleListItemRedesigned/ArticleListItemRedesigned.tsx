@@ -50,8 +50,8 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
         data-testid="ArticleListItem"
         className={classNames(s.ArticleListItem, {}, [className, s[view]])}
       >
-        <VStack max gap="16">
-          <HStack gap="8" max>
+        <VStack fullWidth gap="16">
+          <HStack gap="8" fullWidth>
             {userInfo}
             <Text text={article.createdAt} />
           </HStack>
@@ -69,7 +69,7 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
               text={textBlock.paragraphs.slice(0, 2).join(' ')}
             />
           )}
-          <HStack max justify="between">
+          <HStack fullWidth justify="between">
             <AppLink target={target} to={getRouteArticleDetails(article.id)}>
               <Button variant="outline">{t('Читать далее...')}</Button>
             </AppLink>
@@ -96,8 +96,8 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
         />
         <VStack className={s.info} gap="4">
           <Text title={article.title} className={s.title} />
-          <VStack gap="4" className={s.footer} max>
-            <HStack justify="between" max>
+          <VStack gap="4" className={s.footer} fullWidth>
+            <HStack justify="between" fullWidth>
               <Text text={article.createdAt} className={s.date} />
               {views}
             </HStack>

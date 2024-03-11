@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Avatar } from './Avatar';
-import AvatarImg from '../../assets/avatar-for-tests.jpg';
+import AvatarImg from '@/shared/assets/avatar-for-tests.jpg';
 
 export default {
   title: 'shared/Avatar',

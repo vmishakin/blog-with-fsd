@@ -1,3 +1,10 @@
 .card {
   width: 264px;
 }
+
+.card_skeleton {
+  width: 264px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}

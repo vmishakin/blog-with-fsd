@@ -44,7 +44,11 @@ export const EditableProfileCardHeader = () => {
       name="isAppRedesigned"
       on={
         <Card padding="24" max border="round-border">
-          <HStack max justify="between" className={classNames('', {}, [])}>
+          <HStack
+            fullWidth
+            justify="between"
+            className={classNames('', {}, [])}
+          >
             <Text title={t('Profile')} />
             {canEdit && (
               <div>
@@ -79,7 +83,7 @@ export const EditableProfileCardHeader = () => {
         </Card>
       }
       off={
-        <HStack max justify="between">
+        <HStack fullWidth justify="between">
           <TextDeprecated title={t('Profile')} />
           {canEdit &&
             (readonly ? (

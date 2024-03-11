@@ -1,4 +1,4 @@
-import { Suspense, useEffect } from 'react';
+import { memo, Suspense, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Sidebar } from '@/widgets/Sidebar';
 import { Navbar } from '@/widgets/Navbar';
@@ -11,17 +11,18 @@ import { PageLoader } from '@/widgets/PageLoader';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { MainLayout } from '@/shared/layouts/MainLayout/MainLayout';
 import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout';
+import { useAppToolbar } from './lib/useAppToolbar';
+import { withTheme } from './providers/ThemeProvider/ui/withTheme';
 
-export const App = () => {
+const App = memo(() => {
   const { theme } = useTheme();
   const dispatch = useAppDispatch();
   const inited = useSelector(getUserInited);
+  const toolbar = useAppToolbar();
 
   useEffect(() => {
     dispatch(initAuthData());
   }, [dispatch]);
-
-  console.log(inited);
 
   if (!inited) {
     return (
@@ -58,11 +59,13 @@ export const App = () => {
               header={<Navbar />}
               content={<AppRouter />}
               sidebar={<Sidebar />}
-              // toolbar={<div>toolbar asdadssd</div>}
+              toolbar={toolbar}
             />
           </Suspense>
         </div>
       }
     />
   );
-};
+});
+
+export default withTheme(App);

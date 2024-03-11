@@ -21,7 +21,8 @@ export interface FlexProps extends DivProps {
   direction: FlexDirection;
   gap?: FlexGap;
   wrap?: FlexWrap;
-  max?: boolean;
+  fullWidth?: boolean;
+  fullHeight?: boolean;
 }
 
 const justifyClasses: Record<FlexJustify, string> = {
@@ -58,7 +59,8 @@ export const Flex = ({
   direction = 'row',
   wrap = 'nowrap',
   gap,
-  max,
+  fullWidth,
+  fullHeight,
   ...rest
 }: FlexProps) => {
   const classes = [
@@ -71,7 +73,8 @@ export const Flex = ({
   ];
 
   const mods: Mods = {
-    [s.max]: max,
+    [s.fullWidth]: fullWidth,
+    [s.fullHeight]: fullHeight,
   };
 
   return (

@@ -14,7 +14,7 @@ export const ProfileCardRedesignedError = () => {
   const { t } = useTranslation();
 
   return (
-    <HStack justify="center" max>
+    <HStack justify="center" fullWidth>
       <Text
         variant="error"
         title={t('Произошла ошибка при загрузке профиля')}
@@ -29,18 +29,18 @@ export const ProfileCardRedesignedSkeleton = () => {
   return (
     <Card padding="24" max border="round-border">
       <VStack gap="32">
-        <HStack max justify="center">
+        <HStack fullWidth justify="center">
           <Skeleton border="100%" width={128} height={128} />
         </HStack>
-        <HStack gap="32" max>
-          <VStack gap="16" max>
+        <HStack gap="32" fullWidth>
+          <VStack gap="16" fullWidth>
             <Skeleton width="100%" height={38} />
             <Skeleton width="100%" height={38} />
             <Skeleton width="100%" height={38} />
             <Skeleton width="100%" height={38} />
           </VStack>
 
-          <VStack gap="16" max>
+          <VStack gap="16" fullWidth>
             <Skeleton width="100%" height={38} />
             <Skeleton width="100%" height={38} />
             <Skeleton width="100%" height={38} />
@@ -72,12 +72,12 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
     <Card padding="24" max className={className} border="round-border">
       <VStack gap="32">
         {data?.avatar && (
-          <HStack justify="center" max>
+          <HStack justify="center" fullWidth>
             <Avatar size={128} src={data?.avatar} />
           </HStack>
         )}
-        <HStack gap="24" max>
-          <VStack gap="16" max>
+        <HStack gap="24" fullWidth>
+          <VStack gap="16" fullWidth>
             <Input
               value={data?.first}
               label={t('First name')}
@@ -105,7 +105,7 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
               readonly={readonly}
             />
           </VStack>
-          <VStack gap="16" max>
+          <VStack gap="16" fullWidth>
             <Input
               value={data?.username}
               label={t('Username')}

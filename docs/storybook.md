@@ -63,3 +63,16 @@ Primary.parameters = {
   ],
 };
 ```
+
+## Редизайн
+
+Чтобы использовать редазайн версию компонента, нужно передать декоратор `NewDesignDecorator`
+
+```ts
+export const Primary = Template.bind({});
+Primary.args = PrimaryArgs;
+
+export const PrimaryRedesigned = Template.bind({});
+PrimaryRedesigned.args = PrimaryArgs;
+PrimaryRedesigned.decorators = [NewDesignDecorator, ThemeDecorator(Theme.DARK)];
+```

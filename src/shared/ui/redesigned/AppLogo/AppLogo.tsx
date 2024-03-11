@@ -12,7 +12,7 @@ interface AppLogoProps {
 export const AppLogo = ({ className, size = 100 }: AppLogoProps) => {
   return (
     <HStack
-      max
+      fullWidth
       justify="center"
       className={classNames(s.appLogoWrapper, {}, [className])}
     >

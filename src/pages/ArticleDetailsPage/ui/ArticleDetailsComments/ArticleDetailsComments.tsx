@@ -37,7 +37,7 @@ export const ArticleDetailsComments = ({ id }: ArticleDetailsCommentsProps) => {
   });
 
   return (
-    <VStack gap="16" max>
+    <VStack gap="16" fullWidth>
       <ToggleFeatures
         name="isAppRedesigned"
         on={<Text size="l" title={t('Comments')} />}

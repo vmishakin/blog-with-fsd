@@ -35,7 +35,11 @@ export const ArticleDetailsPageHeader = ({
   }, [article, navigate]);
 
   return (
-    <HStack max justify="between" className={classNames('', {}, [className])}>
+    <HStack
+      fullWidth
+      justify="between"
+      className={classNames('', {}, [className])}
+    >
       <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
         {t('Back to list')}
       </Button>

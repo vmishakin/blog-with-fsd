@@ -6,6 +6,7 @@ import { ArticleAdditionalInfo } from '@/widgets/ArticleAdditionalInfo';
 import { getArticleDetailsData } from '@/entities/Article';
 import s from './AdditionalInfoContainer.module.scss';
 import { getRouteArticleEdit } from '@/shared/constants/router';
+import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 
 export const AdditionalInfoContainer = memo(() => {
   const article = useSelector(getArticleDetailsData);
@@ -19,7 +20,13 @@ export const AdditionalInfoContainer = memo(() => {
   }, [article, navigate]);
 
   if (!article) {
-    return null;
+    return (
+      <Card padding="24" border="round-border" className={s.card_skeleton}>
+        <Skeleton width="216px" height="32px" border="8px" />
+        <Skeleton width="216px" height="44px" border="8px" />
+        <Skeleton width="216px" height="24px" border="8px" />
+      </Card>
+    );
   }
 
   return (

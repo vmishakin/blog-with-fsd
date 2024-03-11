@@ -4,21 +4,18 @@
 @import 'themes/dark';
 @import 'themes/magneta';
 
-body {
+.app {
   font: var(--font-m);
   color: var(--primary-color);
-}
-
-.app {
   min-height: 100vh;
   background: var(--bg-color);
 }
 
 .app_redesigned {
-  background: var(--bg-redesigned);
-  min-height: 100vh;
   font: var(--font-m-redesigned);
   color: var(--text-redesigned);
+  min-height: 100vh;
+  background: var(--bg-redesigned);
 }
 
 .content-page {

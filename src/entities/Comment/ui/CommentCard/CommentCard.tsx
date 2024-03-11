@@ -35,7 +35,7 @@ export const CommentCard = ({
     return (
       <VStack
         gap="8"
-        max
+        fullWidth
         className={classNames(s.CommentCard, {}, [className, s.loading])}
         data-testid="CommentCard.Loading"
       >
@@ -60,7 +60,7 @@ export const CommentCard = ({
           <VStack
             data-testid="CommentCard.Content"
             gap="8"
-            max
+            fullWidth
             className={classNames(s.CommentCardRedesigned, {}, [className])}
           >
             <AppLink to={getRouteProfile(comment.user.id)}>
@@ -79,7 +79,7 @@ export const CommentCard = ({
         <VStack
           data-testid="CommentCard.Content"
           gap="8"
-          max
+          fullWidth
           className={classNames(s.CommentCard, {}, [className])}
         >
           <AppLinkDeprecated

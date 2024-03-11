@@ -2,6 +2,13 @@ import { userActions } from '@/entities/User';
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { loginByUsername } from './loginByUsername';
 
+beforeAll(() => {
+  Object.defineProperty(globalThis, 'window', {
+    value: { location: { reload: jest.fn() }, fetch: jest.fn() },
+    writable: true,
+  });
+});
+
 describe('loginByUsername.test', () => {
   // let dispatch: Dispatch;
   // let getState: () => StateSchema;
