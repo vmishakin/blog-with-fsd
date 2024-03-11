@@ -69,7 +69,7 @@ export const ArticleSortSelector = ({
           ])}
         >
           <VStack gap="8">
-            <Text text={t('Сортировать по:')} />
+            <Text text={t('Sort by')} />
             <ListBox<ArticleSortField>
               items={sortFieldOptions}
               value={sort}
@@ -87,7 +87,7 @@ export const ArticleSortSelector = ({
         <div className={classNames(s.ArticleSortSelector, {}, [className])}>
           <Select<ArticleSortField>
             options={sortFieldOptions}
-            label={t('Сортировать ПО')}
+            label={t('Sort by')}
             value={sort}
             onChange={onChangeSort}
           />
