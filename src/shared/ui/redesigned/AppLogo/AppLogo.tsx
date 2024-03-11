@@ -1,6 +1,6 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
-// import AppSvg from '@/shared/assets/icons/logo.png';
 import s from './AppLogo.module.scss';
+import img from '@/shared/assets/logo.png';
 import { HStack } from '../Stack';
 import { AppImage } from '../AppImage';
 
@@ -18,12 +18,7 @@ export const AppLogo = ({ className, size = 100 }: AppLogoProps) => {
     >
       <div className={s.gradientBig} />
       <div className={s.gradientSmall} />
-      <AppImage
-        src="/images/logo.png"
-        width={size}
-        height={size}
-        className={s.AppLogo}
-      />
+      <AppImage src={img} width={size} height={size} className={s.AppLogo} />
     </HStack>
   );
 };

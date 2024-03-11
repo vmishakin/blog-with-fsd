@@ -1,4 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ArticlePageGreeting } from './ArticlePageGreeting';
 
 export default {
@@ -15,3 +16,4 @@ const Template: ComponentStory<typeof ArticlePageGreeting> = () => {
 
 export const Primary = Template.bind({});
 Primary.args = {};
+Primary.decorators = [StoreDecorator({})];
