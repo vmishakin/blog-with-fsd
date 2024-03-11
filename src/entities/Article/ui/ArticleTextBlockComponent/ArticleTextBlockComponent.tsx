@@ -27,6 +27,7 @@ export const ArticleTextBlockComponent = memo(
         {block.paragraphs.map((paragraph) => (
           <ToggleFeatures
             name="isAppRedesigned"
+            key={paragraph}
             on={
               <Text key={paragraph} text={paragraph} className={s.paragraph} />
             }
