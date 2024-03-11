@@ -50,7 +50,7 @@ export const ListBox = <T extends string>({
         onChange={onChange}
         disabled={readonly}
       >
-        <HListBox.Button className={s.trigger}>
+        <HListBox.Button as={Fragment}>
           <Button
             variant="filled"
             disabled={readonly}
